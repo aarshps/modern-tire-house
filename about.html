@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Modern Tire House SPC</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #eaf6fb 0%, #f8fafc 100%);
+            color: #222;
+        }
+        header {
+            background: linear-gradient(90deg, #2c3e50 60%, #2980b9 100%);
+            color: white;
+            padding: 36px 0 18px 0;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(44,62,80,0.12);
+            letter-spacing: 2px;
+            font-size: 2.2rem;
+            font-weight: 700;
+            border-bottom-left-radius: 18px;
+            border-bottom-right-radius: 18px;
+            animation: fadeInUp 1s ease;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #34495e;
+            padding: 14px 0;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+            border-bottom: 2px solid #2980b9;
+            animation: fadeInUp 1.2s ease;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 22px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            font-size: 1.08rem;
+            position: relative;
+            transition: color 0.2s;
+        }
+        nav a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #ffd700;
+            transition: width .3s;
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+        }
+        nav a:hover {
+            color: #ffd700;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .about-section {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(41,128,185,0.10);
+            padding: 48px 32px 36px 32px;
+            margin-top: 40px;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeInUp 1s cubic-bezier(.23,1,.32,1) forwards;
+        }
+        .about-section h2 {
+            color: #2980b9;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+        .about-section p {
+            font-size: 1.15rem;
+            color: #444;
+            line-height: 1.7;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+        .about-list {
+            margin: 0 auto;
+            max-width: 600px;
+            padding: 0;
+            list-style: none;
+        }
+        .about-list li {
+            font-size: 1.08rem;
+            color: #555;
+            margin-bottom: 10px;
+            padding-left: 0;
+            text-align: left;
+        }
+        .btn {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+            background: #2980b9;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .btn::after {
+            content: '';
+            position: absolute;
+            left: -100%;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #ffd700 0%, #1abc9c 100%);
+            opacity: 0.2;
+            transition: left 0.4s;
+        }
+        .btn:hover::after {
+            left: 0;
+        }
+        .btn:hover {
+            animation: pulse 1s;
+        }
+        footer {
+            background: linear-gradient(90deg, #2c3e50 60%, #2980b9 100%);
+            color: white;
+            text-align: center;
+            padding: 32px 20px 24px 20px;
+            margin-top: 48px;
+            border-radius: 18px 18px 0 0;
+            box-shadow: 0 -4px 16px rgba(44,62,80,0.10);
+        }
+        footer p {
+            margin: 10px 0;
+            font-size: 1.12rem;
+            letter-spacing: 1px;
+        }
+        footer a {
+            color: #ffd700;
+            text-decoration: underline;
+        }
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes logoBounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.12); }
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(41,128,185,0.15); }
+            70% { box-shadow: 0 0 0 12px rgba(41,128,185,0); }
+            100% { box-shadow: 0 0 0 0 rgba(41,128,185,0); }
+        }
+        header img {
+            animation: logoBounce 1.2s infinite alternate;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;">
+            <img src="static/logo.png" alt="Modern Tire House Logo" style="height:48px;width:auto;border-radius:8px;box-shadow:0 2px 8px rgba(44,62,80,0.10);background:#fff;" onerror="this.style.display='none'">
+            <div style="display:flex;flex-direction:column;align-items:flex-start;">
+                <h1 style="margin:0;font-size:2.2rem;letter-spacing:2px;font-weight:700;color:white;">MODERN TIRE HOUSE SPC <span style="font-size:1.1rem;vertical-align:super;">&trade;</span></h1>
+                <span style="color:#ffd700;font-size:1.08rem;font-weight:500;letter-spacing:1px;">Your Trusted Tyre Traders in Oman</span>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <a href="index.html#home">HOME</a>
+        <a href="products.html">PRODUCTS</a>
+        <a href="services.html">SERVICES</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+    <div class="container">
+        <div class="about-section">
+            <h2>About Us</h2>
+            <p>Modern Tire House SPC is your trusted tyre trader in Oman, serving the automotive and industrial sectors with quality products and services. Located in Ghala Industrial Area, we offer a comprehensive range of tyres, tubes, rubber products, and repair solutions for all vehicle types.</p>
+            <ul class="about-list">
+                <li>Established: 2005</li>
+                <li>Location: Ghala Industrial Area, Muscat, Oman</li>
+                <li>Specialization: OTR, Truck, Bus, Forklift Tyres, Tubes, Rubber Products</li>
+                <li>Services: Tyre repair, fitting, balancing, alignment, tube replacement, and more</li>
+                <li>Mission: Delivering quality, reliability, and customer satisfaction</li>
+            </ul>
+            <p>We pride ourselves on our experienced team, modern workshop, and commitment to excellence. Contact us for all your tyre needs!</p>
+        </div>
+    </div>
+    <footer id="contact">
+        <p>ADDRESS: GHALA INDUSTRIAL AREA</p>
+        <p>EMAIL: info@moderntirehouse.com | PHONE: +968-123-4567</p>
+        <p><a class="btn" href="https://maps.google.com" target="_blank">GOOGLE MAP</a></p>
+    </footer>
+</body>
+</html>
