@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MODERN TIRE HOUSE SPC - Home</title>
+    <title>MODERN TIRE HOUSE SPC</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
@@ -12,58 +12,105 @@
         <h1>MODERN TIRE HOUSE SPC</h1>
         <nav>
             <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#home" class="nav-link" data-section="home">Home</a></li>
+                <li><a href="#products" class="nav-link" data-section="products">Products</a></li>
+                <li><a href="#services" class="nav-link" data-section="services">Services</a></li>
+                <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
             </ul>
         </nav>
     </div>
-    <section class="hero">
-        <h2>YOUR TRUSTED TYRE TRADERS IN OMAN</h2>
-        <img src="https://placehold.co/400x200?text=TRUCK+VEHICLE+RUNNING" alt="Truck Vehicle Running">
-    </section>
-    <section class="service-highlight">
-        <div>
-            <h3>ALL TYRE SERVICES UNDER ONE ROOF</h3>
-        </div>
-        <img src="https://placehold.co/200x200?text=REPAIRING+OTR+TYRE" alt="Repairing OTR Tyre">
-    </section>
-    <section class="product-categories">
-        <div class="product-category">
-            <img src="https://placehold.co/100x100?text=TRAILOR" alt="Trailor">
-            <div>TRAILOR</div>
-        </div>
-        <div class="product-category">
-            <img src="https://placehold.co/100x100?text=BUS" alt="Bus">
-            <div>BUS</div>
-        </div>
-        <div class="product-category">
-            <img src="https://placehold.co/100x100?text=OTR" alt="OTR">
-            <div>OTR</div>
-        </div>
-        <div class="product-category">
-            <img src="https://placehold.co/100x100?text=TOOLS" alt="Tools">
-            <div>TOOLS</div>
-        </div>
-        <div class="product-category">
-            <img src="https://placehold.co/100x100?text=REPAIRING" alt="Repairing">
-            <div>REPAIRING</div>
-        </div>
-        <div class="product-category">
-            <img src="https://placehold.co/100x100?text=FORKLIFT" alt="Forklift">
-            <div>FORKLIFT</div>
-        </div>
-        <div class="product-category">
-            <img src="https://placehold.co/100x100?text=TUBES" alt="Tubes">
-            <div>TUBES</div>
-        </div>
-        <div class="product-category">
-            <img src="https://placehold.co/100x100?text=RUBBER+PRODUCTS" alt="Rubber Products">
-            <div>RUBBER PRODUCTS</div>
-        </div>
-    </section>
+    <main>
+        <section id="home" class="spa-section">
+            <div class="hero">
+                <h2>YOUR TRUSTED TYRE TRADERS IN OMAN</h2>
+                <img src="https://placehold.co/400x200?text=TRUCK+VEHICLE+RUNNING" alt="Truck Vehicle Running">
+            </div>
+            <div class="service-highlight">
+                <div>
+                    <h3>ALL TYRE SERVICES UNDER ONE ROOF</h3>
+                </div>
+                <img src="https://placehold.co/200x200?text=REPAIRING+OTR+TYRE" alt="Repairing OTR Tyre">
+            </div>
+            <div class="product-categories">
+                <div class="product-category">
+                    <img src="https://placehold.co/100x100?text=TRAILOR" alt="Trailor">
+                    <div>TRAILOR</div>
+                </div>
+                <div class="product-category">
+                    <img src="https://placehold.co/100x100?text=BUS" alt="Bus">
+                    <div>BUS</div>
+                </div>
+                <div class="product-category">
+                    <img src="https://placehold.co/100x100?text=OTR" alt="OTR">
+                    <div>OTR</div>
+                </div>
+                <div class="product-category">
+                    <img src="https://placehold.co/100x100?text=TOOLS" alt="Tools">
+                    <div>TOOLS</div>
+                </div>
+                <div class="product-category">
+                    <img src="https://placehold.co/100x100?text=REPAIRING" alt="Repairing">
+                    <div>REPAIRING</div>
+                </div>
+                <div class="product-category">
+                    <img src="https://placehold.co/100x100?text=FORKLIFT" alt="Forklift">
+                    <div>FORKLIFT</div>
+                </div>
+                <div class="product-category">
+                    <img src="https://placehold.co/100x100?text=TUBES" alt="Tubes">
+                    <div>TUBES</div>
+                </div>
+                <div class="product-category">
+                    <img src="https://placehold.co/100x100?text=RUBBER+PRODUCTS" alt="Rubber Products">
+                    <div>RUBBER PRODUCTS</div>
+                </div>
+            </div>
+        </section>
+        <section id="products" class="spa-section" style="display:none; max-width: 800px; margin: 2rem auto; padding: 1rem; background: #fff; border-radius: 12px;">
+            <h2>Our Products</h2>
+            <ul style="line-height:2;">
+                <li>Bus and truck tyres</li>
+                <li>Forklift and solid tyres</li>
+                <li>Industrial and earth moving tyres</li>
+                <li>Agricultural tyres</li>
+                <li>Tubes and flaps</li>
+                <li>Vane pumps</li>
+                <li>Spare parts and rubber products</li>
+            </ul>
+        </section>
+        <section id="services" class="spa-section" style="display:none; max-width: 800px; margin: 2rem auto; padding: 1rem; background: #fff; border-radius: 12px;">
+            <h2>All Tyre Services Under One Roof</h2>
+            <p>At Modern Tire House SPC, we offer a comprehensive range of tyre services to meet all your needs. Our expert team provides professional tyre repair, maintenance, and fitting for all types of vehicles, including trucks, buses, OTR, forklifts, and more. We use advanced equipment and quality products to ensure your safety and satisfaction. Whether you need a quick fix or a complete overhaul, our service center is equipped to deliver reliable solutions under one roof.</p>
+        </section>
+        <section id="about" class="spa-section" style="display:none; max-width: 800px; margin: 2rem auto; padding: 1rem; background: #fff; border-radius: 12px;">
+            <h2>About Us</h2>
+            <p>Modern Tire House SPC has been serving Oman for over three decades, providing top-quality tyres and automotive services. Our commitment to professionalism and customer satisfaction has made us a trusted name in the industry.</p>
+            <h3>Mission</h3>
+            <p>To deliver high-quality tyres and professional service, ensuring safety and reliability for every customer.</p>
+            <h3>Vision</h3>
+            <p>To be the leading tyre trading and service company in Oman, recognized for our integrity and excellence.</p>
+        </section>
+        <section id="contact" class="spa-section" style="display:none; max-width: 800px; margin: 2rem auto; padding: 1rem; background: #fff; border-radius: 12px;">
+            <h2>Contact Us</h2>
+            <p>Need tyre support for your vehicle ??</p>
+            <form action="mailto:jinesh@moderntirehouse.com" method="POST" enctype="text/plain" style="display: flex; flex-direction: column; gap: 1rem; max-width: 400px; margin: 0 auto;">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="Email" placeholder="Your Email" required>
+                <textarea name="Message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" style="background: #007bff; color: #fff; border: none; padding: 0.8rem 2rem; border-radius: 25px; font-weight: bold; cursor: pointer;">Send us an email</button>
+            </form>
+            <div style="margin-top:2rem;">
+                <div>Email: <a href="mailto:jinesh@moderntirehouse.com">jinesh@moderntirehouse.com</a></div>
+                <div>Address: GHALA INDUSTRIAL AREA</div>
+                <div>Phone: <span>+968-XXXXXXX</span></div>
+                <div style="margin:1rem 0;">
+                    <iframe src="https://maps.google.com/maps?q=GHALA+INDUSTRIAL+AREA&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="200" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div style="margin-top:1rem; font-weight:500;">Modern tire house, your trusted tyre trading and service company in Oman. Committed to deliver high quality tyres and professional service.</div>
+            </div>
+        </section>
+    </main>
     <footer class="footer">
         <div>Address: GHALA INDUSTRIAL AREA</div>
         <div>Email: <a href="mailto:jinesh@moderntirehouse.com">jinesh@moderntirehouse.com</a></div>
