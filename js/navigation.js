@@ -1,5 +1,4 @@
-// SPA navigation controller for Modern Tire House SPC
-// Handles single-page application routing and section switching
+// SPA navigation for Modern Tire House SPC
 
 document.addEventListener('DOMContentLoaded', function () {
     function showSection(sectionId) {
