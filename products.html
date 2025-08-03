@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products - MODERN TIRE HOUSE SPC</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/x-icon" href="static/favicons/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="static/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="static/favicons/favicon-16x16.png">
@@ -19,25 +19,69 @@
         <nav>
             <ul>
                 <li><a href="home.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="home.html#products">Products</a></li>
+                <li><a href="home.html#services">Services</a></li>
+                <li><a href="home.html#about">About</a></li>
+                <li><a href="home.html#contact">Contact</a></li>
             </ul>
         </nav>
     </div>
-    <main style="max-width: 800px; margin: 2rem auto; padding: 1rem; background: #fff; border-radius: 12px;">
-        <h2>Our Products</h2>
-        <ul style="line-height:2;">
-            <li>Bus and truck tyres</li>
-            <li>Forklift and solid tyres</li>
-            <li>Industrial and earth moving tyres</li>
-            <li>Agricultural tyres</li>
-            <li>Tubes and flaps</li>
-            <li>Vane pumps</li>
-            <li>Spare parts and rubber products</li>
-        </ul>
+    <main style="max-width: 1200px; margin: 2rem auto; padding: 1rem;">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: #222; margin-bottom: 1rem;">Our Premium Products</h2>
+            <p style="font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto;">Quality tyres and automotive solutions for every vehicle type, backed by trusted international brands</p>
+        </div>
+        <div class="products-grid">
+            <div class="product-card">
+                <h3>Commercial Vehicles</h3>
+                <ul>
+                    <li>Bus and truck tyres</li>
+                    <li>Industrial and earth moving tyres</li>
+                    <li>OTR (Off-The-Road) tyres</li>
+                </ul>
+            </div>
+            <div class="product-card">
+                <h3>Specialty & Industrial</h3>
+                <ul>
+                    <li>Forklift and solid tyres</li>
+                    <li>Agricultural tyres</li>
+                    <li>Vane pumps</li>
+                </ul>
+            </div>
+            <div class="product-card">
+                <h3>Accessories & Parts</h3>
+                <ul>
+                    <li>Tubes and flaps</li>
+                    <li>Spare parts and rubber products</li>
+                    <li>Professional repair tools</li>
+                </ul>
+            </div>
+        </div>
     </main>
+
+    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 3rem 2rem; border-radius: 20px; text-align: center; color: white; margin-bottom: 3rem;">
+        <h3 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem; color: white;">Trusted Brands We Carry</h3>
+        <p style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 2rem;">Premium quality tyres from internationally recognized manufacturers</p>
+        <div class="brand-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; max-width: 800px; margin: 0 auto;">
+            <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 12px; backdrop-filter: blur(10px);">
+                <h4 style="font-weight: 600; margin-bottom: 0.5rem;">FULLRUN</h4>
+                <p style="font-size: 0.9rem; opacity: 0.8; margin: 0;">Premium Performance</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 12px; backdrop-filter: blur(10px);">
+                <h4 style="font-weight: 600; margin-bottom: 0.5rem;">HILO</h4>
+                <p style="font-size: 0.9rem; opacity: 0.8; margin: 0;">Industrial Solutions</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 12px; backdrop-filter: blur(10px);">
+                <h4 style="font-weight: 600; margin-bottom: 0.5rem;">REMA TIP TOP</h4>
+                <p style="font-size: 0.9rem; opacity: 0.8; margin: 0;">Repair Excellence</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 12px; backdrop-filter: blur(10px);">
+                <h4 style="font-weight: 600; margin-bottom: 0.5rem;">PCL</h4>
+                <p style="font-size: 0.9rem; opacity: 0.8; margin: 0;">Professional Tools</p>
+            </div>
+        </div>
+    </div>
+
     <section class="receipt-section" style="max-width:800px;margin:2rem auto;padding:1rem;background:#f9f9f9;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
         <h2 style="margin-top:0;">🧾 Receipt Example</h2>
         <div><strong>MODERN TIRE HOUSE SPC</strong></div>

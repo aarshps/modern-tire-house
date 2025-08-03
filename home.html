@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
     <title>MODERN TIRE HOUSE SPC</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/new-sections.css">
     <link rel="icon" type="image/x-icon" href="static/favicons/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="static/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="static/favicons/favicon-16x16.png">
     <!-- Professional web fonts are now loaded via CSS -->
-    <script src="js/script.js" defer></script>
+    <script src="js/navigation.js" defer></script>
     <script src="js/loadHeaderLogos.js"></script>
 </head>
 <body>
@@ -29,49 +30,315 @@
     <main>
         <section id="home" class="spa-section">
             <div class="hero">
+                <img src="static/backgrounds/truck_running_vehicle.png" alt="Modern Tire House - Professional Tire Services" class="responsive-image">
+            </div>
+            
+            <!-- Business Highlights Section -->
+            <div class="business-highlights">
+                <div class="spa-container">
+                    <h2>Your Trusted Tire Partner in Oman</h2>
+                    <div class="highlights-grid">
+                        <div class="highlight-card">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Professional Tire Installation" class="highlight-image">
+                            <div class="highlight-content">
+                                <h3>Professional Installation</h3>
+                                <p>Expert tire fitting and balancing services for all vehicle types</p>
+                            </div>
+                        </div>
+                        
+                        <div class="highlight-card">
+                            <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Commercial Vehicle Tires" class="highlight-image">
+                            <div class="highlight-content">
+                                <h3>Commercial Solutions</h3>
+                                <p>Specialized tires for trucks, buses, and heavy machinery</p>
+                            </div>
+                        </div>
+                        
+                        <div class="highlight-card">
+                            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tire Repair Services" class="highlight-image">
+                            <div class="highlight-content">
+                                <h3>Expert Repairs</h3>
+                                <p>Professional tire repair and maintenance services</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Service Showcase Section -->
+            <div class="service-showcase">
+                <div class="spa-container">
+                    <div class="showcase-content">
+                        <div class="showcase-text">
+                            <h2>Complete Tire Solutions</h2>
+                            <p>From passenger cars to heavy-duty industrial vehicles, we provide comprehensive tire services with over 30 years of experience in Oman.</p>
+                            <ul class="service-features">
+                                <li>✓ All tire brands and sizes</li>
+                                <li>✓ Professional installation</li>
+                                <li>✓ Repair and maintenance</li>
+                                <li>✓ Quality guarantee</li>
+                            </ul>
+                        </div>
+                        <div class="showcase-images">
+                            <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tire Workshop" class="showcase-main">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Tire Storage" class="showcase-secondary">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Industry Focus Section -->
+            <div class="industry-focus">
+                <div class="spa-container">
+                    <h2>Industries We Serve</h2>
+                    <div class="industry-grid">
+                        <div class="industry-card">
+                            <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Construction Industry" class="industry-image">
+                            <h3>Construction</h3>
+                            <p>Heavy-duty tires for construction vehicles and equipment</p>
+                        </div>
+                        
+                        <div class="industry-card">
+                            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Logistics Industry" class="industry-image">
+                            <h3>Logistics</h3>
+                            <p>Commercial tires for trucks and delivery vehicles</p>
+                        </div>
+                        
+                        <div class="industry-card">
+                            <img src="https://images.unsplash.com/photo-1550985543-84d7d8e99c71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Forklift Operations" class="industry-image">
+                            <h3>Warehousing</h3>
+                            <p>Specialized tires for forklifts and material handling</p>
+                        </div>
+                        
+                        <div class="industry-card">
+                            <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Public Transportation" class="industry-image">
+                            <h3>Transportation</h3>
+                            <p>Reliable tires for buses and public transport vehicles</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-        <section id="products" class="spa-section" style="display:none; max-width: 800px; margin: 2rem auto; padding: 1rem; background: #fff; border-radius: 12px;">
-            <h2>Our Products</h2>
-            <ul style="line-height:2;">
-                <li>Bus and truck tyres</li>
-                <li>Forklift and solid tyres</li>
-                <li>Industrial and earth moving tyres</li>
-                <li>Agricultural tyres</li>
-                <li>Tubes and flaps</li>
-                <li>Vane pumps</li>
-                <li>Spare parts and rubber products</li>
-            </ul>
-        </section>
-        <section id="services" class="spa-section" style="display:none; max-width: 800px; margin: 2rem auto; padding: 1rem; background: #fff; border-radius: 12px;">
-            <h2>All Tyre Services Under One Roof</h2>
-            <p>At Modern Tire House SPC, we offer a comprehensive range of tyre services to meet all your needs. Our expert team provides professional tyre repair, maintenance, and fitting for all types of vehicles, including trucks, buses, OTR, forklifts, and more. We use advanced equipment and quality products to ensure your safety and satisfaction. Whether you need a quick fix or a complete overhaul, our service center is equipped to deliver reliable solutions under one roof.</p>
-        </section>
-        <section id="about" class="spa-section" style="display:none; max-width: 800px; margin: 2rem auto; padding: 1rem; background: #fff; border-radius: 12px;">
-            <h2>About Us</h2>
-            <p>Modern Tire House SPC has been serving Oman for over three decades, providing top-quality tyres and automotive services. Our commitment to professionalism and customer satisfaction has made us a trusted name in the industry.</p>
-            <h3>Mission</h3>
-            <p>To deliver high-quality tyres and professional service, ensuring safety and reliability for every customer.</p>
-            <h3>Vision</h3>
-            <p>To be the leading tyre trading and service company in Oman, recognized for our integrity and excellence.</p>
-        </section>
-        <section id="contact" class="spa-section" style="display:none; max-width: 800px; margin: 2rem auto; padding: 1rem; background: #fff; border-radius: 12px;">
-            <h2>Contact Us</h2>
-            <p>Need tyre support for your vehicle ??</p>
-            <form action="mailto:jinesh@moderntirehouse.com" method="POST" enctype="text/plain" style="display: flex; flex-direction: column; gap: 1rem; max-width: 400px; margin: 0 auto;">
-                <input type="text" name="Name" placeholder="Your Name" required>
-                <input type="email" name="Email" placeholder="Your Email" required>
-                <textarea name="Message" placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit" style="background: #007bff; color: #fff; border: none; padding: 0.8rem 2rem; border-radius: 25px; font-weight: bold; cursor: pointer;">Send us an email</button>
-            </form>
-            <div style="margin-top:2rem;">
-                <div>Email: <a href="mailto:jinesh@moderntirehouse.com">jinesh@moderntirehouse.com</a></div>
-                <div>Address: GHALA INDUSTRIAL AREA</div>
-                <div>Phone: <span>+968-XXXXXXX</span></div>
-                <div style="margin:1rem 0;">
-                    <iframe src="https://maps.google.com/maps?q=GHALA+INDUSTRIAL+AREA&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="200" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
+        <section id="products" class="spa-section" style="display:none;">
+            <div class="spa-container">
+                <div class="section-header">
+                    <h2>Our Premium Products</h2>
+                    <p>Quality tyres and automotive solutions for every vehicle type, backed by trusted international brands</p>
                 </div>
-                <div style="margin-top:1rem; font-weight:500;">Modern tire house, your trusted tyre trading and service company in Oman. Committed to deliver high quality tyres and professional service.</div>
+                
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-header">
+                            <div class="product-icon commercial">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99z"/>
+                                </svg>
+                            </div>
+                            <h3>Commercial Vehicles</h3>
+                        </div>
+                        <ul class="product-list">
+                            <li>Bus and truck tyres</li>
+                            <li>Industrial and earth moving tyres</li>
+                            <li>OTR (Off-The-Road) tyres</li>
+                        </ul>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-header">
+                            <div class="product-icon industrial">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4Z"/>
+                                </svg>
+                            </div>
+                            <h3>Specialty & Industrial</h3>
+                        </div>
+                        <ul class="product-list">
+                            <li>Forklift and solid tyres</li>
+                            <li>Agricultural tyres</li>
+                            <li>Vane pumps</li>
+                        </ul>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-header">
+                            <div class="product-icon accessories">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M13,7H11V11H7V13H11V17H13V13H17V11H13V7Z"/>
+                                </svg>
+                            </div>
+                            <h3>Accessories & Parts</h3>
+                        </div>
+                        <ul class="product-list">
+                            <li>Tubes and flaps</li>
+                            <li>Spare parts and rubber products</li>
+                            <li>Professional repair tools</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="brands-section">
+                    <h3>Trusted Brands We Carry</h3>
+                    <p>Premium quality tyres from internationally recognized manufacturers</p>
+                    <div class="brand-grid">
+                        <div class="brand-card">
+                            <h4>FULLRUN</h4>
+                            <p>Premium Performance</p>
+                        </div>
+                        <div class="brand-card">
+                            <h4>HILO</h4>
+                            <p>Industrial Solutions</p>
+                        </div>
+                        <div class="brand-card">
+                            <h4>REMA TIP TOP</h4>
+                            <p>Repair Excellence</p>
+                        </div>
+                        <div class="brand-card">
+                            <h4>PCL</h4>
+                            <p>Professional Tools</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="services" class="spa-section" style="display:none;">
+            <div class="spa-container">
+                <div class="section-header">
+                    <h2>All Tyre Services Under One Roof</h2>
+                    <div class="service-image">
+                        <img src="static/images/repairing_otr_tyres.png" alt="Professional OTR Tyre Repair Services" class="responsive-image">
+                    </div>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tire Installation Service" class="service-card-image">
+                        <div class="service-card-content">
+                            <h3>Professional Installation</h3>
+                            <p>Expert tire mounting, balancing, and alignment services for all vehicle types.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tire Repair Service" class="service-card-image">
+                        <div class="service-card-content">
+                            <h3>Expert Repairs</h3>
+                            <p>Professional tire repair services including patching, vulcanizing, and retreading.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tire Storage Service" class="service-card-image">
+                        <div class="service-card-content">
+                            <h3>Storage Solutions</h3>
+                            <p>Proper tire storage and maintenance to extend tire life and performance.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Fleet Management Service" class="service-card-image">
+                        <div class="service-card-content">
+                            <h3>Fleet Management</h3>
+                            <p>Comprehensive tire management solutions for commercial fleets and businesses.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-content">
+                    <div class="service-description">
+                        <h3>Why Choose Our Services?</h3>
+                        <p>At Modern Tire House SPC, we offer a comprehensive range of tyre services to meet all your needs. Our expert team provides professional tyre repair, maintenance, and fitting for all types of vehicles, including trucks, buses, OTR, forklifts, and more.</p>
+                        <p>We use advanced equipment and quality products to ensure your safety and satisfaction. Whether you need a quick fix or a complete overhaul, our service center is equipped to deliver reliable solutions under one roof.</p>
+                    </div>
+                    
+                    <div class="service-workshop">
+                        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modern Tire Workshop" class="workshop-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="about" class="spa-section" style="display:none;">
+            <div class="spa-container">
+                <div class="section-header">
+                    <h2>About Us</h2>
+                </div>
+                <div class="about-content">
+                    <p>Modern Tire House SPC has been serving Oman for over three decades, providing top-quality tyres and automotive services. Our commitment to professionalism and customer satisfaction has made us a trusted name in the industry.</p>
+                    
+                    <div class="mission-vision">
+                        <div class="mission">
+                            <h3>Mission</h3>
+                            <p>To deliver high-quality tyres and professional service, ensuring safety and reliability for every customer.</p>
+                        </div>
+                        <div class="vision">
+                            <h3>Vision</h3>
+                            <p>To be the leading tyre trading and service company in Oman, recognized for our integrity and excellence.</p>
+                        </div>
+                    </div>
+
+                    <div class="warranty-section">
+                        <h3>Warranty Information</h3>
+                        <p><strong>Warranty on Tyres: 1 year</strong><br>For any manufacturing defects on pro rata basis.</p>
+                        
+                        <h3>Brands We Offer</h3>
+                        <div class="brands-list">
+                            <ul>
+                                <li>REMA TIP TOP</li>
+                                <li>FULLRUN TYRE</li>
+                                <li>VELTOUR TYRE INFLATORS</li>
+                                <li>PCL</li>
+                            </ul>
+                            <ul>
+                                <li>HILO Tyres</li>
+                                <li>HEAVY DUTY TYRE FLAPS</li>
+                                <li>OTR Tyres</li>
+                                <li>Vane Pumps</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="spa-section" style="display:none;">
+            <div class="spa-container">
+                <div class="section-header">
+                    <h2>Contact Us</h2>
+                    <p>Need tyre support for your vehicle?</p>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-form">
+                        <form action="mailto:jinesh@moderntirehouse.com" method="POST" enctype="text/plain">
+                            <input type="text" name="Name" placeholder="Your Name" required>
+                            <input type="email" name="Email" placeholder="Your Email" required>
+                            <textarea name="Message" placeholder="Your Message" rows="5" required></textarea>
+                            <button type="submit">Send us an email</button>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <h4>Email</h4>
+                                <a href="mailto:jinesh@moderntirehouse.com">jinesh@moderntirehouse.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <h4>Address</h4>
+                                <p>GHALA INDUSTRIAL AREA</p>
+                            </div>
+                            <div class="contact-item">
+                                <h4>Phone</h4>
+                                <a href="tel:+96896761921">+968 9676 1921</a>
+                            </div>
+                        </div>
+                        
+                        <div class="map-container">
+                            <iframe src="https://maps.google.com/maps?q=GHALA+INDUSTRIAL+AREA&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                                    width="100%" height="200" 
+                                    style="border:0; border-radius:12px;" 
+                                    allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -158,7 +425,7 @@
         <a href="https://wa.me/96896761921" target="_blank" class="floating-btn whatsapp" title="Chat on WhatsApp"></a>
         <a href="tel:+96896761921" class="floating-btn phone" title="Call Now"></a>
     </div>
-    
+
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         loadHeaderLogos();
