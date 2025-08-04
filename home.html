@@ -74,15 +74,18 @@
             max-width: 100vw;
             position: relative;
             -webkit-overflow-scrolling: touch;
-            height: 100%;
+            height: auto;
+            min-height: 100vh;
             margin: 0;
             padding: 0;
+            touch-action: pan-y;
         }
 
         /* Prevent horizontal overflow globally */
         * {
             max-width: 100%;
             -webkit-tap-highlight-color: transparent;
+            box-sizing: border-box;
         }
 
         html, body {
@@ -92,46 +95,91 @@
             min-height: 100vh;
         }
 
-        /* Mobile scrolling fixes */
+        /* Android and Mobile scrolling fixes */
         @media (max-width: 768px) {
             html {
                 -webkit-overflow-scrolling: touch;
-                overflow-y: auto;
-                height: 100%;
+                overflow-y: auto !important;
+                height: auto !important;
                 position: relative;
+                touch-action: pan-y;
+                /* Additional Android fixes */
+                overscroll-behavior: contain;
+                scroll-behavior: auto;
             }
             
             body {
                 -webkit-overflow-scrolling: touch;
-                overflow-y: auto;
-                height: auto;
+                overflow-y: auto !important;
+                height: auto !important;
                 min-height: 100vh;
                 min-height: calc(var(--vh, 1vh) * 100);
                 position: relative;
                 overflow-x: hidden !important;
                 width: 100vw !important;
                 max-width: 100vw !important;
+                touch-action: pan-y;
+                /* Additional Android compatibility */
+                overscroll-behavior: contain;
+                scroll-behavior: auto;
+                /* Force hardware acceleration on Android */
+                transform: translateZ(0);
+                will-change: scroll-position;
+                backface-visibility: hidden;
             }
             
             body.mobile-menu-open {
-                overflow: hidden;
-                position: fixed;
-                width: 100%;
-                height: 100vh;
-                height: calc(var(--vh, 1vh) * 100);
+                overflow: hidden !important;
+                position: fixed !important;
+                width: 100% !important;
+                height: 100vh !important;
+                height: calc(var(--vh, 1vh) * 100) !important;
+                touch-action: none;
             }
             
-            /* Fix for iOS Safari */
+            /* Force scrolling for Android */
             body:not(.mobile-menu-open) {
                 -webkit-overflow-scrolling: touch !important;
                 overflow-y: scroll !important;
                 overflow-x: hidden !important;
+                position: relative !important;
+                height: auto !important;
+                touch-action: pan-y !important;
+                /* Android-specific scrolling properties */
+                overscroll-behavior-y: auto !important;
+                overscroll-behavior-x: contain !important;
+                scroll-snap-type: none !important;
             }
             
             /* Ensure hero section uses proper viewport height */
             .hero {
                 min-height: 100vh;
                 min-height: calc(var(--vh, 1vh) * 100);
+                touch-action: pan-y;
+                /* Android scroll optimization */
+                transform: translateZ(0);
+            }
+            
+            /* Fix for all sections on mobile */
+            .stats, .services, .products, .about, .contact, .brands {
+                touch-action: pan-y;
+                position: relative;
+                /* Ensure sections don't interfere with scrolling */
+                contain: layout style;
+                will-change: auto;
+            }
+            
+            /* Android Chrome specific optimizations */
+            @supports (-webkit-appearance: none) {
+                body {
+                    -webkit-overflow-scrolling: auto;
+                }
+                
+                /* Force scroll container behavior */
+                html {
+                    overflow-y: scroll !important;
+                    -webkit-overflow-scrolling: auto;
+                }
             }
         }
 
@@ -2475,6 +2523,10 @@ ${data.message}
         // Force layout fix on initial load
         window.addEventListener('load', function() {
             if (window.innerWidth < 768) {
+                const isAndroid = /Android/i.test(navigator.userAgent);
+                const isChrome = /Chrome/i.test(navigator.userAgent);
+                
+                // Basic mobile layout fixes
                 document.documentElement.style.overflowX = 'hidden';
                 document.body.style.overflowX = 'hidden';
                 document.body.style.width = '100%';
@@ -2482,7 +2534,58 @@ ${data.message}
                 
                 // Ensure scrolling is enabled
                 document.body.style.overflowY = 'auto';
-                document.body.style.webkitOverflowScrolling = 'touch';
+                document.documentElement.style.overflowY = 'auto';
+                
+                // Android-specific load fixes
+                if (isAndroid) {
+                    console.log('Applying Android load fixes');
+                    
+                    // Force proper scrolling behavior
+                    document.body.style.overflow = 'visible';
+                    document.body.style.overflowY = 'auto';
+                    document.body.style.position = 'relative';
+                    document.body.style.height = 'auto';
+                    document.body.style.touchAction = 'pan-y';
+                    
+                    // Chrome-specific fixes
+                    if (isChrome) {
+                        document.body.style.webkitOverflowScrolling = 'auto';
+                        document.body.style.overscrollBehavior = 'contain';
+                    } else {
+                        document.body.style.webkitOverflowScrolling = 'touch';
+                    }
+                    
+                    // Force hardware acceleration
+                    document.body.style.willChange = 'scroll-position';
+                    document.body.style.backfaceVisibility = 'hidden';
+                    document.body.style.perspective = '1000px';
+                    
+                    // Android-specific scroll test
+                    setTimeout(() => {
+                        const testScroll = () => {
+                            const canScroll = document.documentElement.scrollHeight > window.innerHeight;
+                            console.log('Android Scroll Test:', {
+                                canScroll,
+                                documentHeight: document.documentElement.scrollHeight,
+                                windowHeight: window.innerHeight,
+                                bodyOverflow: getComputedStyle(document.body).overflow,
+                                bodyOverflowY: getComputedStyle(document.body).overflowY,
+                                bodyPosition: getComputedStyle(document.body).position,
+                                bodyHeight: getComputedStyle(document.body).height
+                            });
+                            
+                            if (!canScroll) {
+                                console.warn('Android: Page may not be scrollable - forcing content height');
+                                document.body.style.minHeight = '200vh';
+                            }
+                        };
+                        testScroll();
+                        
+                        // Force scroll to test
+                        window.scrollTo(0, 50);
+                        setTimeout(() => window.scrollTo(0, 0), 100);
+                    }, 500);
+                }
                 
                 // iOS Safari specific fixes
                 if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
@@ -2501,16 +2604,43 @@ ${data.message}
                     }, 500);
                 }
                 
-                // Debug function - remove in production
+                // Enhanced debug function
                 window.debugScrolling = function() {
+                    const isAndroid = /Android/i.test(navigator.userAgent);
+                    const isChrome = /Chrome/i.test(navigator.userAgent);
+                    
                     console.log('=== Mobile Scroll Debug ===');
-                    console.log('Body overflow-y:', getComputedStyle(document.body).overflowY);
-                    console.log('Body height:', getComputedStyle(document.body).height);
-                    console.log('Body position:', getComputedStyle(document.body).position);
-                    console.log('Document height:', document.documentElement.scrollHeight);
-                    console.log('Window height:', window.innerHeight);
-                    console.log('Can scroll:', document.documentElement.scrollHeight > window.innerHeight);
-                    console.log('Current scroll position:', window.pageYOffset);
+                    console.log('Device Type:', {
+                        isAndroid,
+                        isChrome,
+                        userAgent: navigator.userAgent
+                    });
+                    console.log('Body Styles:', {
+                        overflow: getComputedStyle(document.body).overflow,
+                        overflowY: getComputedStyle(document.body).overflowY,
+                        height: getComputedStyle(document.body).height,
+                        position: getComputedStyle(document.body).position,
+                        touchAction: getComputedStyle(document.body).touchAction
+                    });
+                    console.log('Document Info:', {
+                        documentHeight: document.documentElement.scrollHeight,
+                        windowHeight: window.innerHeight,
+                        canScroll: document.documentElement.scrollHeight > window.innerHeight,
+                        currentScrollPosition: window.pageYOffset
+                    });
+                    
+                    // Test scroll functionality
+                    const originalScroll = window.pageYOffset;
+                    window.scrollTo(0, 100);
+                    setTimeout(() => {
+                        const newScroll = window.pageYOffset;
+                        console.log('Scroll Test:', {
+                            originalPosition: originalScroll,
+                            testPosition: newScroll,
+                            scrollWorking: newScroll !== originalScroll
+                        });
+                        window.scrollTo(0, originalScroll);
+                    }, 100);
                 };
                 
                 // Auto-run debug after page load
@@ -2601,57 +2731,94 @@ ${data.message}
             
             // Comprehensive mobile scrolling fixes
             if (window.innerWidth <= 768) {
+                // Android-specific fixes
+                const isAndroid = /Android/i.test(navigator.userAgent);
+                const isChrome = /Chrome/i.test(navigator.userAgent);
+                
+                if (isAndroid) {
+                    console.log('Android device detected - applying Android-specific fixes');
+                    
+                    // Force proper body styles for Android
+                    document.body.style.overflow = 'visible';
+                    document.body.style.overflowY = 'auto';
+                    document.body.style.overflowX = 'hidden';
+                    document.body.style.height = 'auto';
+                    document.body.style.minHeight = '100vh';
+                    document.body.style.position = 'relative';
+                    document.body.style.touchAction = 'pan-y';
+                    
+                    // Same for html
+                    document.documentElement.style.overflow = 'visible';
+                    document.documentElement.style.overflowY = 'auto';
+                    document.documentElement.style.overflowX = 'hidden';
+                    document.documentElement.style.height = 'auto';
+                    document.documentElement.style.touchAction = 'pan-y';
+                    
+                    // Android Chrome specific fixes
+                    if (isChrome) {
+                        document.body.style.webkitOverflowScrolling = 'auto';
+                        document.documentElement.style.webkitOverflowScrolling = 'auto';
+                    }
+                }
+                
                 // Prevent default touch behaviors that can interfere with scrolling
                 document.addEventListener('touchstart', function(e) {
-                    // Allow scrolling but prevent unwanted behaviors
+                    // Allow all touch events to proceed normally
                 }, { passive: true });
                 
                 document.addEventListener('touchmove', function(e) {
-                    // Allow vertical scrolling, prevent horizontal
-                    if (Math.abs(e.touches[0].clientX - e.touches[0].pageX) > Math.abs(e.touches[0].clientY - e.touches[0].pageY)) {
-                        // Horizontal movement detected, allow it for sliders but prevent page scroll
-                        if (!e.target.closest('.brands-slider')) {
-                            e.preventDefault();
-                        }
+                    // Only prevent horizontal scrolling if not in a slider
+                    const touch = e.touches[0];
+                    const deltaX = Math.abs(touch.clientX - (touch.startX || touch.clientX));
+                    const deltaY = Math.abs(touch.clientY - (touch.startY || touch.clientY));
+                    
+                    // If horizontal movement is greater than vertical and not in brands slider
+                    if (deltaX > deltaY && !e.target.closest('.brands-slider')) {
+                        e.preventDefault();
                     }
                 }, { passive: false });
+                
+                // Store initial touch position
+                document.addEventListener('touchstart', function(e) {
+                    const touch = e.touches[0];
+                    touch.startX = touch.clientX;
+                    touch.startY = touch.clientY;
+                }, { passive: true });
                 
                 // Force enable touch scrolling on mobile
                 document.body.style.webkitOverflowScrolling = 'touch';
                 document.documentElement.style.webkitOverflowScrolling = 'touch';
                 
-                // Ensure body can scroll
-                document.body.style.overflowY = 'auto';
-                document.documentElement.style.overflowY = 'auto';
-                
-                // Remove any conflicting styles
-                document.body.style.position = 'relative';
-                document.body.style.height = 'auto';
-                document.body.style.minHeight = '100vh';
-                
                 // Fix iOS Safari address bar issues
-                const fixiOSViewport = () => {
+                const fixViewport = () => {
                     const vh = window.innerHeight * 0.01;
                     document.documentElement.style.setProperty('--vh', `${vh}px`);
                 };
                 
-                fixiOSViewport();
-                window.addEventListener('resize', fixiOSViewport);
+                fixViewport();
+                window.addEventListener('resize', fixViewport);
                 window.addEventListener('orientationchange', () => {
-                    setTimeout(fixiOSViewport, 100);
+                    setTimeout(fixViewport, 100);
                 });
                 
-                // Force layout recalculation
+                // Force layout recalculation and scroll reset
                 setTimeout(() => {
+                    // Android-specific scroll force
+                    if (isAndroid) {
+                        document.body.style.transform = 'translateZ(0)';
+                        document.body.offsetHeight; // Force reflow
+                        document.body.style.transform = '';
+                    }
+                    
                     window.scrollTo(0, 1);
                     window.scrollTo(0, 0);
                 }, 100);
                 
-                // Additional iOS Safari fixes
-                if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-                    // Fix iOS momentum scrolling
-                    document.body.style.webkitOverflowScrolling = 'touch';
-                    document.documentElement.style.webkitOverflowScrolling = 'touch';
+                // Additional Android fixes
+                if (isAndroid) {
+                    // Force GPU acceleration for smoother scrolling
+                    document.body.style.willChange = 'scroll-position';
+                    document.body.style.transform = 'translateZ(0)';
                     
                     // Prevent zoom on double tap
                     let lastTouchEnd = 0;
@@ -2662,6 +2829,19 @@ ${data.message}
                         }
                         lastTouchEnd = now;
                     }, false);
+                    
+                    // Additional Android Chrome fixes
+                    if (isChrome) {
+                        // Disable pull-to-refresh if needed
+                        document.body.style.overscrollBehavior = 'contain';
+                    }
+                }
+                
+                // iOS Safari specific fixes
+                if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+                    // Fix iOS momentum scrolling
+                    document.body.style.webkitOverflowScrolling = 'touch';
+                    document.documentElement.style.webkitOverflowScrolling = 'touch';
                 }
             }
             
