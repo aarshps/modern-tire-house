@@ -3,7 +3,7 @@
 <head>
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="logos/logo.png">
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
@@ -12,9 +12,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="mobile-web-app-capable" content="yes">
-    <title>Modern Tire House SPC - Your Trusted Tyre Traders Worldwide</title>
-    <meta name="description" content="Modern Tire House SPC - Over 30 years of excellence in the tyre industry. Comprehensive solutions for trucks, buses, heavy vehicles, industrial tyres and more.">
-    <meta name="keywords" content="tyres, truck tyres, industrial tyres, OTR tyres, rema tip top, fullrun tyres, commercial tyres">
+    <title>Modern Tire House SPC - Your Trusted Tire Traders in Oman</title>
+    <meta name="description" content="Modern Tire House SPC - Our team brings over 3 decades of excellence in the tire industry. Comprehensive solutions for trucks, buses, heavy vehicles, industrial tires and more.">
+    <meta name="keywords" content="tires, truck tires, industrial tires, OTR tires, rema tip top, fullrun tires, commercial tires">
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -35,6 +35,8 @@
             --section-title-color: #000000;
             --contact-text-color: #f1f5f9;
             --contact-icon-color: #cbd5e1;
+            --greyish-white: #e2e8f0;
+            --dark-green: #166534;
             --gold-color: #ca8a04;
             --icon-color: #000000;
             --text-dark: #1e293b;
@@ -223,19 +225,20 @@
         .logo-icon {
             width: 50px;
             height: 50px;
-            background: var(--white);
-            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 8px;
+            background: white;
+            border-radius: 50%;
+            padding: 4px;
             box-shadow: var(--shadow-soft);
         }
 
         .logo-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
+            width: 42px;
+            height: 42px;
+            object-fit: cover;
+            border-radius: 25%;
         }
 
         .logo-text {
@@ -275,7 +278,7 @@
         }
 
         .nav-menu a:hover {
-            color: var(--icon-color);
+            color: var(--highlight-color);
         }
 
         .nav-menu a::after {
@@ -437,8 +440,8 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(30, 41, 59, 0.4), rgba(30, 41, 59, 0.5)),
-                        url('images/hero.jpg') center/cover;
+            background: linear-gradient(rgba(30, 41, 59, 0.6), rgba(30, 41, 59, 0.6)),
+                        url('images/hero.jpeg') center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -472,6 +475,56 @@
             z-index: 2;
         }
 
+        .hero-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero-logo-container {
+            width: 160px;
+            height: 160px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            animation: heroLogoAppear 2s ease-out 0.2s both;
+        }
+
+        @keyframes heroLogoAppear {
+            0% {
+                opacity: 0;
+                transform: scale(0.8) translateY(30px);
+                filter: blur(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+                filter: blur(0px);
+            }
+        }
+
+        .hero-logo-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-logo-container img {
+            width: 136px;
+            height: 136px;
+            object-fit: cover;
+            border-radius: 25%;
+            position: relative;
+            z-index: 2;
+        }
+
         .hero-title {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 4rem;
@@ -481,6 +534,26 @@
             letter-spacing: -0.03em;
             line-height: 1.1;
             text-transform: uppercase;
+            animation: heroTitleReveal 2.5s cubic-bezier(0.23, 1, 0.32, 1) 0.8s both;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes heroTitleReveal {
+            0% {
+                opacity: 0;
+                transform: translateY(40px) scale(0.95);
+                filter: blur(8px);
+            }
+            60% {
+                opacity: 0.8;
+                transform: translateY(-5px) scale(1.02);
+                filter: blur(2px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0px);
+            }
         }
 
         .hero-subtitle {
@@ -490,6 +563,26 @@
             margin-bottom: 1rem;
             opacity: 0.9;
             letter-spacing: 0.025em;
+            animation: heroSubtitleReveal 2s cubic-bezier(0.23, 1, 0.32, 1) 1.3s both;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes heroSubtitleReveal {
+            0% {
+                opacity: 0;
+                transform: translateY(25px) scale(0.98);
+                filter: blur(5px);
+            }
+            70% {
+                opacity: 0.7;
+                transform: translateY(-3px) scale(1.01);
+                filter: blur(1px);
+            }
+            100% {
+                opacity: 0.9;
+                transform: translateY(0) scale(1);
+                filter: blur(0px);
+            }
         }
 
         .hero-description {
@@ -502,6 +595,26 @@
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            animation: heroDescriptionReveal 2s cubic-bezier(0.23, 1, 0.32, 1) 1.8s both;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes heroDescriptionReveal {
+            0% {
+                opacity: 0;
+                transform: translateY(20px) scale(0.99);
+                filter: blur(3px);
+            }
+            80% {
+                opacity: 0.6;
+                transform: translateY(-2px) scale(1.005);
+                filter: blur(0.5px);
+            }
+            100% {
+                opacity: 0.8;
+                transform: translateY(0) scale(1);
+                filter: blur(0px);
+            }
         }
 
         .hero-cta {
@@ -509,8 +622,216 @@
             gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
+            animation: heroCTAReveal 2s cubic-bezier(0.23, 1, 0.32, 1) 2.3s both;
         }
 
+        @keyframes heroCTAReveal {
+            0% {
+                opacity: 0;
+                transform: translateY(20px) scale(0.95);
+                filter: blur(2px);
+            }
+            70% {
+                opacity: 0.8;
+                transform: translateY(-3px) scale(1.02);
+                filter: blur(0.5px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0px);
+            }
+        }
+
+        /* Responsive hero logo styles */
+        @media (max-width: 768px) {
+            .hero-logo-container {
+                width: 130px;
+                height: 130px;
+                padding: 10px;
+            }
+
+            .hero-logo-container img {
+                width: 110px;
+                height: 110px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-logo-container {
+                width: 110px;
+                height: 110px;
+                padding: 8px;
+            }
+
+            .hero-logo-container img {
+                width: 94px;
+                height: 94px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-description {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Enhanced Button Hover Effects */
+        .btn-primary,
+        .btn-secondary {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before,
+        .btn-secondary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary:hover::before,
+        .btn-secondary:hover::before {
+            left: 100%;
+        }
+
+        /* Enhanced Card Animations */
+        .service-card,
+        .category-card {
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .service-card:hover,
+        .category-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Enhanced Scroll Animations */
+        .stat-item {
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-12px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Enhanced Loading Animation */
+        .loading {
+            background: var(--primary-color);
+        }
+
+        .spinner {
+            animation: spin 1.2s cubic-bezier(0.23, 1, 0.32, 1) infinite;
+        }
+
+        /* Enhanced Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--highlight-color);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0.8);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            z-index: 1000;
+            box-shadow: 0 8px 25px rgba(26, 107, 238, 0.3);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+        }
+
+        .scroll-top:hover {
+            transform: scale(1.1) translateY(-2px);
+            box-shadow: 0 12px 35px rgba(26, 107, 238, 0.4);
+        }
+
+        .scroll-top:active {
+            transform: scale(0.95);
+        }
+
+        /* Enhanced Loading Screen */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .loading.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid var(--white);
+            border-radius: 50%;
+            animation: spin 1s cubic-bezier(0.23, 1, 0.32, 1) infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Enhanced Scroll Progress */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: var(--highlight-color);
+            z-index: 1001;
+            transition: width 0.1s ease;
+            box-shadow: 0 0 10px rgba(26, 107, 238, 0.3);
+        }
         .btn-primary {
             background: var(--highlight-color);
             color: var(--white);
@@ -565,7 +886,7 @@
             pointer-events: none;
         }
 
-        .floating-tyre {
+        .floating-tire {
             position: absolute;
             width: 80px;
             height: 80px;
@@ -575,9 +896,9 @@
             animation: float 8s ease-in-out infinite;
         }
 
-        .floating-tyre:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
-        .floating-tyre:nth-child(2) { top: 60%; right: 15%; animation-delay: 2s; }
-        .floating-tyre:nth-child(3) { bottom: 20%; left: 20%; animation-delay: 4s; }
+        .floating-tire:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .floating-tire:nth-child(2) { top: 60%; right: 15%; animation-delay: 2s; }
+        .floating-tire:nth-child(3) { bottom: 20%; left: 20%; animation-delay: 4s; }
 
         @keyframes float {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -630,7 +951,7 @@
             font-family: 'Space Grotesk', sans-serif;
             font-size: 3.5rem;
             font-weight: 800;
-            color: var(--stats-number-color);
+            color: var(--text-dark);
             margin-bottom: 0.5rem;
             counter-reset: num var(--num);
             letter-spacing: -0.02em;
@@ -648,7 +969,7 @@
         /* Services Section */
         .services {
             padding: 8rem 0;
-            background: url('images/services.jpeg') center/cover;
+            background: url('images/services.jpg') center/cover;
             position: relative;
         }
 
@@ -710,77 +1031,79 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
             margin-top: 4rem;
         }
 
         .service-card {
             background: rgba(255, 255, 255, 0.6);
-            border-radius: 12px;
-            padding: 3rem 2rem;
-            text-align: center;
+            border-radius: 15px;
+            overflow: hidden;
             box-shadow: var(--shadow-soft);
             transition: all 0.3s ease;
             position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.3);
             backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
-        .service-card::before {
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .service-image {
+            height: 200px;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--icon-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-image::before {
             content: '';
             position: absolute;
             top: 0;
             left: -100%;
             width: 100%;
-            height: 3px;
-            background: var(--icon-color);
-            transition: all 0.3s ease;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.5s ease;
         }
 
-        .service-card:hover::before {
-            left: 0;
+        .service-card:hover .service-image::before {
+            left: 100%;
         }
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--icon-color);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 2rem;
-            color: var(--white);
+        .service-content {
+            padding: 2rem;
         }
 
         .service-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--stats-number-color);
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
             letter-spacing: -0.01em;
         }
 
         .service-description {
             font-family: 'Inter', sans-serif;
             color: var(--text-dark);
-            line-height: 1.8;
+            font-size: 0.9rem;
             font-weight: 500;
+            line-height: 1.5;
         }
 
         /* Products Section */
         .products {
             padding: 8rem 0;
-            background: url('images/products.jpeg') center/cover;
+            background: url('images/products.jpg') center/cover;
             position: relative;
         }
 
@@ -808,7 +1131,7 @@
         }
 
         .category-image {
-            height: 150px;
+            height: 200px;
             background: transparent;
             display: flex;
             align-items: center;
@@ -843,7 +1166,7 @@
             font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
-            color: var(--stats-number-color);
+            color: var(--text-dark);
             letter-spacing: -0.01em;
         }
 
@@ -1134,256 +1457,421 @@
         .footer {
             background: var(--primary-color);
             color: var(--white);
-            padding: 4rem 0 2rem;
+            padding: 3rem 0 1.5rem;
+            position: relative;
         }
 
         .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
-        .footer-section h4 {
+        .footer-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.3rem;
+            font-size: 1.8rem;
             font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: var(--highlight-color);
-            letter-spacing: -0.01em;
-        }
-
-        .footer-section p,
-        .footer-section li {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            margin-bottom: 0.8rem;
-            opacity: 0.8;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section a {
+            margin-bottom: 1rem;
             color: var(--white);
+        }
+
+        .footer-description {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .footer-contact {
+            margin-bottom: 2rem;
+        }
+
+        .footer-contact h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .footer-contact p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .footer-contact a {
+            color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
-        .footer-section a:hover {
-            color: var(--highlight-color);
+        .footer-contact a:hover {
+            color: var(--white);
+            text-decoration: underline;
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 1.5rem;
             text-align: center;
             font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            opacity: 0.7;
+            font-size: 0.9rem;
+            opacity: 0.8;
         }
 
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .nav {
-                padding: 1rem 4%;
-            }
-            
-            .hero-title {
-                font-size: 3.5rem;
-            }
-            
-            .section-title {
-                font-size: 3rem;
-            }
-            
-            .container {
-                padding: 0 4%;
-            }
-        }
-
+        /* Footer Mobile Responsiveness */
         @media (max-width: 768px) {
-            /* Critical mobile overflow fixes */
-            * {
-                max-width: 100vw;
-                box-sizing: border-box;
+            .footer {
+                padding: 2rem 0 1rem;
             }
 
-            html, body {
-                overflow-x: hidden !important;
-                width: 100% !important;
-                max-width: 100vw !important;
+            .footer-content {
+                padding: 0 1rem;
             }
 
-            .nav {
-                padding: 1rem 3%;
+            .footer-title {
+                font-size: 1.5rem;
+            }
+
+            .footer-description {
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .footer-contact h4 {
+                font-size: 1.1rem;
+            }
+
+            .footer-contact p {
+                font-size: 0.9rem;
+                margin-bottom: 0.4rem;
+            }
+
+            .footer-bottom {
+                font-size: 0.85rem;
+                padding-top: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer {
+                padding: 1.5rem 0 0.8rem;
+            }
+
+            .footer-content {
+                padding: 0 0.8rem;
+            }
+
+            .footer-title {
+                font-size: 1.3rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .footer-description {
+                font-size: 0.9rem;
+                margin-bottom: 1.2rem;
+                line-height: 1.5;
+            }
+
+            .footer-contact {
+                margin-bottom: 1.5rem;
+            }
+
+            .footer-contact h4 {
+                font-size: 1rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .footer-contact p {
+                font-size: 0.85rem;
+                margin-bottom: 0.3rem;
+                word-wrap: break-word;
+            }
+
+            .footer-bottom {
+                font-size: 0.8rem;
+                padding-top: 0.8rem;
+            }
+        }
+
+        /* Location/Maps Section */
+        .location {
+            padding: 8rem 0;
+            background: linear-gradient(rgba(30, 41, 59, 0.7), rgba(30, 41, 59, 0.7)),
+                        url('images/maps.jpg') center/cover;
+            position: relative;
+        }
+
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .location-info {
+            color: var(--white);
+        }
+
+        .location-info h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--white);
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .location-info p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .location-details {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 2rem;
+        }
+
+        .location-details h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--greyish-white);
+        }
+
+        .location-details .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .location-details .detail-item i {
+            color: var(--greyish-white);
+            font-size: 1.2rem;
+            width: 20px;
+        }
+
+        .location-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-maps {
+            background: var(--highlight-color);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            letter-spacing: 0.025em;
+        }
+
+        .btn-maps:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-strong);
+            background: #16803d;
+        }
+
+        .map-container {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-strong);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .map-frame {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 15px;
+            filter: contrast(1.1) saturate(1.2);
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(30, 41, 59, 0.9);
+            color: var(--white);
+            padding: 1rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .map-overlay h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--greyish-white);
+        }
+
+        .map-overlay p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            margin: 0;
+            color: var(--greyish-white);
+            opacity: 0.9;
+        }
+
+        /* Mobile responsiveness for location section */
+        @media (max-width: 768px) {
+            .location {
+                padding: 5rem 0;
+            }
+
+            .location-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .location-info h2 {
+                font-size: 2.5rem;
+                text-align: center;
+            }
+
+            .location-details {
+                padding: 1.5rem;
+            }
+
+            .location-buttons {
+                justify-content: center;
+            }
+
+            .btn-maps {
                 width: 100%;
-                max-width: 100vw;
-                box-sizing: border-box;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .map-frame {
+                height: 300px;
+            }
+
+            .map-overlay {
+                position: relative;
+                top: 0;
+                left: 0;
+                margin-top: 1rem;
+            }
+        }
+
+        /* Enhanced Mobile Responsiveness */
+        @media (max-width: 768px) {
+            /* Enhanced header mobile styles */
+            .header {
+                padding: 0;
             }
             
-            .nav-menu {
-                display: none;
+            .nav {
+                padding: 0.8rem 4%;
             }
-
-            .mobile-menu-toggle {
-                display: flex;
-                flex-shrink: 0;
+            
+            .logo-text h1 {
+                font-size: 1.2rem;
             }
-
+            
             .contact-btns {
                 display: none;
             }
 
-            .logo {
-                flex-shrink: 1;
-                min-width: 0;
-            }
-
-            .logo-text h1 {
-                font-size: 1.1rem;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-
-            .hero {
-                height: 100vh;
-                padding: 0 1rem;
-                width: 100%;
-                max-width: 100vw;
-                box-sizing: border-box;
-            }
-
-            .hero-content {
-                padding: 0 1rem;
-                width: 100%;
-                max-width: 100%;
-                box-sizing: border-box;
-            }
-
-            .hero-title {
-                font-size: 2.8rem;
-                line-height: 1.1;
-                margin-bottom: 1.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.1rem;
-                margin-bottom: 1rem;
-            }
-
-            .hero-description {
-                font-size: 1rem;
-                margin-bottom: 2rem;
-                padding: 0 1rem;
-            }
-
-            .hero-cta {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-
-            .btn-primary, .btn-secondary {
-                width: 80%;
-                max-width: 300px;
-                justify-content: center;
-                padding: 1rem 2rem;
-                font-size: 1rem;
-            }
-
-            .floating-tyre {
-                width: 60px;
-                height: 60px;
+            /* Enhanced section spacing */
+            .section-header {
+                padding: 2rem 1.5rem;
+                margin-bottom: 3rem;
             }
 
             .section-title {
                 font-size: 2.5rem;
-                text-align: center;
             }
 
             .section-subtitle {
                 font-size: 1rem;
             }
 
-            .section-header {
-                margin-bottom: 3rem;
-                padding: 2rem 1.5rem;
-            }
-
-            .container {
-                padding: 0 3%;
-                width: 100%;
-                max-width: 100vw;
-                box-sizing: border-box;
-            }
-
+            /* Enhanced stats section */
             .stats {
                 padding: 4rem 0;
-                width: 100%;
-                max-width: 100vw;
-                overflow: hidden;
             }
 
             .stats-container {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
-                padding: 0 1rem;
-                width: 100%;
-                max-width: 100%;
-                box-sizing: border-box;
+                gap: 2rem;
+                padding: 0 4%;
             }
 
             .stat-item {
-                padding: 1.5rem 1rem;
-                border-radius: 15px;
-            }
-
-            .stat-icon {
-                font-size: 2.5rem;
-                margin-bottom: 0.8rem;
+                padding: 1.5rem;
             }
 
             .stat-number {
                 font-size: 2.5rem;
-                margin-bottom: 0.3rem;
             }
 
-            .stat-label {
-                font-size: 0.9rem;
-                line-height: 1.3;
-            }
-
-            .services, .products, .about, .contact {
+            /* Enhanced services section */
+            .services {
                 padding: 5rem 0;
-                width: 100%;
-                max-width: 100vw;
-                overflow: hidden;
             }
 
-            .services-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                margin-top: 3rem;
+            }
+
+            .service-card {
+                margin: 0 1rem;
+            }
+
+            /* Enhanced products section */
+            .products {
+                padding: 5rem 0;
+            }
+
             .products-categories {
                 grid-template-columns: 1fr;
-                gap: 2rem;
-                width: 100%;
-                max-width: 100%;
+                gap: 1.5rem;
+                margin-top: 3rem;
             }
 
-            .service-card, .category-card {
-                padding: 2rem 1.5rem;
-                width: 100%;
-                max-width: 100%;
-                box-sizing: border-box;
+            .category-card {
+                margin: 0 1rem;
             }
 
-            .service-title, .category-title {
-                font-size: 1.3rem;
+            /* Enhanced about section */
+            .about {
+                padding: 5rem 0;
             }
 
-            .about-content,
-            .contact-content {
+            .about-content {
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
@@ -1397,20 +1885,19 @@
                 padding: 2rem 1.5rem;
             }
 
-            .about-badge {
-                top: -10px;
-                right: -10px;
-                padding: 1rem;
-                font-size: 1rem;
+            /* Enhanced contact section */
+            .contact {
+                padding: 5rem 0;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
             }
 
             .contact-info h3 {
                 font-size: 2rem;
                 text-align: center;
-            }
-
-            .contact-item {
-                padding: 1rem;
                 margin-bottom: 1.5rem;
             }
 
@@ -1418,134 +1905,89 @@
                 padding: 2rem 1.5rem;
             }
 
-            .form-group input,
-            .form-group textarea {
-                padding: 0.8rem;
-                font-size: 16px;
-                border-radius: 10px;
-                border: 2px solid rgba(255, 255, 255, 0.3);
-                background: rgba(255, 255, 255, 0.95);
-                transition: all 0.3s ease;
-            }
-
-            .form-group input:focus,
-            .form-group textarea:focus {
-                border-color: var(--highlight-color);
-                background: var(--white);
-                transform: scale(1.02);
-            }
-
-            .form-group label {
-                font-size: 0.9rem;
-                font-weight: 600;
-                margin-bottom: 0.8rem;
-            }
-
+            /* Enhanced brands section */
             .brands {
                 padding: 4rem 0;
-                width: 100%;
-                max-width: 100vw;
-                overflow: hidden;
             }
 
             .brands-slider {
-                gap: 2rem;
-                overflow-x: auto;
-                scroll-behavior: smooth;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: none;
-                -ms-overflow-style: none;
-                animation: none;
-                justify-content: flex-start;
+                margin-top: 2rem;
                 padding: 0 1rem;
-                width: 100%;
-                max-width: calc(100vw - 2rem);
-                box-sizing: border-box;
-                contain: layout;
             }
 
-            .brands-slider::-webkit-scrollbar {
-                display: none;
+            /* Enhanced container padding */
+            .container {
+                padding: 0 4%;
             }
 
-            .brand-logo {
-                min-width: 150px;
-                height: 80px;
-                padding: 0.5rem;
-                flex-shrink: 0;
+            /* Enhanced button styles */
+            .btn-primary,
+            .btn-secondary {
+                font-size: 1rem;
+                padding: 0.8rem 2rem;
             }
 
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+            .hero-cta {
+                gap: 1rem;
+                margin-top: 2rem;
+            }
+
+            /* Enhanced form styles */
+            .form-group input,
+            .form-group textarea {
+                padding: 0.8rem;
+                font-size: 1rem;
+            }
+
+            /* Enhanced location section */
+            .location {
+                padding: 4rem 0;
+            }
+
+            .location-info {
                 text-align: center;
+                margin-bottom: 2rem;
             }
 
-            .scroll-top {
-                bottom: 20px;
-                right: 20px;
-                width: 45px;
-                height: 45px;
+            .map-frame {
+                height: 280px;
             }
         }
 
         @media (max-width: 480px) {
+            /* Extra small screen optimizations */
+            .nav {
+                padding: 0.6rem 3%;
+            }
+
             .hero-title {
-                font-size: 2.2rem;
+                font-size: 1.8rem;
+                line-height: 1.2;
             }
 
             .hero-subtitle {
-                font-size: 1rem;
+                font-size: 0.95rem;
             }
 
             .hero-description {
                 font-size: 0.9rem;
-                padding: 0;
+                margin-bottom: 1.5rem;
             }
 
             .section-title {
                 font-size: 2rem;
             }
 
-            .section-header {
-                padding: 1.5rem 1rem;
-            }
-
-            .stats-container {
-                grid-template-columns: 1fr;
-                gap: 1rem;
+            .section-subtitle {
+                font-size: 0.9rem;
             }
 
             .stat-number {
                 font-size: 2rem;
             }
 
-            .service-card, .category-card {
-                padding: 1.5rem 1rem;
-            }
-
-            .service-icon, .category-image {
-                font-size: 1.8rem;
-            }
-
-            .category-image {
-                height: 80px;
-            }
-            
-            .category-card h3 {
-                font-size: 1rem;
-                margin: 0.6rem 0 0.4rem;
-            }
-            
-            .category-card p {
-                font-size: 0.85rem;
-                line-height: 1.3;
-                margin-bottom: 0.6rem;
-            }
-
-            /* Further reduce category content padding on small mobile */
-            .category-content {
-                padding: 1rem;
+            .stat-label {
+                font-size: 0.9rem;
             }
 
             .about-title {
@@ -1556,200 +1998,30 @@
                 font-size: 1.8rem;
             }
 
-            .brand-logo {
-                min-width: 120px;
-                height: 60px;
-            }
-
-            .btn-primary, .btn-secondary {
-                width: 90%;
-                padding: 0.8rem 1.5rem;
+            .btn-primary,
+            .btn-secondary {
                 font-size: 0.9rem;
-            }
-        }
-
-        /* Mobile-specific improvements */
-        @media (max-width: 768px) {
-            /* Touch-friendly tap targets */
-            .service-card, .category-card, .stat-item {
-                min-height: 44px;
-                cursor: pointer;
+                padding: 0.7rem 1.5rem;
             }
 
-            /* Better touch interaction for buttons */
-            .btn-primary, .btn-secondary, .btn-contact {
-                min-height: 44px;
-                touch-action: manipulation;
-            }
-
-            /* Prevent zoom on input focus */
-            input, textarea, select {
-                font-size: 16px !important;
-            }
-
-            /* Better spacing for mobile */
-            .hero {
-                min-height: 100vh;
-                display: flex;
+            .hero-cta {
+                flex-direction: column;
                 align-items: center;
             }
 
-            /* Improved mobile navigation styles */
-            .mobile-nav-overlay {
-                padding: 1rem;
+            .hero-cta .btn-primary,
+            .hero-cta .btn-secondary {
+                width: 200px;
+                justify-content: center;
             }
 
-            /* Better mobile form layout */
-            .contact-form {
-                margin-top: 2rem;
+            .map-frame {
+                height: 250px;
             }
 
-            /* Mobile-specific animations */
-            .service-card:active, .category-card:active {
-                transform: scale(0.98);
+            .container {
+                padding: 0 3%;
             }
-
-            /* Sticky mobile header with proper spacing */
-            .header {
-                height: auto;
-            }
-
-            .hero {
-                padding-top: 80px;
-            }
-
-            /* Product Icons Mobile Optimizations */
-            .category-card {
-                margin-bottom: 1rem;
-            }
-            
-            .category-image {
-                height: 100px;
-                font-size: 2.2rem;
-            }
-            
-            .category-card h3 {
-                font-size: 1.1rem;
-                margin: 0.8rem 0 0.5rem;
-            }
-            
-            .category-card p {
-                font-size: 0.9rem;
-                line-height: 1.4;
-                margin-bottom: 0.8rem;
-            }
-
-            /* Reduce category content padding on mobile */
-            .category-content {
-                padding: 1.5rem;
-            }
-        }
-
-        /* Landscape phone orientation */
-        @media (max-width: 768px) and (orientation: landscape) {
-            .hero {
-                height: auto;
-                min-height: 100vh;
-                padding: 100px 1rem 2rem;
-            }
-
-            .hero-title {
-                font-size: 2.5rem;
-            }
-        }
-
-        /* Very small screens */
-        @media (max-width: 320px) {
-            .hero-title {
-                font-size: 1.8rem;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            .stat-number {
-                font-size: 1.8rem;
-            }
-
-            .service-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
-            }
-        }
-        .loading {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--primary-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-
-        .loading.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .spinner {
-            width: 60px;
-            height: 60px;
-            border: 4px solid rgba(59, 130, 246, 0.2);
-            border-top: 4px solid var(--highlight-color);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Scroll Progress */
-        .scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 4px;
-            background: var(--icon-color);
-            z-index: 1001;
-            transition: width 0.1s ease;
-        }
-
-        /* Scroll to Top */
-        .scroll-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: var(--icon-color);
-            border: none;
-            border-radius: 12px;
-            color: var(--white);
-            font-size: 1.2rem;
-            cursor: pointer;
-            opacity: 0;
-            transform: translateY(100px);
-            transition: all 0.3s ease;
-            z-index: 100;
-        }
-
-        .scroll-top.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .scroll-top:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
         }
     </style>
 </head>
@@ -1767,7 +2039,7 @@
         <nav class="nav">
             <div class="logo">
                 <div class="logo-icon">
-                    <img src="favicon.ico" alt="Modern Tire House Logo">
+                    <img src="logos/logo.png" alt="Modern Tire House Logo">
                 </div>
                 <div class="logo-text">
                     <h1>Modern Tire House SPC</h1>
@@ -1779,6 +2051,7 @@
                 <li><a href="#products">Products</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#location">Location</a></li>
             </ul>
             <div class="contact-btns">
                 <a href="https://wa.me/96899479816" class="btn-contact btn-whatsapp">
@@ -1804,6 +2077,7 @@
             <li><a href="#products" onclick="closeMobileMenu()">Products</a></li>
             <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
             <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+            <li><a href="#location" onclick="closeMobileMenu()">Location</a></li>
         </ul>
         <div class="mobile-contact-btns">
             <a href="https://wa.me/96899479816" class="btn-contact btn-whatsapp">
@@ -1818,16 +2092,21 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="floating-elements">
-            <div class="floating-tyre"></div>
-            <div class="floating-tyre"></div>
-            <div class="floating-tyre"></div>
+            <div class="floating-tire"></div>
+            <div class="floating-tire"></div>
+            <div class="floating-tire"></div>
         </div>
         <div class="hero-content" data-aos="fade-up">
+            <div class="hero-logo">
+                <div class="hero-logo-container">
+                    <img src="logos/logo.png" alt="Modern Tire House Logo">
+                </div>
+            </div>
             <h1 class="hero-title">Modern Tire House SPC</h1>
-            <h2 class="hero-subtitle">Your Trusted Tyre Traders Worldwide</h2>
+            <h2 class="hero-subtitle">Your Trusted Tire Traders in Oman</h2>
             <p class="hero-description">
-                Over three decades of excellence in the global tyre industry. From heavy-duty trucks to industrial machinery, 
-                we provide comprehensive tyre solutions that never compromise on quality.
+                With our team's three decades of excellence in the global tire industry, from heavy-duty trucks to industrial machinery, 
+                we provide comprehensive tire solutions that never compromise on quality.
             </p>
             <div class="hero-cta">
                 <a href="#contact" class="btn-primary">
@@ -1847,29 +2126,29 @@
                 <div class="stat-icon">
                     <i class="fas fa-calendar-alt"></i>
                 </div>
-                <div class="stat-number" data-count="30">30+</div>
-                <div class="stat-label">Years of Experience</div>
+                <div class="stat-number" data-count="3">3+</div>
+                <div class="stat-label">Decades of Team Experience</div>
             </div>
             <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
                 <div class="stat-icon">
-                    <i class="fas fa-truck"></i>
+                    <i class="fas fa-handshake"></i>
                 </div>
-                <div class="stat-number" data-count="10000">10,000+</div>
-                <div class="stat-label">Tyres Supplied</div>
+                <div class="stat-number" data-count="100">100%</div>
+                <div class="stat-label">Customer Satisfaction</div>
             </div>
             <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
                 <div class="stat-icon">
-                    <i class="fas fa-users"></i>
+                    <i class="fas fa-clock"></i>
                 </div>
-                <div class="stat-number" data-count="500">500+</div>
-                <div class="stat-label">Satisfied Clients</div>
+                <div class="stat-number" data-count="24">24/7</div>
+                <div class="stat-label">Support Available</div>
             </div>
             <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
                 <div class="stat-icon">
-                    <i class="fas fa-tools"></i>
+                    <i class="fas fa-shipping-fast"></i>
                 </div>
-                <div class="stat-number" data-count="5000">5,000+</div>
-                <div class="stat-label">Tyres Serviced</div>
+                <div class="stat-number" data-count="48">48hr</div>
+                <div class="stat-label">Fast Delivery</div>
             </div>
         </div>
     </section>
@@ -1882,53 +2161,29 @@
             </div>
             <div class="brands-slider">
                 <div class="brand-logo">
-                    <img src="images/brands/fullrun-tyres.png" alt="Fullrun Tyres">
+                    <img src="images/brands/fullrun-tyres.png" alt="Fullrun Tires">
                 </div>
                 <div class="brand-logo">
                     <img src="images/brands/rema-tip-top.svg" alt="Rema Tip Top">
                 </div>
                 <div class="brand-logo">
-                    <img src="images/brands/bridgestone.png" alt="Bridgestone">
+                    <img src="images/brands/hilo.png" alt="Hilo">
                 </div>
                 <div class="brand-logo">
-                    <img src="images/brands/michelin.png" alt="Michelin">
-                </div>
-                <div class="brand-logo">
-                    <img src="images/brands/continental.svg" alt="Continental">
-                </div>
-                <div class="brand-logo">
-                    <img src="images/brands/yokohama.png" alt="Yokohama">
-                </div>
-                <div class="brand-logo">
-                    <img src="images/brands/dunlop.svg" alt="Dunlop">
-                </div>
-                <div class="brand-logo">
-                    <img src="images/brands/goodyear.svg" alt="Goodyear">
+                    <img src="images/brands/veltour.png" alt="Veltour">
                 </div>
                 <!-- Duplicate for seamless scroll -->
                 <div class="brand-logo">
-                    <img src="images/brands/fullrun-tyres.png" alt="Fullrun Tyres">
+                    <img src="images/brands/fullrun-tyres.png" alt="Fullrun Tires">
                 </div>
                 <div class="brand-logo">
                     <img src="images/brands/rema-tip-top.svg" alt="Rema Tip Top">
                 </div>
                 <div class="brand-logo">
-                    <img src="images/brands/bridgestone.png" alt="Bridgestone">
+                    <img src="images/brands/hilo.png" alt="Hilo">
                 </div>
                 <div class="brand-logo">
-                    <img src="images/brands/michelin.png" alt="Michelin">
-                </div>
-                <div class="brand-logo">
-                    <img src="images/brands/continental.svg" alt="Continental">
-                </div>
-                <div class="brand-logo">
-                    <img src="images/brands/yokohama.png" alt="Yokohama">
-                </div>
-                <div class="brand-logo">
-                    <img src="images/brands/dunlop.svg" alt="Dunlop">
-                </div>
-                <div class="brand-logo">
-                    <img src="images/brands/goodyear.svg" alt="Goodyear">
+                    <img src="images/brands/veltour.png" alt="Veltour">
                 </div>
             </div>
         </div>
@@ -1940,69 +2195,81 @@
             <div class="section-header" data-aos="fade-up">
                 <h2 class="section-title">Our Premium Services</h2>
                 <p class="section-subtitle">
-                    Comprehensive tyre solutions for all your heavy-duty vehicle needs
+                    Comprehensive tire solutions for all your heavy-duty vehicle needs
                 </p>
             </div>
             <div class="services-grid">
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-icon">
-                        <i class="fas fa-truck"></i>
+                    <div class="service-image">
+                        <img src="services/truck-bus-tyres.jpeg" alt="Truck & Bus Tires" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
                     </div>
-                    <h3 class="service-title">Truck & Bus Tyres</h3>
-                    <p class="service-description">
-                        Premium truck and bus tyres from leading manufacturers. Built for durability, performance, 
-                        and cost-effectiveness on demanding roads worldwide.
-                    </p>
+                    <div class="service-content">
+                        <h3 class="service-title">Truck & Bus Tires</h3>
+                        <p class="service-description">
+                            Premium truck and bus tires from leading manufacturers. Built for durability, performance, 
+                            and cost-effectiveness on demanding roads in Oman.
+                        </p>
+                    </div>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-icon">
-                        <i class="fas fa-industry"></i>
+                    <div class="service-image">
+                        <img src="services/industrial-otr-tyres.jpeg" alt="Industrial & OTR Tires" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
                     </div>
-                    <h3 class="service-title">Industrial & OTR Tyres</h3>
-                    <p class="service-description">
-                        Heavy-duty industrial and off-the-road tyres for construction, mining, and earthmoving equipment. 
-                        Engineered for extreme conditions.
-                    </p>
+                    <div class="service-content">
+                        <h3 class="service-title">Industrial & OTR Tires</h3>
+                        <p class="service-description">
+                            Heavy-duty industrial and off-the-road tires for construction, mining, and earthmoving equipment. 
+                            Engineered for extreme conditions.
+                        </p>
+                    </div>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-icon">
-                        <i class="fas fa-tools"></i>
+                    <div class="service-image">
+                        <img src="services/tyre-repair-service.jpeg" alt="Tire Repair Services" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
                     </div>
-                    <h3 class="service-title">Tyre Repair Services</h3>
-                    <p class="service-description">
-                        Professional tyre repair and maintenance services using Rema Tip Top materials. 
-                        Expert consultation and on-site service available.
-                    </p>
+                    <div class="service-content">
+                        <h3 class="service-title">Tire Repair Services</h3>
+                        <p class="service-description">
+                            Professional tire repair and maintenance services using Rema Tip Top materials. 
+                            Expert consultation and on-site service available.
+                        </p>
+                    </div>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-icon">
-                        <i class="fas fa-seedling"></i>
+                    <div class="service-image">
+                        <img src="services/agriculture-tyres.jpeg" alt="Agricultural Tires" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
                     </div>
-                    <h3 class="service-title">Agricultural Tyres</h3>
-                    <p class="service-description">
-                        Specialized agricultural tyres for farming equipment and machinery. 
-                        Designed for optimal traction and minimal soil compaction.
-                    </p>
+                    <div class="service-content">
+                        <h3 class="service-title">Agricultural Tires</h3>
+                        <p class="service-description">
+                            Specialized agricultural tires for farming equipment and machinery. 
+                            Designed for optimal traction and minimal soil compaction.
+                        </p>
+                    </div>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="service-icon">
-                        <i class="fas fa-shipping-fast"></i>
+                    <div class="service-image">
+                        <img src="services/express-service.jpeg" alt="Express Delivery" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
                     </div>
-                    <h3 class="service-title">Express Delivery</h3>
-                    <p class="service-description">
-                        Fast and reliable delivery worldwide. Emergency tire services available 24/7 
-                        for your business continuity.
-                    </p>
+                    <div class="service-content">
+                        <h3 class="service-title">Express Delivery</h3>
+                        <p class="service-description">
+                            Fast and reliable delivery across Oman. Emergency tire services available 24/7 
+                            for your business continuity.
+                        </p>
+                    </div>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="600">
-                    <div class="service-icon">
-                        <i class="fas fa-user-tie"></i>
+                    <div class="service-image">
+                        <img src="services/expert-consultation.jpeg" alt="Expert Consultation" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
                     </div>
-                    <h3 class="service-title">Expert Consultation</h3>
-                    <p class="service-description">
-                        Professional tyre consultation services. Our experts help you choose the right tyres 
-                        for your specific applications and budget.
-                    </p>
+                    <div class="service-content">
+                        <h3 class="service-title">Expert Consultation</h3>
+                        <p class="service-description">
+                            Professional tire consultation services. Our experts help you choose the right tires 
+                            for your specific applications and budget.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2014,58 +2281,67 @@
             <div class="section-header" data-aos="fade-up">
                 <h2 class="section-title">Product Categories</h2>
                 <p class="section-subtitle">
-                    Comprehensive range of tyres and accessories for every application
+                    Comprehensive range of tires and accessories for every application
                 </p>
             </div>
             <div class="products-categories">
                 <div class="category-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="category-image">
-                        <i class="fas fa-truck"></i>
+                        <img src="products/truck-and-bus-tyres.jpeg" alt="Truck and Bus Tires" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
                     </div>
                     <div class="category-content">
-                        <h3 class="category-title">Truck & Bus Tyres</h3>
-                        <p class="category-description">Heavy-duty tyres for commercial vehicles</p>
+                        <h3 class="category-title">Truck & Bus Tires</h3>
+                        <p class="category-description">Heavy-duty tires for commercial vehicles</p>
                     </div>
                 </div>
                 <div class="category-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="category-image">
-                        <i class="fas fa-cogs"></i>
+                        <img src="products/industrial-tyres.jpeg" alt="Industrial Tires" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
                     </div>
                     <div class="category-content">
-                        <h3 class="category-title">Industrial Tyres</h3>
-                        <p class="category-description">Specialized tyres for industrial applications</p>
+                        <h3 class="category-title">Industrial Tires</h3>
+                        <p class="category-description">Specialized tires for industrial applications</p>
                     </div>
                 </div>
                 <div class="category-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="category-image">
-                        <i class="fas fa-mountain"></i>
+                        <img src="products/otr-tyres.jpeg" alt="OTR and Earthmoving Tires" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
                     </div>
                     <div class="category-content">
                         <h3 class="category-title">OTR & Earthmoving</h3>
-                        <p class="category-description">Off-the-road tyres for heavy machinery</p>
+                        <p class="category-description">Off-the-road tires for heavy machinery</p>
                     </div>
                 </div>
                 <div class="category-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="category-image">
-                        <i class="fas fa-seedling"></i>
+                        <img src="products/agri-tyres.jpeg" alt="Agricultural Tires" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
                     </div>
                     <div class="category-content">
-                        <h3 class="category-title">Agricultural Tyres</h3>
-                        <p class="category-description">Farm equipment and tractor tyres</p>
+                        <h3 class="category-title">Agricultural Tires</h3>
+                        <p class="category-description">Farm equipment and tractor tires</p>
                     </div>
                 </div>
                 <div class="category-card" data-aos="fade-up" data-aos-delay="500">
                     <div class="category-image">
-                        <i class="fas fa-pallet"></i>
+                        <img src="products/forklift-solid-tyres.jpeg" alt="Forklift and Solid Tires" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
                     </div>
                     <div class="category-content">
                         <h3 class="category-title">Forklift & Solid</h3>
-                        <p class="category-description">Forklift and solid tyres for material handling</p>
+                        <p class="category-description">Forklift and solid tires for material handling</p>
                     </div>
                 </div>
                 <div class="category-card" data-aos="fade-up" data-aos-delay="600">
                     <div class="category-image">
-                        <i class="fas fa-tools"></i>
+                        <img src="products/specialized-rubber-tyres.jpeg" alt="Specialized Rubber Tires" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title">Specialized Rubber Tires</h3>
+                        <p class="category-description">Custom rubber tires for specialized applications</p>
+                    </div>
+                </div>
+                <div class="category-card" data-aos="fade-up" data-aos-delay="700">
+                    <div class="category-image">
+                        <img src="products/accessories.jpeg" alt="Tire Accessories and Parts" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
                     </div>
                     <div class="category-content">
                         <h3 class="category-title">Accessories & Parts</h3>
@@ -2084,11 +2360,11 @@
                     <h2 class="about-title">About Modern Tire House SPC</h2>
                     <p class="about-description">
                         Located in the heart of Ghala Industrial Area, Modern Tire House SPC has been a 
-                        trusted tyre trading and service company for over three decades. We revolutionize the 
-                        tyre industry through technology, transparency, and uncompromising quality.
+                        trusted tire trading and service company with a team bringing over three decades of experience. We revolutionize the 
+                        tire industry through technology, transparency, and uncompromising quality.
                     </p>
                     <ul class="about-features">
-                        <li><i class="fas fa-check-circle"></i> Over 30 years of industry experience</li>
+                        <li><i class="fas fa-check-circle"></i> Team with over 3 decades of industry experience</li>
                         <li><i class="fas fa-check-circle"></i> Authorized Rema Tip Top distributor</li>
                         <li><i class="fas fa-check-circle"></i> Comprehensive warranty programs</li>
                         <li><i class="fas fa-check-circle"></i> 24-hour emergency services</li>
@@ -2098,7 +2374,7 @@
                 <div class="about-visual" data-aos="fade-left">
                     <div class="about-image"></div>
                     <div class="about-badge">
-                        30+<br>Years
+                        3+<br>Decades
                     </div>
                 </div>
             </div>
@@ -2111,7 +2387,7 @@
             <div class="section-header dark" data-aos="fade-up">
                 <h2 class="section-title">Get In Touch</h2>
                 <p class="section-subtitle">
-                    Ready to revolutionize your tyre experience? Contact our experts today.
+                    Ready to revolutionize your tire experience? Contact our experts today.
                 </p>
             </div>
             <div class="contact-content">
@@ -2139,7 +2415,7 @@
                         <div>
                             <strong>Email</strong><br>
                             <a href="mailto:sales@moderntirehouse.com">sales@moderntirehouse.com</a><br>
-                            <a href="mailto:moderntirehousesspc@gmail.com">moderntirehousesspc@gmail.com</a>
+                            <a href="mailto:moderntirehousespc@gmail.com">moderntirehousesspc@gmail.com</a>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -2190,46 +2466,93 @@
         </div>
     </section>
 
+    <!-- Location/Maps Section -->
+    <section class="location" id="location">
+        <div class="container">
+            <div class="location-content">
+                <div class="location-info" data-aos="fade-right">
+                    <h2>Visit Our Location</h2>
+                    <p>
+                        Located in the heart of Ghala Industrial Area, Modern Tire House SPC is strategically positioned 
+                        to serve businesses across Oman. Our facility is easily accessible and equipped with modern 
+                        tire storage and service capabilities.
+                    </p>
+                    
+                    <div class="location-details">
+                        <h3>Address Details</h3>
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>P.O. Box: 1181, P.C.: 117</strong><br>
+                                Ghala Industrial Area, Sultanate of Oman
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-id-card"></i>
+                            <div>
+                                <strong>CR No.:</strong> 1608458<br>
+                                <strong>VATIN:</strong> OM1100483496
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Business Hours:</strong><br>
+                                Sunday - Thursday: 8:00 AM - 6:00 PM<br>
+                                Saturday: 8:00 AM - 12:00 PM
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="location-buttons">
+                        <a href="https://maps.google.com/?q=Ghala+Industrial+Area+Oman" target="_blank" class="btn-maps">
+                            <i class="fas fa-map-marked-alt"></i> Open in Google Maps
+                        </a>
+                        <a href="https://www.google.com/maps/dir//23.634567,58.406234" target="_blank" class="btn-maps" style="background: #1a9f50;">
+                            <i class="fas fa-directions"></i> Get Directions
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="map-container" data-aos="fade-left">
+                    <iframe 
+                        class="map-frame"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.8234567!2d58.406234!3d23.634567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e91ff366e5b1e6f%3A0x7b8e4c9d5a1c8f0!2sGhala%20Industrial%20Area%2C%20Oman!5e1!3m2!1sen!2som!4v1703246400000!5m2!1sen!2som"
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Modern Tire House SPC Location">
+                    </iframe>
+                    <div class="map-overlay">
+                        <h4>Modern Tire House SPC</h4>
+                        <p>Ghala Industrial Area</p>
+                        <p>Sultanate of Oman</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Modern Tire House SPC</h4>
-                    <p>Your trusted tyre trading and service company worldwide for over three decades.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#">Truck & Bus Tyres</a></li>
-                        <li><a href="#">Industrial Tyres</a></li>
-                        <li><a href="#">OTR & Earthmoving</a></li>
-                        <li><a href="#">Agricultural Tyres</a></li>
-                        <li><a href="#">Tyre Repair Services</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Business Info</h4>
-                    <p>Commercial Registration: 1608458</p>
-                    <p>VAT Number: OM1100483496</p>
-                    <p>Bank: Bank Muscat</p>
-                    <p>Account: 0318 0794 1671 0017</p>
-                    <p>Warranty: 1-year pro-rata basis</p>
+                <h4 class="footer-title">Modern Tire House SPC</h4>
+                <p class="footer-description">
+                    Your trusted tire trading and service company in Oman with a team bringing over three decades of expertise in the global tire industry.
+                </p>
+                
+                <div class="footer-contact">
+                    <h4>Contact Information</h4>
+                    <p><strong>Address:</strong> P.O. Box 1181, P.C. 117, Ghala Industrial Area, Sultanate of Oman</p>
+                    <p><strong>Phone:</strong> <a href="tel:+96899326012">+968 9932 6012</a> | <a href="tel:+96899479816">+968 9947 9816</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:sales@moderntirehouse.com">sales@moderntirehouse.com</a></p>
+                    <p><strong>WhatsApp:</strong> <a href="https://wa.me/96899479816">+968 9947 9816</a></p>
+                    <p><strong>C.R. No.:</strong> 1608458 | <strong>VATIN:</strong> OM1100483496</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Modern Tire House SPC. All rights reserved. | Website designed & developed by <strong>Ajyal</strong> | Designed with 🚀 for global excellence.</p>
-                <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.6;">v1.0.0</p>
+                <p>&copy; 2025 Modern Tire House SPC. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -2312,17 +2635,53 @@
             const stats = document.querySelectorAll('.stat-number');
             stats.forEach(stat => {
                 const target = parseInt(stat.getAttribute('data-count'));
-                const increment = target / 100;
-                let current = 0;
+                const label = stat.textContent;
                 
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= target) {
-                        current = target;
-                        clearInterval(timer);
-                    }
-                    stat.textContent = Math.floor(current) + '+';
-                }, 20);
+                // Handle different stat formats
+                if (label.includes('%')) {
+                    // Percentage animation
+                    const increment = target / 100;
+                    let current = 0;
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        stat.textContent = Math.floor(current) + '%';
+                    }, 20);
+                } else if (label.includes('/7') || label.includes('hr')) {
+                    // Time format animation
+                    const increment = target / 50;
+                    let current = 0;
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        if (label.includes('/7')) {
+                            stat.textContent = Math.floor(current) + '/7';
+                        } else {
+                            stat.textContent = Math.floor(current) + 'hr';
+                        }
+                    }, 40);
+                } else {
+                    // Standard number format with +
+                    const increment = target / 100;
+                    let current = 0;
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        stat.textContent = Math.floor(current) + '+';
+                    }, 20);
+                }
             });
         }
 
@@ -2422,7 +2781,7 @@ ${data.message}
 
         // Add dynamic effects
         document.addEventListener('mousemove', function(e) {
-            const floatingElements = document.querySelectorAll('.floating-tyre');
+            const floatingElements = document.querySelectorAll('.floating-tire');
             floatingElements.forEach((el, index) => {
                 const speed = (index + 1) * 0.5;
                 const x = (e.clientX * speed) / 100;
@@ -2443,29 +2802,39 @@ ${data.message}
         //     }
         // });
 
-        // Add typing effect to hero title
-        function typeWriter(element, text, speed = 100) {
+        // Add typing effect to hero title - Enhanced smooth version
+        function typeWriter(element, text, speed = 80) {
             let i = 0;
             element.innerHTML = '';
+            element.style.borderRight = '3px solid var(--highlight-color)';
+            element.style.animation = 'none';
             
             function type() {
                 if (i < text.length) {
                     element.innerHTML += text.charAt(i);
                     i++;
-                    setTimeout(type, speed);
+                    // Variable speed for more natural typing
+                    const randomSpeed = speed + Math.random() * 40 - 20;
+                    setTimeout(type, Math.max(40, randomSpeed));
+                } else {
+                    // Blinking cursor effect
+                    setTimeout(() => {
+                        element.style.borderRight = 'none';
+                        element.style.animation = 'heroTitleReveal 0.5s ease-out forwards';
+                    }, 500);
                 }
             }
             type();
         }
 
-        // Initialize typing effect after page load
+        // Initialize typing effect after page load - Delayed for smoother experience
         setTimeout(() => {
             const heroTitle = document.querySelector('.hero-title');
             if (heroTitle) {
                 const originalText = heroTitle.textContent;
-                typeWriter(heroTitle, originalText, 100);
+                typeWriter(heroTitle, originalText, 85);
             }
-        }, 2000);
+        }, 3000); // Increased delay for better visual sequence
 
         // Add click effects to service cards
         document.querySelectorAll('.service-card').forEach(card => {
@@ -2651,77 +3020,117 @@ ${data.message}
             }
         });
 
-        // Initialize mobile optimizations
+        // Enhanced mobile optimizations with improved performance
         function initializeMobileOptimizations() {
             if (window.innerWidth < 768) {
                 document.body.classList.add('mobile');
                 
-                // Force proper mobile layout
-                document.documentElement.style.overflowX = 'hidden';
-                document.body.style.overflowX = 'hidden';
-                document.body.style.width = '100%';
-                document.body.style.maxWidth = '100vw';
+                // Force proper mobile layout with enhanced performance
+                const setMobileStyles = () => {
+                    document.documentElement.style.overflowX = 'hidden';
+                    document.body.style.overflowX = 'hidden';
+                    document.body.style.width = '100%';
+                    document.body.style.maxWidth = '100vw';
+                    
+                    // Ensure scrolling works with enhanced touch support
+                    document.body.style.overflowY = 'auto';
+                    document.body.style.webkitOverflowScrolling = 'touch';
+                    
+                    // Remove any height restrictions that might prevent scrolling
+                    document.body.style.height = 'auto';
+                    document.body.style.minHeight = '100vh';
+                    
+                    // Enhanced GPU acceleration for smoother animations
+                    document.body.style.transform = 'translateZ(0)';
+                    document.body.style.willChange = 'scroll-position';
+                };
                 
-                // Ensure scrolling works
-                document.body.style.overflowY = 'auto';
-                document.body.style.webkitOverflowScrolling = 'touch';
+                setMobileStyles();
                 
-                // Remove any height restrictions that might prevent scrolling
-                document.body.style.height = 'auto';
-                document.body.style.minHeight = '100vh';
-                
-                // Add touch scroll hint for brands slider
+                // Enhanced touch scroll hint for brands slider
                 const brandSlider = document.querySelector('.brands-slider');
                 if (brandSlider) {
                     brandSlider.style.animation = 'none';
                     
-                    // Add scroll hint
+                    // Add improved scroll hint
                     const scrollHint = document.createElement('div');
-                    scrollHint.innerHTML = '<i class="fas fa-hand-point-right"></i> Swipe to see more brands';
+                    scrollHint.innerHTML = '<i class="fas fa-hand-point-right"></i> Swipe to explore our trusted tire brands';
                     scrollHint.style.cssText = `
                         text-align: center;
                         color: var(--text-muted);
                         font-size: 0.9rem;
                         margin-top: 1rem;
                         font-style: italic;
+                        padding: 0.5rem;
+                        background: rgba(255, 255, 255, 0.1);
+                        border-radius: 8px;
+                        backdrop-filter: blur(5px);
+                        border: 1px solid rgba(255, 255, 255, 0.2);
                     `;
                     brandSlider.parentNode.appendChild(scrollHint);
                     
-                    // Hide hint after first interaction
+                    // Hide hint after first interaction with fade effect
                     brandSlider.addEventListener('scroll', function() {
-                        scrollHint.style.display = 'none';
+                        scrollHint.style.transition = 'opacity 0.5s ease';
+                        scrollHint.style.opacity = '0';
+                        setTimeout(() => scrollHint.remove(), 500);
                     }, { once: true });
                 }
                 
-                // Improve touch interaction for service cards
+                // Enhanced touch interaction for service and category cards
                 document.querySelectorAll('.service-card, .category-card').forEach(card => {
                     card.addEventListener('touchstart', function() {
+                        this.style.transition = 'transform 0.1s ease';
                         this.style.transform = 'scale(0.98)';
                     }, { passive: true });
                     
                     card.addEventListener('touchend', function() {
+                        this.style.transition = 'transform 0.2s ease';
                         setTimeout(() => {
                             this.style.transform = '';
-                        }, 150);
+                        }, 100);
                     }, { passive: true });
                 });
 
-                // Fix any elements that might be causing horizontal scroll
-                setTimeout(() => {
+                // Enhanced element overflow fix with performance optimization
+                const fixOverflow = () => {
                     const elements = document.querySelectorAll('*');
                     elements.forEach(el => {
                         const rect = el.getBoundingClientRect();
-                        if (rect.right > window.innerWidth) {
+                        if (rect.right > window.innerWidth + 10) { // Added buffer
                             el.style.maxWidth = '100%';
                             el.style.overflow = 'hidden';
                         }
                     });
                     
-                    // Final scroll fix
+                    // Final enhanced scroll fix
                     document.body.style.overflowY = 'auto';
                     document.body.style.webkitOverflowScrolling = 'touch';
-                    window.scrollTo(0, 0);
-                }, 100);
+                    
+                    // Smooth scroll to top for clean start
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                };
+                
+                // Debounced overflow fix for better performance
+                let overflowTimeout;
+                const debouncedFixOverflow = () => {
+                    clearTimeout(overflowTimeout);
+                    overflowTimeout = setTimeout(fixOverflow, 100);
+                };
+                
+                debouncedFixOverflow();
+                
+                // Enhanced viewport height fix for mobile browsers
+                const setViewportHeight = () => {
+                    const vh = window.innerHeight * 0.01;
+                    document.documentElement.style.setProperty('--vh', `${vh}px`);
+                };
+                
+                setViewportHeight();
+                window.addEventListener('resize', setViewportHeight);
+                window.addEventListener('orientationchange', () => {
+                    setTimeout(setViewportHeight, 300);
+                });
             }
         }
 
