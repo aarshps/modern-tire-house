@@ -326,6 +326,11 @@
             background: none;
             border: none;
             transition: all 0.3s ease;
+            border-radius: 8px;
+            min-width: 44px; /* iOS touch target size */
+            min-height: 44px;
+            align-items: center;
+            justify-content: center;
         }
 
         .mobile-menu-toggle:hover {
@@ -360,7 +365,7 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            background: rgba(30, 41, 59, 0.95);
+            background: rgba(30, 41, 59, 0.98);
             backdrop-filter: blur(20px);
             z-index: 999;
             display: flex;
@@ -368,8 +373,9 @@
             justify-content: center;
             align-items: center;
             transform: translateX(-100%);
-            transition: transform 0.3s ease;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         .mobile-nav-overlay.active {
@@ -396,16 +402,22 @@
             letter-spacing: 0.025em;
             transition: all 0.3s ease;
             display: block;
-            padding: 1rem 2rem;
+            padding: 1.2rem 2.5rem;
             border-radius: 12px;
             position: relative;
+            min-height: 44px; /* iOS touch target size */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .mobile-nav-menu a:hover,
-        .mobile-nav-menu a:active {
+        .mobile-nav-menu a:active,
+        .mobile-nav-menu a:focus {
             color: var(--highlight-color);
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.15);
             transform: translateX(10px);
+            outline: none;
         }
 
         .mobile-contact-btns {
@@ -1766,14 +1778,36 @@
             
             .nav {
                 padding: 0.8rem 4%;
+                align-items: center;
+                justify-content: space-between;
+            }
+            
+            .logo {
+                flex: 1;
             }
             
             .logo-text h1 {
                 font-size: 1.2rem;
             }
             
+            .logo-text p {
+                font-size: 0.75rem;
+            }
+            
+            /* Hide desktop navigation and contact buttons on mobile */
+            .nav-menu {
+                display: none;
+            }
+            
             .contact-btns {
                 display: none;
+            }
+            
+            /* Show mobile menu toggle */
+            .mobile-menu-toggle {
+                display: flex;
+                position: relative;
+                z-index: 1002;
             }
 
             /* Enhanced section spacing */
@@ -1931,6 +1965,25 @@
             /* Extra small screen optimizations */
             .nav {
                 padding: 0.6rem 3%;
+            }
+            
+            /* Enhanced logo responsiveness */
+            .logo-text h1 {
+                font-size: 1rem;
+            }
+            
+            .logo-text p {
+                font-size: 0.7rem;
+            }
+            
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .logo-icon img {
+                width: 32px;
+                height: 32px;
             }
 
             .hero-title {
