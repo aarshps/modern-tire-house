@@ -1,0 +1,3369 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico?v=1.3">
+    <link rel="apple-touch-icon" href="logos/logo.png?v=1.3">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#1e293b">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Modern Tire House SPC - Your Trusted Tire Traders in Oman</title>
+    <meta name="description" content="Modern Tire House SPC - Our team brings over 3 decades of excellence in the tire industry. Comprehensive solutions for trucks, buses, heavy vehicles, industrial tires and more.">
+    <meta name="keywords" content="tires, truck tires, industrial tires, OTR tires, rema tip top, fullrun tires, commercial tires">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #1e293b;
+            --secondary-color: #334155;
+            --accent-color: #0f172a;
+            --highlight-color: #1a6bee;
+            --stats-number-color: #1558c7;
+            --section-title-color: #000000;
+            --contact-text-color: #f1f5f9;
+            --contact-icon-color: #cbd5e1;
+            --greyish-white: #e2e8f0;
+            --dark-green: #166534;
+            --gold-color: #ca8a04;
+            --icon-color: #000000;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --text-muted: #94a3b8;
+            --bg-light: #f8fafc;
+            --bg-section: #ffffff;
+            --white: #ffffff;
+            --border-light: #e2e8f0;
+            --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-strong: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            height: 100%;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            font-feature-settings: "liga" 1, "calt" 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            width: 100%;
+            max-width: 100vw;
+            position: relative;
+            -webkit-overflow-scrolling: touch;
+            height: auto;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            touch-action: pan-y;
+        }
+
+        /* Prevent horizontal overflow globally */
+        * {
+            max-width: 100%;
+            -webkit-tap-highlight-color: transparent;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            overflow-x: hidden;
+            position: relative;
+            height: auto;
+            min-height: 100vh;
+        }
+
+        /* Android and Mobile scrolling fixes */
+        @media (max-width: 768px) {
+            html {
+                -webkit-overflow-scrolling: touch;
+                overflow-y: auto !important;
+                height: auto !important;
+                position: relative;
+                touch-action: pan-y;
+                /* Additional Android fixes */
+                overscroll-behavior: contain;
+                scroll-behavior: auto;
+            }
+            
+            body {
+                -webkit-overflow-scrolling: touch;
+                overflow-y: auto !important;
+                height: auto !important;
+                min-height: 100vh;
+                min-height: calc(var(--vh, 1vh) * 100);
+                position: relative;
+                overflow-x: hidden !important;
+                width: 100vw !important;
+                max-width: 100vw !important;
+                touch-action: pan-y;
+                /* Additional Android compatibility */
+                overscroll-behavior: contain;
+                scroll-behavior: auto;
+                /* Force hardware acceleration on Android */
+                transform: translateZ(0);
+                will-change: scroll-position;
+                backface-visibility: hidden;
+            }
+            
+            body.mobile-menu-open {
+                overflow: hidden !important;
+                position: fixed !important;
+                width: 100% !important;
+                height: 100vh !important;
+                height: calc(var(--vh, 1vh) * 100) !important;
+                touch-action: none;
+            }
+            
+            /* Force scrolling for Android */
+            body:not(.mobile-menu-open) {
+                -webkit-overflow-scrolling: touch !important;
+                overflow-y: scroll !important;
+                overflow-x: hidden !important;
+                position: relative !important;
+                height: auto !important;
+                touch-action: pan-y !important;
+                /* Android-specific scrolling properties */
+                overscroll-behavior-y: auto !important;
+                overscroll-behavior-x: contain !important;
+                scroll-snap-type: none !important;
+            }
+            
+            /* Ensure hero section uses proper viewport height */
+            .hero {
+                min-height: 100vh;
+                min-height: calc(var(--vh, 1vh) * 100);
+                touch-action: pan-y;
+                /* Android scroll optimization */
+                transform: translateZ(0);
+            }
+            
+            /* Fix for all sections on mobile */
+            .stats, .services, .products, .about, .contact, .brands {
+                touch-action: pan-y;
+                position: relative;
+                /* Ensure sections don't interfere with scrolling */
+                contain: layout style;
+                will-change: auto;
+            }
+            
+            /* Android Chrome specific optimizations */
+            @supports (-webkit-appearance: none) {
+                body {
+                    -webkit-overflow-scrolling: auto;
+                }
+                
+                /* Force scroll container behavior */
+                html {
+                    overflow-y: scroll !important;
+                    -webkit-overflow-scrolling: auto;
+                }
+            }
+        }
+
+        /* Header & Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            max-width: 100vw;
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid var(--border-light);
+            overflow: hidden;
+        }
+
+        .header.scrolled {
+            background: rgba(30, 41, 59, 0.98);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 50%;
+            padding: 4px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .logo-icon img {
+            width: 42px;
+            height: 42px;
+            object-fit: cover;
+            border-radius: 25%;
+        }
+
+        .logo-text {
+            color: var(--white);
+        }
+
+        .logo-text h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: -5px;
+            letter-spacing: -0.025em;
+        }
+
+        .logo-text p {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            transition: all 0.3s ease;
+            letter-spacing: 0.025em;
+        }
+
+        .nav-menu a:hover {
+            color: var(--highlight-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--icon-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .contact-btns {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-contact {
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            letter-spacing: 0.025em;
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+            background: none;
+            border: none;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            min-width: 44px; /* iOS touch target size */
+            min-height: 44px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-menu-toggle:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            margin: 3px 0;
+            transition: all 0.3s ease;
+            border-radius: 3px;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        .mobile-nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(30, 41, 59, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: translateX(-100%);
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .mobile-nav-overlay.active {
+            transform: translateX(0);
+        }
+
+        .mobile-nav-menu {
+            list-style: none;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .mobile-nav-menu li {
+            margin: 1.5rem 0;
+        }
+
+        .mobile-nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1.5rem;
+            letter-spacing: 0.025em;
+            transition: all 0.3s ease;
+            display: block;
+            padding: 1.2rem 2.5rem;
+            border-radius: 12px;
+            position: relative;
+            min-height: 44px; /* iOS touch target size */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-nav-menu a:hover,
+        .mobile-nav-menu a:active,
+        .mobile-nav-menu a:focus {
+            color: var(--highlight-color);
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(10px);
+            outline: none;
+        }
+
+        .mobile-contact-btns {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .mobile-contact-btns .btn-contact {
+            width: 200px;
+            justify-content: center;
+        }
+
+        .btn-whatsapp {
+            background: #1a9f50;
+            color: var(--white);
+        }
+
+        .btn-call {
+            background: var(--highlight-color);
+            color: var(--white);
+        }
+
+        .btn-contact:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(30, 41, 59, 0.6), rgba(30, 41, 59, 0.6)),
+                        url('images/hero.jpeg?v=1.3') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80"><circle cx="40" cy="40" r="1" fill="%233b82f6"/></svg>');
+            background-size: 80px 80px;
+            animation: backgroundMove 25s linear infinite;
+            opacity: 0.03;
+        }
+
+        @keyframes backgroundMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            padding: 0 2rem;
+            z-index: 2;
+        }
+
+        .hero-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero-logo-container {
+            width: 160px;
+            height: 160px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            animation: heroLogoAppear 2s ease-out 0.2s both;
+        }
+
+        @keyframes heroLogoAppear {
+            0% {
+                opacity: 0;
+                transform: scale(0.8) translateY(30px);
+                filter: blur(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+                filter: blur(0px);
+            }
+        }
+
+        .hero-logo-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-logo-container img {
+            width: 136px;
+            height: 136px;
+            object-fit: cover;
+            border-radius: 25%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--white);
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            text-transform: uppercase;
+            animation: heroTitleReveal 2.5s cubic-bezier(0.23, 1, 0.32, 1) 0.8s both;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes heroTitleReveal {
+            0% {
+                opacity: 0;
+                transform: translateY(40px) scale(0.95);
+                filter: blur(8px);
+            }
+            60% {
+                opacity: 0.8;
+                transform: translateY(-5px) scale(1.02);
+                filter: blur(2px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0px);
+            }
+        }
+
+        .hero-subtitle {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+            letter-spacing: 0.025em;
+            animation: heroSubtitleReveal 2s cubic-bezier(0.23, 1, 0.32, 1) 1.3s both;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes heroSubtitleReveal {
+            0% {
+                opacity: 0;
+                transform: translateY(25px) scale(0.98);
+                filter: blur(5px);
+            }
+            70% {
+                opacity: 0.7;
+                transform: translateY(-3px) scale(1.01);
+                filter: blur(1px);
+            }
+            100% {
+                opacity: 0.9;
+                transform: translateY(0) scale(1);
+                filter: blur(0px);
+            }
+        }
+
+        .hero-description {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+            opacity: 0.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: heroDescriptionReveal 2s cubic-bezier(0.23, 1, 0.32, 1) 1.8s both;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes heroDescriptionReveal {
+            0% {
+                opacity: 0;
+                transform: translateY(20px) scale(0.99);
+                filter: blur(3px);
+            }
+            80% {
+                opacity: 0.6;
+                transform: translateY(-2px) scale(1.005);
+                filter: blur(0.5px);
+            }
+            100% {
+                opacity: 0.8;
+                transform: translateY(0) scale(1);
+                filter: blur(0px);
+            }
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: heroCTAReveal 2s cubic-bezier(0.23, 1, 0.32, 1) 2.3s both;
+        }
+
+        @keyframes heroCTAReveal {
+            0% {
+                opacity: 0;
+                transform: translateY(20px) scale(0.95);
+                filter: blur(2px);
+            }
+            70% {
+                opacity: 0.8;
+                transform: translateY(-3px) scale(1.02);
+                filter: blur(0.5px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0px);
+            }
+        }
+
+        /* Responsive hero logo styles */
+        @media (max-width: 768px) {
+            .hero-logo-container {
+                width: 130px;
+                height: 130px;
+                padding: 10px;
+            }
+
+            .hero-logo-container img {
+                width: 110px;
+                height: 110px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-logo-container {
+                width: 110px;
+                height: 110px;
+                padding: 8px;
+            }
+
+            .hero-logo-container img {
+                width: 94px;
+                height: 94px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-description {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Enhanced Button Hover Effects */
+        .btn-primary,
+        .btn-secondary {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before,
+        .btn-secondary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary:hover::before,
+        .btn-secondary:hover::before {
+            left: 100%;
+        }
+
+        /* Enhanced Card Animations */
+        .service-card,
+        .category-card {
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .service-card:hover,
+        .category-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Enhanced Scroll Animations */
+        .stat-item {
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-12px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Enhanced Loading Animation */
+        .loading {
+            background: var(--primary-color);
+        }
+
+        .spinner {
+            animation: spin 1.2s cubic-bezier(0.23, 1, 0.32, 1) infinite;
+        }
+
+        /* Enhanced Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--highlight-color);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0.8);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            z-index: 1000;
+            box-shadow: 0 8px 25px rgba(26, 107, 238, 0.3);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+        }
+
+        .scroll-top:hover {
+            transform: scale(1.1) translateY(-2px);
+            box-shadow: 0 12px 35px rgba(26, 107, 238, 0.4);
+        }
+
+        .scroll-top:active {
+            transform: scale(0.95);
+        }
+
+        /* Enhanced Loading Screen */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .loading.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid var(--white);
+            border-radius: 50%;
+            animation: spin 1s cubic-bezier(0.23, 1, 0.32, 1) infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Enhanced Scroll Progress */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: var(--highlight-color);
+            z-index: 1001;
+            transition: width 0.1s ease;
+            box-shadow: 0 0 10px rgba(26, 107, 238, 0.3);
+        }
+        .btn-primary {
+            background: var(--highlight-color);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.025em;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--highlight-color);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            letter-spacing: 0.025em;
+        }
+
+        .btn-primary:hover, .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .btn-secondary:hover {
+            background: var(--highlight-color);
+            color: var(--white);
+        }
+
+        /* Floating Elements */
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .floating-tire {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border: 2px solid var(--highlight-color);
+            border-radius: 50%;
+            opacity: 0.15;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .floating-tire:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .floating-tire:nth-child(2) { top: 60%; right: 15%; animation-delay: 2s; }
+        .floating-tire:nth-child(3) { bottom: 20%; left: 20%; animation-delay: 4s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Stats Section */
+        .stats {
+            background: url('images/stats.jpg?v=1.3') center/cover;
+            padding: 5rem 0;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-medium);
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .stat-icon {
+            font-size: 3rem;
+            color: var(--icon-color);
+            margin-bottom: 1rem;
+        }
+
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            counter-reset: num var(--num);
+            letter-spacing: -0.02em;
+        }
+
+        .stat-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            opacity: 0.9;
+            letter-spacing: 0.025em;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 8rem 0;
+            background: url('images/services.jpg?v=1.3') center/cover;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(15px);
+            box-shadow: var(--shadow-medium);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-header.dark {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .section-header.dark .section-title {
+            color: var(--contact-text-color);
+        }
+
+        .section-header.dark .section-subtitle {
+            color: var(--contact-text-color);
+            opacity: 0.9;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--highlight-color);
+            margin-bottom: 1rem;
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        .section-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            position: relative;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .service-image {
+            height: 320px;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--icon-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.5s ease;
+        }
+
+        .service-card:hover .service-image::before {
+            left: 100%;
+        }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .service-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            letter-spacing: -0.01em;
+        }
+
+        .service-description {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 8rem 0;
+            background: url('images/products.jpg?v=1.3') center/cover;
+            position: relative;
+        }
+
+        .products-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .category-card {
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            position: relative;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .category-image {
+            height: 320px;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--icon-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.5s ease;
+        }
+
+        .category-card:hover .category-image::before {
+            left: 100%;
+        }
+
+        .category-content {
+            padding: 2rem;
+        }
+
+        .category-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            letter-spacing: -0.01em;
+        }
+
+        .category-description {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        /* Brands Section */
+        .brands {
+            padding: 6rem 0;
+            background: url('images/brands.jpg?v=1.3') center/cover;
+            position: relative;
+        }
+
+        .brands .section-title {
+            color: var(--section-title-color) !important;
+        }
+
+        .services .section-title {
+            color: var(--section-title-color) !important;
+        }
+
+        .products .section-title {
+            color: var(--section-title-color) !important;
+        }
+
+        .brands-slider {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            margin-top: 3rem;
+            animation: brandSlide 20s linear infinite;
+        }
+
+        .brand-logo {
+            min-width: 200px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            letter-spacing: 0.025em;
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+        }
+
+        .brand-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+        }
+
+        .brand-logo img[src*="rock-pillar"] {
+            /* Remove all color filter, just drop shadow */
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+        }
+
+        .brand-logo:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes brandSlide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Mobile brands slider improvements */
+        @media (max-width: 768px) {
+            .brands-slider {
+                overflow-x: auto;
+                scroll-behavior: smooth;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+                animation: none;
+                justify-content: flex-start;
+            }
+
+            .brands-slider::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        /* About Section */
+        .about {
+            padding: 8rem 0;
+            background: url('images/about.jpg?v=1.3') center/cover;
+            position: relative;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-text {
+            padding: 3rem 2rem;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .about-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--section-title-color);
+            margin-bottom: 2rem;
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        .about-description {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            font-weight: 500;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .about-features {
+            list-style: none;
+        }
+
+        .about-features li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+
+        .about-features i {
+            color: var(--icon-color);
+            font-size: 1.2rem;
+        }
+
+        .about-visual {
+            position: relative;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            background: url('images/about-service.jpg?v=1.3') center/cover;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .about-badge {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            background: var(--highlight-color);
+            color: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-align: center;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 8rem 0;
+            background: url('images/contact.jpg?v=1.3') center/cover;
+            color: var(--white);
+            position: relative;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--contact-text-color);
+            letter-spacing: -0.02em;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            backdrop-filter: blur(15px);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(10px);
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--contact-icon-color);
+            min-width: 30px;
+        }
+
+        .contact-item a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--highlight-color);
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 3rem;
+            border-radius: 12px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.025em;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.25);
+            border-color: var(--highlight-color);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 3rem 0 1.5rem;
+            position: relative;
+        }
+
+        .footer-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .footer-description {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .footer-contact {
+            margin-bottom: 2rem;
+        }
+
+        .footer-contact h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .footer-contact p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .footer-contact a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-contact a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 1.5rem;
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Footer Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .footer {
+                padding: 2rem 0 1rem;
+            }
+
+            .footer-content {
+                padding: 0 1rem;
+            }
+
+            .footer-title {
+                font-size: 1.5rem;
+            }
+
+            .footer-description {
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .footer-contact h4 {
+                font-size: 1.1rem;
+            }
+
+            .footer-contact p {
+                font-size: 0.9rem;
+                margin-bottom: 0.4rem;
+            }
+
+            .footer-bottom {
+                font-size: 0.85rem;
+                padding-top: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer {
+                padding: 1.5rem 0 0.8rem;
+            }
+
+            .footer-content {
+                padding: 0 0.8rem;
+            }
+
+            .footer-title {
+                font-size: 1.3rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .footer-description {
+                font-size: 0.9rem;
+                margin-bottom: 1.2rem;
+                line-height: 1.5;
+            }
+
+            .footer-contact {
+                margin-bottom: 1.5rem;
+            }
+
+            .footer-contact h4 {
+                font-size: 1rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .footer-contact p {
+                font-size: 0.85rem;
+                margin-bottom: 0.3rem;
+                word-wrap: break-word;
+            }
+
+            .footer-bottom {
+                font-size: 0.8rem;
+                padding-top: 0.8rem;
+            }
+        }
+
+        /* Location/Maps Section */
+        .location {
+            padding: 8rem 0;
+            background: linear-gradient(rgba(30, 41, 59, 0.7), rgba(30, 41, 59, 0.7)),
+                        url('images/maps.jpg?v=1.3') center/cover;
+            position: relative;
+        }
+
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .location-info {
+            color: var(--white);
+        }
+
+        .location-info h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--white);
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .location-info p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .location-details {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 2rem;
+        }
+
+        .location-details h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--greyish-white);
+        }
+
+        .location-details .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .location-details .detail-item i {
+            color: var(--greyish-white);
+            font-size: 1.2rem;
+            width: 20px;
+        }
+
+        .location-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-maps {
+            background: var(--highlight-color);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            letter-spacing: 0.025em;
+        }
+
+        .btn-maps:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-strong);
+            background: #16803d;
+        }
+
+        .map-container {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-strong);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .map-frame {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 15px;
+            filter: invert(0.9) contrast(1.2) saturate(0.8) hue-rotate(180deg);
+        }
+
+        /* Mobile responsiveness for location section */
+        @media (max-width: 768px) {
+            .location {
+                padding: 5rem 0;
+            }
+
+            .location-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .location-info h2 {
+                font-size: 2.5rem;
+                text-align: center;
+            }
+
+            .location-details {
+                padding: 1.5rem;
+                text-align: left;
+            }
+            
+            .location-details .detail-item {
+                display: flex;
+                align-items: flex-start;
+                gap: 0.8rem;
+                margin-bottom: 1.2rem;
+                flex-wrap: wrap;
+            }
+            
+            .location-details .detail-item i {
+                color: var(--greyish-white);
+                font-size: 1.2rem;
+                width: 20px;
+                margin-top: 0.1rem;
+                flex-shrink: 0;
+            }
+            
+            .location-details .detail-item div {
+                flex: 1;
+                min-width: 0;
+                word-wrap: break-word;
+            }
+
+            .location-buttons {
+                justify-content: center;
+            }
+
+            .btn-maps {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .map-frame {
+                height: 300px;
+                filter: invert(0.9) contrast(1.2) saturate(0.8) hue-rotate(180deg);
+            }
+        }
+
+        /* Enhanced Mobile Responsiveness */
+        @media (max-width: 768px) {
+            /* Enhanced header mobile styles */
+            .header {
+                padding: 0;
+            }
+            
+            .nav {
+                padding: 0.8rem 4%;
+                align-items: center;
+                justify-content: space-between;
+            }
+            
+            .logo {
+                flex: 1;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.2rem;
+            }
+            
+            .logo-text p {
+                font-size: 0.75rem;
+            }
+            
+            /* Hide desktop navigation and contact buttons on mobile */
+            .nav-menu {
+                display: none;
+            }
+            
+            .contact-btns {
+                display: none;
+            }
+            
+            /* Show mobile menu toggle */
+            .mobile-menu-toggle {
+                display: flex;
+                position: relative;
+                z-index: 1002;
+            }
+
+            /* Enhanced section spacing */
+            .section-header {
+                padding: 2rem 1.5rem;
+                margin-bottom: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+
+            /* Enhanced stats section */
+            .stats {
+                padding: 4rem 0;
+            }
+
+            .stats-container {
+                gap: 2rem;
+                padding: 0 4%;
+            }
+
+            .stat-item {
+                padding: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            /* Enhanced services section */
+            .services {
+                padding: 5rem 0;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                margin-top: 3rem;
+            }
+
+            .service-card {
+                margin: 0 1rem;
+            }
+
+            /* Enhanced products section */
+            .products {
+                padding: 5rem 0;
+            }
+
+            .products-categories {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                margin-top: 3rem;
+            }
+
+            .category-card {
+                margin: 0 1rem;
+            }
+
+            /* Enhanced about section */
+            .about {
+                padding: 5rem 0;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-title {
+                font-size: 2.5rem;
+                text-align: center;
+            }
+
+            .about-text {
+                padding: 2rem 1.5rem;
+            }
+
+            /* Enhanced contact section */
+            .contact {
+                padding: 5rem 0;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .contact-info h3 {
+                font-size: 2rem;
+                text-align: center;
+                margin-bottom: 1.5rem;
+            }
+
+            .contact-form {
+                padding: 2rem 1.5rem;
+            }
+
+            /* Enhanced brands section */
+            .brands {
+                padding: 4rem 0;
+            }
+
+            .brands-slider {
+                margin-top: 2rem;
+                padding: 0 1rem;
+            }
+
+            /* Enhanced container padding */
+            .container {
+                padding: 0 4%;
+            }
+
+            /* Enhanced button styles */
+            .btn-primary,
+            .btn-secondary {
+                font-size: 1rem;
+                padding: 0.8rem 2rem;
+            }
+
+            .hero-cta {
+                gap: 1rem;
+                margin-top: 2rem;
+            }
+
+            /* Enhanced form styles */
+            .form-group input,
+            .form-group textarea {
+                padding: 0.8rem;
+                font-size: 1rem;
+            }
+
+            /* Enhanced location section */
+            .location {
+                padding: 4rem 0;
+            }
+
+            .location-info {
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+
+            .map-frame {
+                height: 280px;
+                filter: invert(0.9) contrast(1.2) saturate(0.8) hue-rotate(180deg);
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Extra small screen optimizations */
+            .nav {
+                padding: 0.6rem 3%;
+            }
+            
+            /* Enhanced logo responsiveness */
+            .logo-text h1 {
+                font-size: 1rem;
+            }
+            
+            .logo-text p {
+                font-size: 0.7rem;
+            }
+            
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .logo-icon img {
+                width: 32px;
+                height: 32px;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+                line-height: 1.2;
+            }
+
+            .hero-subtitle {
+                font-size: 0.95rem;
+            }
+
+            .hero-description {
+                font-size: 0.9rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .stat-label {
+                font-size: 0.9rem;
+            }
+
+            .about-title {
+                font-size: 2rem;
+            }
+
+            .contact-info h3 {
+                font-size: 1.8rem;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                font-size: 0.9rem;
+                padding: 0.7rem 1.5rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-cta .btn-primary,
+            .hero-cta .btn-secondary {
+                width: 200px;
+                justify-content: center;
+            }
+
+            .map-frame {
+                height: 250px;
+                filter: invert(0.9) contrast(1.2) saturate(0.8) hue-rotate(180deg);
+            }
+
+            .container {
+                padding: 0 3%;
+            }
+            
+            .location-details {
+                padding: 1rem;
+            }
+            
+            .location-details h3 {
+                font-size: 1.1rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .location-details .detail-item {
+                margin-bottom: 1rem;
+                gap: 0.6rem;
+            }
+            
+            .location-details .detail-item i {
+                font-size: 1.1rem;
+                width: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="logos/logo.png?v=1.3" alt="Modern Tire House Logo">
+                </div>
+                <div class="logo-text">
+                    <h1>Modern Tire House SPC</h1>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#location">Location</a></li>
+            </ul>
+            <div class="contact-btns">
+                <a href="https://wa.me/96899479816" class="btn-contact btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="tel:+96899479816" class="btn-contact btn-call">
+                    <i class="fas fa-phone"></i> Call
+                </a>
+            </div>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay">
+        <ul class="mobile-nav-menu">
+            <li><a href="#home" onclick="closeMobileMenu()">Home</a></li>
+            <li><a href="#services" onclick="closeMobileMenu()">Services</a></li>
+            <li><a href="#products" onclick="closeMobileMenu()">Products</a></li>
+            <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
+            <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+            <li><a href="#location" onclick="closeMobileMenu()">Location</a></li>
+        </ul>
+        <div class="mobile-contact-btns">
+            <a href="https://wa.me/96899479816" class="btn-contact btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="tel:+96899479816" class="btn-contact btn-call">
+                <i class="fas fa-phone"></i> Call
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="floating-elements">
+            <div class="floating-tire"></div>
+            <div class="floating-tire"></div>
+            <div class="floating-tire"></div>
+        </div>
+        <div class="hero-content" data-aos="fade-up">
+            <div class="hero-logo">
+                <div class="hero-logo-container">
+                    <img src="logos/logo.png?v=1.3" alt="Modern Tire House Logo" style="width: 180px; height: auto;">
+                </div>
+            </div>
+            <h1 class="hero-title">Modern Tire House SPC</h1>
+            <h2 class="hero-subtitle">Your Trusted Tire Traders in Oman</h2>
+            <p class="hero-description">
+                With our team's three decades of excellence in the global tire industry, from heavy-duty trucks to industrial machinery, 
+                we provide comprehensive tire solutions that never compromise on quality.
+            </p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn-primary">
+                    <i class="fas fa-envelope"></i> Get Quote
+                </a>
+                <a href="#services" class="btn-secondary">
+                    <i class="fas fa-cogs"></i> Our Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="stat-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <div class="stat-number" data-count="3">3+</div>
+                <div class="stat-label">Decades of Team Experience</div>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <div class="stat-number" data-count="100">100%</div>
+                <div class="stat-label">Customer Satisfaction</div>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="stat-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="stat-number" data-count="24">24/7</div>
+                <div class="stat-label">Support Available</div>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+                <div class="stat-icon">
+                    <i class="fas fa-shipping-fast"></i>
+                </div>
+                <div class="stat-number" data-count="48">48hr</div>
+                <div class="stat-label">Fast Delivery</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="brands">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Trusted Brand Partners</h2>
+            </div>
+            <div class="brands-slider">
+                <div class="brand-logo">
+                    <img src="images/brands/fullrun-tyres.png?v=1.3" alt="Fullrun Tires">
+                </div>
+                <div class="brand-logo">
+                    <img src="images/brands/rema-tip-top.svg?v=1.3" alt="Rema Tip Top">
+                </div>
+                <div class="brand-logo">
+                    <img src="images/brands/veltour.png?v=1.3" alt="Veltour">
+                </div>
+                <div class="brand-logo">
+                    <img src="images/brands/hilo.png?v=1.3" alt="Hilo">
+                </div>
+                <div class="brand-logo">
+                    <img src="images/brands/rock-pillar.png?v=1.3" alt="Rock Pillar">
+                </div>
+                <!-- Duplicate for seamless scroll -->
+                <div class="brand-logo">
+                    <img src="images/brands/fullrun-tyres.png?v=1.3" alt="Fullrun Tires">
+                </div>
+                <div class="brand-logo">
+                    <img src="images/brands/rema-tip-top.svg?v=1.3" alt="Rema Tip Top">
+                </div>
+                <div class="brand-logo">
+                    <img src="images/brands/hilo.png?v=1.3" alt="Hilo">
+                </div>
+                <div class="brand-logo">
+                    <img src="images/brands/veltour.png?v=1.3" alt="Veltour">
+                </div>
+                <div class="brand-logo">
+                    <img src="images/brands/rock-pillar.png?v=1.3" alt="Rock Pillar">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Our Premium Services</h2>
+                <p class="section-subtitle">
+                    Comprehensive tire solutions for all your heavy-duty vehicle needs
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-image">
+                        <img src="services/truck-bus-tyres.jpeg?v=1.3" alt="Truck & Bus Tires" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Truck & Bus Tires</h3>
+                        <p class="service-description">
+                            Premium truck and bus tires from leading manufacturers Built for durability, performance, 
+                            and cost-effectiveness on demanding roads in Oman
+                        </p>
+                    </div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-image">
+                        <img src="services/industrial-otr-tyres.jpeg?v=1.3" alt="Industrial & OTR Tires" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Industrial & OTR Tires</h3>
+                        <p class="service-description">
+                            Heavy-duty industrial and off-the-road tires for construction, mining, and earthmoving equipment 
+                            Engineered for extreme conditions
+                        </p>
+                    </div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-image">
+                        <img src="services/tyre-repair-service.jpeg?v=1.3" alt="Tire Repair Services" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Tire Repair Services</h3>
+                        <p class="service-description">
+                            Professional tire repair and maintenance services using Rema Tip Top materials 
+                            Expert consultation and on-site service available
+                        </p>
+                    </div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-image">
+                        <img src="services/agriculture-tyres.jpeg?v=1.3" alt="Agricultural Tires" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Agricultural Tires</h3>
+                        <p class="service-description">
+                            Specialized agricultural tires for farming equipment and machinery 
+                            Designed for optimal traction and minimal soil compaction
+                        </p>
+                    </div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-image">
+                        <img src="services/express-service.jpeg?v=1.3" alt="Express Delivery" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Express Delivery</h3>
+                        <p class="service-description">
+                            Fast and reliable delivery across Oman Emergency tire services available 24/7 
+                            for your business continuity
+                        </p>
+                    </div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-image">
+                        <img src="services/expert-consultation.jpeg?v=1.3" alt="Expert Consultation" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Expert Consultation</h3>
+                        <p class="service-description">
+                            Professional tire consultation services Our experts help you choose the right tires 
+                            for your specific applications and budget
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Product Categories</h2>
+                <p class="section-subtitle">
+                    Comprehensive range of tires and accessories for every application
+                </p>
+            </div>
+            <div class="products-categories">
+                <div class="category-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="category-image">
+                        <img src="products/truck-and-bus-tyres.jpeg?v=1.3" alt="Truck and Bus Tires" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title">Truck & Bus Tires</h3>
+                        <p class="category-description">Heavy-duty tires for commercial vehicles</p>
+                    </div>
+                </div>
+                <div class="category-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="category-image">
+                        <img src="products/industrial-tyres.jpeg?v=1.3" alt="Industrial Tires" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title">Industrial Tires</h3>
+                        <p class="category-description">Specialized tires for industrial applications</p>
+                    </div>
+                </div>
+                <div class="category-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="category-image">
+                        <img src="products/otr-tyres.jpeg?v=1.3" alt="OTR and Earthmoving Tires" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title">OTR & Earthmoving</h3>
+                        <p class="category-description">Off-the-road tires for heavy machinery</p>
+                    </div>
+                </div>
+                <div class="category-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="category-image">
+                        <img src="products/agri-tyres.jpeg?v=1.3" alt="Agricultural Tires" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title">Agricultural Tires</h3>
+                        <p class="category-description">Farm equipment and tractor tires</p>
+                    </div>
+                </div>
+                <div class="category-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="category-image">
+                        <img src="products/forklift-solid-tyres.jpeg?v=1.3" alt="Forklift and Solid Tires" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title">Forklift & Solid</h3>
+                        <p class="category-description">Forklift and solid tires for material handling</p>
+                    </div>
+                </div>
+                <div class="category-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="category-image">
+                        <img src="products/specialized-rubber-parts.jpeg?v=1.3" alt="Specialised Rubber Parts" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title">Specialised Rubber Parts</h3>
+                        <p class="category-description">Custom rubber parts and solutions for industrial, automotive, and special applications</p>
+                    </div>
+                </div>
+                <div class="category-card" data-aos="fade-up" data-aos-delay="700">
+                    <div class="category-image">
+                        <img src="products/accessories.jpeg?v=1.3" alt="Tire Accessories and Parts" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title">Accessories & Parts</h3>
+                        <p class="category-description">Tubes (Indian and Korean), flaps, valves, and repair materials</p>
+                    </div>
+                </div>
+                <div class="category-card" data-aos="fade-up" data-aos-delay="800">
+                    <div class="category-image">
+                        <img src="products/vane-pumps.jpeg?v=1.3" alt="Vane Pumps" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title">Vane Pumps</h3>
+                        <p class="category-description">High-quality vane pumps for industrial and automotive applications</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <h2 class="about-title">About Modern Tire House SPC</h2>
+                    <p class="about-description">
+                        Located in the heart of Ghala Industrial Area, Modern Tire House SPC has been a 
+                        trusted tire trading and service company with a team bringing over three decades of experience. We revolutionize the 
+                        tire industry through technology, transparency, and uncompromising quality.
+                    </p>
+                    <ul class="about-features">
+                        <li><i class="fas fa-check-circle"></i> Team with over 3 decades of industry experience</li>
+                        <li><i class="fas fa-check-circle"></i> Rema Tip Top distributor in Oman</li>
+                        <li><i class="fas fa-check-circle"></i> Comprehensive warranty programs</li>
+                        <li><i class="fas fa-check-circle"></i> 24-hour emergency services</li>
+                        <li><i class="fas fa-check-circle"></i> Professional installation & fitting</li>
+                    </ul>
+                </div>
+                <div class="about-visual" data-aos="fade-left">
+                    <div class="about-image"></div>
+                    <div class="about-badge">
+                        3+<br>Decades
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header dark" data-aos="fade-up">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">
+                    Ready to revolutionize your tire experience? Contact our experts today.
+                </p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Address</strong><br>
+                            P.O. Box 1181, P.C. 117<br>
+                            Ghala Industrial Area<br>
+                            Sultanate of Oman
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Phone</strong><br>
+                            +968 9932 6012<br>
+                            <a href="tel:+96899479816">+968 9947 9816</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong><br>
+                            <a href="mailto:sales@moderntirehouse.com">sales@moderntirehouse.com</a><br>
+                            <a href="mailto:moderntirehousespc@gmail.com">moderntirehousespc@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <strong>WhatsApp</strong><br>
+                            <a href="https://wa.me/96899479816">+968 9947 9816</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-id-card"></i>
+                        <div>
+                            <strong>Registration</strong><br>
+                            C.R. No.: 1608458<br>
+                            VATIN: OM1100483496
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form" data-aos="fade-left">
+                    <h3 style="margin-bottom: 2rem; color: var(--contact-text-color);">Send us a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location/Maps Section -->
+    <section class="location" id="location">
+        <div class="container">
+            <div class="location-content">
+                <div class="location-info" data-aos="fade-right">
+                    <h2>Visit Our Location</h2>
+                    <p>
+                        Located in the heart of Ghala Industrial Area, Modern Tire House SPC is strategically positioned 
+                        to serve businesses across Oman. Our facility is easily accessible and equipped with modern 
+                        tire storage and service capabilities.
+                    </p>
+                    
+                    <div class="location-details">
+                        <h3>Address Details</h3>
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>P.O. Box: 1181, P.C.: 117</strong><br>
+                                Ghala Industrial Area, Sultanate of Oman
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-id-card"></i>
+                            <div>
+                                <strong>CR No.:</strong> 1608458<br>
+                                <strong>VATIN:</strong> OM1100483496
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Business Hours:</strong><br>
+                                Sunday - Thursday: 8:00 AM - 6:00 PM<br>
+                                Saturday: 8:00 AM - 12:00 PM
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="location-buttons">
+                        <a href="https://maps.google.com/?q=Ghala+Industrial+Area+Oman" target="_blank" class="btn-maps">
+                            <i class="fas fa-map-marked-alt"></i> Open in Google Maps
+                        </a>
+                        <a href="https://www.google.com/maps/dir//23.634567,58.406234" target="_blank" class="btn-maps" style="background: #1a9f50;">
+                            <i class="fas fa-directions"></i> Get Directions
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="map-container" data-aos="fade-left">
+                    <iframe 
+                        class="map-frame"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.8234567!2d58.406234!3d23.634567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e91ff366e5b1e6f%3A0x7b8e4c9d5a1c8f0!2sGhala%20Industrial%20Area%2C%20Oman!5e0!3m2!1sen!2som!4v1703246400000!5m2!1sen!2som&style=feature:all|element:labels.text.fill|color:0xffffff&style=feature:all|element:labels.text.stroke|color:0x000000|lightness:13&style=feature:administrative|element:geometry.fill|color:0x000000&style=feature:administrative|element:geometry.stroke|color:0x144b53|lightness:14|weight:1.4&style=feature:landscape|element:all|color:0x08304b&style=feature:poi|element:geometry|color:0x0c4152|lightness:5&style=feature:road.highway|element:geometry.fill|color:0x000000&style=feature:road.highway|element:geometry.stroke|color:0x0b434f|lightness:25&style=feature:road.arterial|element:geometry.fill|color:0x000000&style=feature:road.arterial|element:geometry.stroke|color:0x0b3d51|lightness:16&style=feature:road.local|element:geometry|color:0x000000&style=feature:transit|element:all|color:0x146474&style=feature:water|element:all|color:0x021019"
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Modern Tire House SPC Location">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <h4 class="footer-title">Modern Tire House SPC</h4>
+                <p class="footer-description">
+                    Your trusted tire trading and service company in Oman with a team bringing over three decades of expertise in the global tire industry.
+                </p>
+                <!-- Removed Rema Tip Top Distributor badge as requested -->
+                
+                <div class="footer-contact">
+                    <h4>Contact Information</h4>
+                    <p><strong>Address:</strong> P.O. Box 1181, P.C. 117, Ghala Industrial Area, Sultanate of Oman</p>
+                    <p><strong>Phone:</strong> <a href="tel:+96899326012">+968 9932 6012</a> | <a href="tel:+96899479816">+968 9947 9816</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:sales@moderntirehouse.com">sales@moderntirehouse.com</a></p>
+                    <p><strong>WhatsApp:</strong> <a href="https://wa.me/96899479816">+968 9947 9816</a></p>
+                    <p><strong>C.R. No.:</strong> 1608458 | <strong>VATIN:</strong> OM1100483496</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Modern Tire House SPC. All rights reserved. <span style="opacity:0.7;">v1.4</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Loading Screen
+        window.addEventListener('load', function() {
+            const loading = document.getElementById('loading');
+            setTimeout(() => {
+                loading.classList.add('hidden');
+            }, 1500);
+        });
+
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        const scrollProgress = document.getElementById('scrollProgress');
+        const scrollTop = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            
+            // Header background
+            if (scrolled > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            // Scroll progress
+            const progress = (scrolled / maxScroll) * 100;
+            scrollProgress.style.width = progress + '%';
+
+            // Scroll to top button
+            if (scrolled > 500) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        // Scroll to top functionality
+        scrollTop.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Stats counter animation
+        function animateStats() {
+            const stats = document.querySelectorAll('.stat-number');
+            stats.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-count'));
+                const label = stat.textContent;
+                
+                // Handle different stat formats
+                if (label.includes('%')) {
+                    // Percentage animation
+                    const increment = target / 100;
+                    let current = 0;
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        stat.textContent = Math.floor(current) + '%';
+                    }, 20);
+                } else if (label.includes('/7') || label.includes('hr')) {
+                    // Time format animation
+                    const increment = target / 50;
+                    let current = 0;
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        if (label.includes('/7')) {
+                            stat.textContent = Math.floor(current) + '/7';
+                        } else {
+                            stat.textContent = Math.floor(current) + 'hr';
+                        }
+                    }, 40);
+                } else {
+                    // Standard number format with +
+                    const increment = target / 100;
+                    let current = 0;
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        stat.textContent = Math.floor(current) + '+';
+                    }, 20);
+                }
+            });
+        }
+
+        // Trigger stats animation when in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && entry.target.classList.contains('stats')) {
+                    animateStats();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        observer.observe(document.querySelector('.stats'));
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Create mailto link
+            const subject = encodeURIComponent(data.subject);
+            const body = encodeURIComponent(`
+Name: ${data.name}
+Email: ${data.email}
+Phone: ${data.phone}
+
+Message:
+${data.message}
+            `);
+            
+            const mailtoLink = `mailto:sales@moderntirehouse.com?subject=${subject}&body=${body}`;
+            window.location.href = mailtoLink;
+            
+            // Reset form
+            this.reset();
+            alert('Thank you for your message! Your default email client will open to send the message.');
+        });
+
+        // Mobile menu toggle (if needed)
+        function toggleMobileMenu() {
+            const nav = document.querySelector('.nav-menu');
+            nav.classList.toggle('active');
+        }
+
+        // Mobile Navigation Functions
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+        const body = document.body;
+
+        function openMobileMenu() {
+            mobileMenuToggle.classList.add('active');
+            mobileNavOverlay.classList.add('active');
+            body.classList.add('mobile-menu-open');
+        }
+
+        function closeMobileMenu() {
+            mobileMenuToggle.classList.remove('active');
+            mobileNavOverlay.classList.remove('active');
+            body.classList.remove('mobile-menu-open');
+        }
+
+        // Toggle mobile menu on hamburger click
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', function() {
+                if (mobileNavOverlay.classList.contains('active')) {
+                    closeMobileMenu();
+                } else {
+                    openMobileMenu();
+                }
+            });
+        }
+
+        // Close mobile menu when clicking on overlay
+        mobileNavOverlay.addEventListener('click', function(e) {
+            if (e.target === mobileNavOverlay) {
+                closeMobileMenu();
+            }
+        });
+
+        // Close mobile menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileNavOverlay.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+
+        // Close mobile menu on window resize to desktop
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768 && mobileNavOverlay.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+
+        // Add dynamic effects
+        document.addEventListener('mousemove', function(e) {
+            const floatingElements = document.querySelectorAll('.floating-tire');
+            floatingElements.forEach((el, index) => {
+                const speed = (index + 1) * 0.5;
+                const x = (e.clientX * speed) / 100;
+                const y = (e.clientY * speed) / 100;
+                
+                el.style.transform = `translate(${x}px, ${y}px) rotate(${x + y}deg)`;
+            });
+        });
+
+        // Parallax effect for hero section - REMOVED to fix white space issue
+        // window.addEventListener('scroll', function() {
+        //     const scrolled = window.pageYOffset;
+        //     const hero = document.querySelector('.hero');
+        //     const rate = scrolled * -0.5;
+        //     
+        //     if (hero) {
+        //         hero.style.transform = `translateY(${rate}px)`;
+        //     }
+        // });
+
+        // Add typing effect to hero title - Enhanced smooth version
+        function typeWriter(element, text, speed = 80) {
+            let i = 0;
+            element.innerHTML = '';
+            element.style.borderRight = '3px solid var(--highlight-color)';
+            element.style.animation = 'none';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    // Variable speed for more natural typing
+                    const randomSpeed = speed + Math.random() * 40 - 20;
+                    setTimeout(type, Math.max(40, randomSpeed));
+                } else {
+                    // Blinking cursor effect
+                    setTimeout(() => {
+                        element.style.borderRight = 'none';
+                        element.style.animation = 'heroTitleReveal 0.5s ease-out forwards';
+                    }, 500);
+                }
+            }
+            type();
+        }
+
+        // Initialize typing effect after page load - Delayed for smoother experience
+        setTimeout(() => {
+            const heroTitle = document.querySelector('.hero-title');
+            if (heroTitle) {
+                const originalText = heroTitle.textContent;
+                typeWriter(heroTitle, originalText, 85);
+            }
+        }, 3000); // Increased delay for better visual sequence
+
+        // Add click effects to service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+
+        // Add hover sound effects (optional)
+        function playHoverSound() {
+            // This would play a subtle sound effect on hover
+            // Implementation depends on having audio files
+        }
+
+        // Brand slider infinite scroll
+        const brandSlider = document.querySelector('.brands-slider');
+        if (brandSlider) {
+            brandSlider.addEventListener('animationend', function() {
+                this.style.animation = 'none';
+                this.offsetHeight; // Trigger reflow
+                this.style.animation = 'brandSlide 20s linear infinite';
+            });
+        }
+
+        // Add resize handler for responsive adjustments
+        window.addEventListener('resize', function() {
+            // Adjust animations and layouts for different screen sizes
+            if (window.innerWidth < 768) {
+                document.body.classList.add('mobile');
+                
+                // Force mobile layout fixes
+                document.documentElement.style.overflowX = 'hidden';
+                document.body.style.overflowX = 'hidden';
+                document.body.style.width = '100%';
+                document.body.style.maxWidth = '100vw';
+                
+                // Disable brand slider animation on mobile
+                const brandSlider = document.querySelector('.brands-slider');
+                if (brandSlider) {
+                    brandSlider.style.animation = 'none';
+                }
+            } else {
+                document.body.classList.remove('mobile');
+                
+                // Re-enable brand slider animation on desktop
+                const brandSlider = document.querySelector('.brands-slider');
+                if (brandSlider) {
+                    brandSlider.style.animation = 'brandSlide 20s linear infinite';
+                }
+            }
+        });
+
+        // Force layout fix on initial load
+        window.addEventListener('load', function() {
+            if (window.innerWidth < 768) {
+                const isAndroid = /Android/i.test(navigator.userAgent);
+                const isChrome = /Chrome/i.test(navigator.userAgent);
+                
+                // Basic mobile layout fixes
+                document.documentElement.style.overflowX = 'hidden';
+                document.body.style.overflowX = 'hidden';
+                document.body.style.width = '100%';
+                document.body.style.maxWidth = '100vw';
+                
+                // Ensure scrolling is enabled
+                document.body.style.overflowY = 'auto';
+                document.documentElement.style.overflowY = 'auto';
+                
+                // Android-specific load fixes
+                if (isAndroid) {
+                    console.log('Applying Android load fixes');
+                    
+                    // Force proper scrolling behavior
+                    document.body.style.overflow = 'visible';
+                    document.body.style.overflowY = 'auto';
+                    document.body.style.position = 'relative';
+                    document.body.style.height = 'auto';
+                    document.body.style.touchAction = 'pan-y';
+                    
+                    // Chrome-specific fixes
+                    if (isChrome) {
+                        document.body.style.webkitOverflowScrolling = 'auto';
+                        document.body.style.overscrollBehavior = 'contain';
+                    } else {
+                        document.body.style.webkitOverflowScrolling = 'touch';
+                    }
+                    
+                    // Force hardware acceleration
+                    document.body.style.willChange = 'scroll-position';
+                    document.body.style.backfaceVisibility = 'hidden';
+                    document.body.style.perspective = '1000px';
+                    
+                    // Android-specific scroll test
+                    setTimeout(() => {
+                        const testScroll = () => {
+                            const canScroll = document.documentElement.scrollHeight > window.innerHeight;
+                            console.log('Android Scroll Test:', {
+                                canScroll,
+                                documentHeight: document.documentElement.scrollHeight,
+                                windowHeight: window.innerHeight,
+                                bodyOverflow: getComputedStyle(document.body).overflow,
+                                bodyOverflowY: getComputedStyle(document.body).overflowY,
+                                bodyPosition: getComputedStyle(document.body).position,
+                                bodyHeight: getComputedStyle(document.body).height
+                            });
+                            
+                            if (!canScroll) {
+                                console.warn('Android: Page may not be scrollable - forcing content height');
+                                document.body.style.minHeight = '200vh';
+                            }
+                        };
+                        testScroll();
+                        
+                        // Force scroll to test
+                        window.scrollTo(0, 50);
+                        setTimeout(() => window.scrollTo(0, 0), 100);
+                    }, 500);
+                }
+                
+                // iOS Safari specific fixes
+                if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+                    document.body.style.webkitOverflowScrolling = 'touch';
+                    document.documentElement.style.webkitOverflowScrolling = 'touch';
+                    
+                    // Fix iOS viewport issues
+                    const viewport = document.querySelector('meta[name=viewport]');
+                    if (viewport) {
+                        viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, shrink-to-fit=no, viewport-fit=cover');
+                    }
+                    
+                    // Force scroll reset
+                    setTimeout(() => {
+                        window.scrollTo(0, 0);
+                    }, 500);
+                }
+                
+                // Enhanced debug function
+                window.debugScrolling = function() {
+                    const isAndroid = /Android/i.test(navigator.userAgent);
+                    const isChrome = /Chrome/i.test(navigator.userAgent);
+                    
+                    console.log('=== Mobile Scroll Debug ===');
+                    console.log('Device Type:', {
+                        isAndroid,
+                        isChrome,
+                        userAgent: navigator.userAgent
+                    });
+                    console.log('Body Styles:', {
+                        overflow: getComputedStyle(document.body).overflow,
+                        overflowY: getComputedStyle(document.body).overflowY,
+                        height: getComputedStyle(document.body).height,
+                        position: getComputedStyle(document.body).position,
+                        touchAction: getComputedStyle(document.body).touchAction
+                    });
+                    console.log('Document Info:', {
+                        documentHeight: document.documentElement.scrollHeight,
+                        windowHeight: window.innerHeight,
+                        canScroll: document.documentElement.scrollHeight > window.innerHeight,
+                        currentScrollPosition: window.pageYOffset
+                    });
+                    
+                    // Test scroll functionality
+                    const originalScroll = window.pageYOffset;
+                    window.scrollTo(0, 100);
+                    setTimeout(() => {
+                        const newScroll = window.pageYOffset;
+                        console.log('Scroll Test:', {
+                            originalPosition: originalScroll,
+                            testPosition: newScroll,
+                            scrollWorking: newScroll !== originalScroll
+                        });
+                        window.scrollTo(0, originalScroll);
+                    }, 100);
+                };
+                
+                // Auto-run debug after page load
+                setTimeout(() => {
+                    if (window.debugScrolling) window.debugScrolling();
+                }, 1000);
+            }
+        });
+
+        // Enhanced mobile optimizations with improved performance
+        function initializeMobileOptimizations() {
+            if (window.innerWidth < 768) {
+                document.body.classList.add('mobile');
+                
+                // Force proper mobile layout with enhanced performance
+                const setMobileStyles = () => {
+                    document.documentElement.style.overflowX = 'hidden';
+                    document.body.style.overflowX = 'hidden';
+                    document.body.style.width = '100%';
+                    document.body.style.maxWidth = '100vw';
+                    
+                    // Ensure scrolling works with enhanced touch support
+                    document.body.style.overflowY = 'auto';
+                    document.body.style.webkitOverflowScrolling = 'touch';
+                    
+                    // Remove any height restrictions that might prevent scrolling
+                    document.body.style.height = 'auto';
+                    document.body.style.minHeight = '100vh';
+                    
+                    // Enhanced GPU acceleration for smoother animations
+                    document.body.style.transform = 'translateZ(0)';
+                    document.body.style.willChange = 'scroll-position';
+                };
+                
+                setMobileStyles();
+                
+                // Enhanced touch scroll hint for brands slider
+                const brandSlider = document.querySelector('.brands-slider');
+                if (brandSlider) {
+                    brandSlider.style.animation = 'none';
+                    
+                    // Add improved scroll hint
+                    const scrollHint = document.createElement('div');
+                    scrollHint.innerHTML = '<i class="fas fa-hand-point-right"></i> Swipe to explore our trusted tire brands';
+                    scrollHint.style.cssText = `
+                        text-align: center;
+                        color: var(--text-muted);
+                        font-size: 0.9rem;
+                        margin-top: 1rem;
+                        font-style: italic;
+                        padding: 0.5rem;
+                        background: rgba(255, 255, 255, 0.1);
+                        border-radius: 8px;
+                        backdrop-filter: blur(5px);
+                        border: 1px solid rgba(255, 255, 255, 0.2);
+                    `;
+                    brandSlider.parentNode.appendChild(scrollHint);
+                    
+                    // Hide hint after first interaction with fade effect
+                    brandSlider.addEventListener('scroll', function() {
+                        scrollHint.style.transition = 'opacity 0.5s ease';
+                        scrollHint.style.opacity = '0';
+                        setTimeout(() => scrollHint.remove(), 500);
+                    }, { once: true });
+                }
+                
+                // Enhanced touch interaction for service and category cards
+                document.querySelectorAll('.service-card, .category-card').forEach(card => {
+                    card.addEventListener('touchstart', function() {
+                        this.style.transition = 'transform 0.1s ease';
+                        this.style.transform = 'scale(0.98)';
+                    }, { passive: true });
+                    
+                    card.addEventListener('touchend', function() {
+                        this.style.transition = 'transform 0.2s ease';
+                        setTimeout(() => {
+                            this.style.transform = '';
+                        }, 100);
+                    }, { passive: true });
+                });
+
+                // Enhanced element overflow fix with performance optimization
+                const fixOverflow = () => {
+                    const elements = document.querySelectorAll('*');
+                    elements.forEach(el => {
+                        const rect = el.getBoundingClientRect();
+                        if (rect.right > window.innerWidth + 10) { // Added buffer
+                            el.style.maxWidth = '100%';
+                            el.style.overflow = 'hidden';
+                        }
+                    });
+                    
+                    // Final enhanced scroll fix
+                    document.body.style.overflowY = 'auto';
+                    document.body.style.webkitOverflowScrolling = 'touch';
+                    
+                    // Smooth scroll to top for clean start
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                };
+                
+                // Debounced overflow fix for better performance
+                let overflowTimeout;
+                const debouncedFixOverflow = () => {
+                    clearTimeout(overflowTimeout);
+                    overflowTimeout = setTimeout(fixOverflow, 100);
+                };
+                
+                debouncedFixOverflow();
+                
+                // Enhanced viewport height fix for mobile browsers
+                const setViewportHeight = () => {
+                    const vh = window.innerHeight * 0.01;
+                    document.documentElement.style.setProperty('--vh', `${vh}px`);
+                };
+                
+                setViewportHeight();
+                window.addEventListener('resize', setViewportHeight);
+                window.addEventListener('orientationchange', () => {
+                    setTimeout(setViewportHeight, 300);
+                });
+            }
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add any initialization code here
+            console.log('Modern Tire House SPC - Website Loaded Successfully');
+            console.log('🚀 Fully responsive mobile-optimized website');
+            
+            // Comprehensive mobile scrolling fixes
+            if (window.innerWidth <= 768) {
+                // Android-specific fixes
+                const isAndroid = /Android/i.test(navigator.userAgent);
+                const isChrome = /Chrome/i.test(navigator.userAgent);
+                
+                if (isAndroid) {
+                    console.log('Android device detected - applying Android-specific fixes');
+                    
+                    // Force proper body styles for Android
+                    document.body.style.overflow = 'visible';
+                    document.body.style.overflowY = 'auto';
+                    document.body.style.overflowX = 'hidden';
+                    document.body.style.height = 'auto';
+                    document.body.style.minHeight = '100vh';
+                    document.body.style.position = 'relative';
+                    document.body.style.touchAction = 'pan-y';
+                    
+                    // Same for html
+                    document.documentElement.style.overflow = 'visible';
+                    document.documentElement.style.overflowY = 'auto';
+                    document.documentElement.style.overflowX = 'hidden';
+                    document.documentElement.style.height = 'auto';
+                    document.documentElement.style.touchAction = 'pan-y';
+                    
+                    // Android Chrome specific fixes
+                    if (isChrome) {
+                        document.body.style.webkitOverflowScrolling = 'auto';
+                        document.documentElement.style.webkitOverflowScrolling = 'auto';
+                    }
+                }
+                
+                // Prevent default touch behaviors that can interfere with scrolling
+                document.addEventListener('touchstart', function(e) {
+                    // Allow all touch events to proceed normally
+                }, { passive: true });
+                
+                document.addEventListener('touchmove', function(e) {
+                    // Only prevent horizontal scrolling if not in a slider
+                    const touch = e.touches[0];
+                    const deltaX = Math.abs(touch.clientX - (touch.startX || touch.clientX));
+                    const deltaY = Math.abs(touch.clientY - (touch.startY || touch.clientY));
+                    
+                    // If horizontal movement is greater than vertical and not in brands slider
+                    if (deltaX > deltaY && !e.target.closest('.brands-slider')) {
+                        e.preventDefault();
+                    }
+                }, { passive: false });
+                
+                // Store initial touch position
+                document.addEventListener('touchstart', function(e) {
+                    const touch = e.touches[0];
+                    touch.startX = touch.clientX;
+                    touch.startY = touch.clientY;
+                }, { passive: true });
+                
+                // Force enable touch scrolling on mobile
+                document.body.style.webkitOverflowScrolling = 'touch';
+                document.documentElement.style.webkitOverflowScrolling = 'touch';
+                
+                // Fix iOS Safari address bar issues
+                const fixViewport = () => {
+                    const vh = window.innerHeight * 0.01;
+                    document.documentElement.style.setProperty('--vh', `${vh}px`);
+                };
+                
+                fixViewport();
+                window.addEventListener('resize', fixViewport);
+                window.addEventListener('orientationchange', () => {
+                    setTimeout(fixViewport, 100);
+                });
+                
+                // Force layout recalculation and scroll reset
+                setTimeout(() => {
+                    // Android-specific scroll force
+                    if (isAndroid) {
+                        document.body.style.transform = 'translateZ(0)';
+                        document.body.offsetHeight; // Force reflow
+                        document.body.style.transform = '';
+                    }
+                    
+                    window.scrollTo(0, 1);
+                    window.scrollTo(0, 0);
+                }, 100);
+                
+                // Additional Android fixes
+                if (isAndroid) {
+                    // Force GPU acceleration for smoother scrolling
+                    document.body.style.willChange = 'scroll-position';
+                    document.body.style.transform = 'translateZ(0)';
+                    
+                    // Prevent zoom on double tap
+                    let lastTouchEnd = 0;
+                    document.addEventListener('touchend', function (event) {
+                        const now = (new Date()).getTime();
+                        if (now - lastTouchEnd <= 300) {
+                            event.preventDefault();
+                        }
+                        lastTouchEnd = now;
+                    }, false);
+                    
+                    // Additional Android Chrome fixes
+                    if (isChrome) {
+                        // Disable pull-to-refresh if needed
+                        document.body.style.overscrollBehavior = 'contain';
+                    }
+                }
+                
+                // iOS Safari specific fixes
+                if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+                    // Fix iOS momentum scrolling
+                    document.body.style.webkitOverflowScrolling = 'touch';
+                    document.documentElement.style.webkitOverflowScrolling = 'touch';
+                }
+            }
+            
+            // Initialize mobile optimizations
+            initializeMobileOptimizations();
+            
+            // Add entrance animations
+            setTimeout(() => {
+                document.body.classList.add('loaded');
+            }, 100);
+        });
+
+        // Performance optimization
+        const lazyImages = document.querySelectorAll('img[data-src]');
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+
+        lazyImages.forEach(img => imageObserver.observe(img));
+    </script>
+</body>
+</html>
