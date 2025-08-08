@@ -97,6 +97,12 @@
             min-height: 100vh;
         }
 
+        /* Ensure all major layout elements respect viewport bounds */
+        .hero, .services, .products, .brands, .contact, .footer, .header {
+            max-width: 100vw;
+            overflow-x: hidden;
+        }
+
         /* Android and Mobile scrolling fixes */
         @media (max-width: 768px) {
             html {
@@ -387,10 +393,12 @@
             text-align: center;
             margin: 0;
             padding: 0;
+            width: 100%;
+            max-width: 280px;
         }
 
         .mobile-nav-menu li {
-            margin: 1.5rem 0;
+            margin: 0.8rem 0;
         }
 
         .mobile-nav-menu a {
@@ -398,40 +406,47 @@
             text-decoration: none;
             font-family: 'Inter', sans-serif;
             font-weight: 600;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             letter-spacing: 0.025em;
             transition: all 0.3s ease;
-            display: block;
-            padding: 1.2rem 2.5rem;
+            display: flex;
+            padding: 1rem 2rem;
             border-radius: 12px;
             position: relative;
-            min-height: 44px; /* iOS touch target size */
-            display: flex;
+            min-height: 44px;
             align-items: center;
             justify-content: center;
+            border: 2px solid transparent;
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .mobile-nav-menu a:hover,
         .mobile-nav-menu a:active,
         .mobile-nav-menu a:focus {
             color: var(--highlight-color);
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             outline: none;
         }
 
         .mobile-contact-btns {
-            margin-top: 2rem;
+            margin-top: 1.5rem;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             gap: 1rem;
             align-items: center;
+            justify-content: center;
             padding: 0 2rem;
+            flex-wrap: wrap;
         }
 
         .mobile-contact-btns .btn-contact {
-            width: 200px;
+            width: 140px;
             justify-content: center;
+            font-size: 0.9rem;
+            padding: 0.8rem 1rem;
         }
 
         .btn-whatsapp {
@@ -451,7 +466,8 @@
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
+            height: calc(100vh - 0px);
             background: linear-gradient(rgba(30, 41, 59, 0.6), rgba(30, 41, 59, 0.6)),
                         url('images/hero.jpeg?v=1.3') center/cover;
             display: flex;
@@ -460,7 +476,9 @@
             text-align: center;
             color: var(--white);
             position: relative;
-            overflow: hidden;
+            overflow: visible;
+            padding: 140px 2rem 60px 2rem;
+            box-sizing: border-box;
         }
 
         .hero::before {
@@ -483,8 +501,9 @@
 
         .hero-content {
             max-width: 1000px;
-            padding: 0 2rem;
+            padding: 0;
             z-index: 2;
+            width: 100%;
         }
 
         .hero-logo {
@@ -635,6 +654,8 @@
             justify-content: center;
             flex-wrap: wrap;
             animation: heroCTAReveal 2s cubic-bezier(0.23, 1, 0.32, 1) 2.3s both;
+            margin-top: 2rem;
+            padding: 0 1rem;
         }
 
         @keyframes heroCTAReveal {
@@ -847,7 +868,7 @@
         .btn-primary {
             background: var(--highlight-color);
             color: var(--white);
-            padding: 1rem 2.5rem;
+            padding: 1rem 2rem;
             border: none;
             border-radius: 50px;
             font-family: 'Inter', sans-serif;
@@ -861,13 +882,16 @@
             position: relative;
             overflow: hidden;
             letter-spacing: 0.025em;
+            white-space: nowrap;
+            min-width: fit-content;
+            flex-shrink: 0;
         }
 
         .btn-secondary {
             background: transparent;
             color: var(--white);
             border: 2px solid var(--highlight-color);
-            padding: 1rem 2.5rem;
+            padding: 1rem 2rem;
             border-radius: 50px;
             font-family: 'Inter', sans-serif;
             font-size: 1.1rem;
@@ -878,6 +902,9 @@
             align-items: center;
             gap: 0.5rem;
             letter-spacing: 0.025em;
+            white-space: nowrap;
+            min-width: fit-content;
+            flex-shrink: 0;
         }
 
         .btn-primary:hover, .btn-secondary:hover {
@@ -1043,7 +1070,7 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 4rem;
         }
@@ -1121,7 +1148,7 @@
 
         .products-categories {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 4rem;
         }
@@ -1480,7 +1507,7 @@
         .footer {
             background: var(--primary-color);
             color: var(--white);
-            padding: 3rem 0 1.5rem;
+            padding: 2rem 0 1rem;
             position: relative;
         }
 
@@ -1501,28 +1528,28 @@
 
         .footer-description {
             font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
             opacity: 0.9;
         }
 
         .footer-contact {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .footer-contact h4 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             color: var(--white);
         }
 
         .footer-contact p {
             font-family: 'Inter', sans-serif;
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            margin-bottom: 0.4rem;
             opacity: 0.9;
             word-wrap: break-word;
             overflow-wrap: break-word;
@@ -1541,17 +1568,17 @@
 
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.2);
-            padding-top: 1.5rem;
+            padding-top: 1rem;
             text-align: center;
             font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             opacity: 0.8;
         }
 
         /* Footer Mobile Responsiveness */
         @media (max-width: 768px) {
             .footer {
-                padding: 2rem 0 1rem;
+                padding: 1.5rem 0 0.8rem;
             }
 
             .footer-content {
@@ -1679,16 +1706,24 @@
 
         .location-details .detail-item {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 1rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             font-family: 'Inter', sans-serif;
+            line-height: 1.6;
         }
 
         .location-details .detail-item i {
             color: var(--greyish-white);
             font-size: 1.2rem;
             width: 20px;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .location-details .detail-item div {
+            flex: 1;
+            min-width: 0;
         }
 
         .location-buttons {
@@ -1728,6 +1763,8 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
+            margin: 0;
+            padding: 0;
         }
 
         .map-frame {
@@ -1736,6 +1773,10 @@
             border: none;
             border-radius: 15px;
             filter: invert(0.9) contrast(1.2) saturate(0.8) hue-rotate(180deg);
+            margin: 0;
+            padding: 0;
+            display: block;
+            vertical-align: top;
         }
 
         /* Mobile responsiveness for location section */
@@ -1764,7 +1805,7 @@
                 align-items: flex-start;
                 gap: 0.8rem;
                 margin-bottom: 1.2rem;
-                flex-wrap: wrap;
+                line-height: 1.5;
             }
             
             .location-details .detail-item i {
@@ -1779,6 +1820,7 @@
                 flex: 1;
                 min-width: 0;
                 word-wrap: break-word;
+                overflow-wrap: break-word;
             }
 
             .location-buttons {
@@ -1797,8 +1839,113 @@
             }
         }
 
-        /* Enhanced Mobile Responsiveness */
+        /* Container styles for consistent responsive behavior */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
         @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 0.8rem;
+            }
+        }
+
+        /* Enhanced Mobile Responsiveness */
+        /* Let JavaScript handle the display logic, but keep fallback for very small screens */
+        
+        /* Tablet and large phone styles */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .hero {
+                padding: 130px 2rem 50px 2rem;
+            }
+
+            .hero-cta {
+                gap: 1.2rem;
+                padding: 0 1rem;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                font-size: 1.05rem;
+                padding: 0.95rem 1.9rem;
+                min-width: 170px;
+            }
+
+            /* Maintain multi-column layout on tablets */
+            .services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.8rem;
+            }
+
+            .products-categories {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.8rem;
+            }
+
+            /* Maintain side-by-side layout on tablets for about section */
+            .about-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+
+            /* Maintain side-by-side layout on tablets for contact section */
+            .contact-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+        }
+
+        /* Medium screens - stack content when space becomes limited */
+        @media (max-width: 1000px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-title {
+                text-align: center;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .contact-info h3 {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Mobile layouts - stack about and contact content */
+            .about-content {
+                grid-template-columns: 1fr !important;
+                gap: 2rem;
+            }
+
+            .about-title {
+                text-align: center;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr !important;
+                gap: 2rem;
+            }
+
+            .contact-info h3 {
+                text-align: center;
+            }
+
             /* Enhanced header mobile styles */
             .header {
                 padding: 0;
@@ -1821,22 +1968,27 @@
             .logo-text p {
                 font-size: 0.75rem;
             }
-            
-            /* Hide desktop navigation and contact buttons on mobile */
-            .nav-menu {
-                display: none;
+
+            /* Enhanced hero mobile styles */
+            .hero {
+                min-height: 100vh;
+                height: auto;
+                padding: 120px 1rem 40px 1rem;
             }
-            
-            .contact-btns {
-                display: none;
+
+            .hero-cta {
+                gap: 1rem;
+                margin-top: 2rem;
+                padding: 0;
             }
-            
-            /* Show mobile menu toggle */
-            .mobile-menu-toggle {
-                display: flex;
-                position: relative;
-                z-index: 1002;
+
+            .btn-primary,
+            .btn-secondary {
+                font-size: 1rem;
+                padding: 0.9rem 1.8rem;
+                min-width: 160px;
             }
+        }
 
             /* Enhanced section spacing */
             .section-header {
@@ -1876,7 +2028,7 @@
             }
 
             .services-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
                 gap: 1.5rem;
                 margin-top: 3rem;
             }
@@ -1891,7 +2043,7 @@
             }
 
             .products-categories {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
                 gap: 1.5rem;
                 margin-top: 3rem;
             }
@@ -1906,7 +2058,7 @@
             }
 
             .about-content {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
                 gap: 3rem;
             }
 
@@ -1925,13 +2077,12 @@
             }
 
             .contact-content {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
                 gap: 3rem;
             }
 
             .contact-info h3 {
                 font-size: 2rem;
-                text-align: center;
                 margin-bottom: 1.5rem;
             }
 
@@ -1958,7 +2109,9 @@
             .btn-primary,
             .btn-secondary {
                 font-size: 1rem;
-                padding: 0.8rem 2rem;
+                padding: 0.8rem 1.8rem;
+                min-width: 150px;
+                white-space: nowrap;
             }
 
             .hero-cta {
@@ -2054,19 +2207,62 @@
 
             .btn-primary,
             .btn-secondary {
-                font-size: 0.9rem;
-                padding: 0.7rem 1.5rem;
+                font-size: 0.95rem;
+                padding: 0.8rem 1.6rem;
+                min-width: 180px;
             }
 
             .hero-cta {
                 flex-direction: column;
                 align-items: center;
+                gap: 1rem;
+                padding: 0 1rem;
             }
 
             .hero-cta .btn-primary,
             .hero-cta .btn-secondary {
-                width: 200px;
+                width: 220px;
                 justify-content: center;
+            }
+
+            .hero {
+                padding: 100px 1rem 30px 1rem;
+            }
+
+            /* Allow smaller cards on very small screens to fit more per row */
+            .services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                gap: 1rem;
+            }
+
+            .products-categories {
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                gap: 1rem;
+            }
+
+            /* Stack about and contact content on very small screens */
+            .about-content {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem;
+            }
+
+            .about-title {
+                font-size: 1.8rem;
+                text-align: center;
+            }
+
+            .about-text {
+                padding: 1.5rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem;
+            }
+
+            .contact-info h3 {
+                font-size: 1.5rem;
+                text-align: center;
             }
 
             .map-frame {
@@ -2089,12 +2285,22 @@
             
             .location-details .detail-item {
                 margin-bottom: 1rem;
-                gap: 0.6rem;
+                gap: 0.8rem;
+                align-items: flex-start;
+                line-height: 1.4;
             }
             
             .location-details .detail-item i {
                 font-size: 1.1rem;
                 width: 18px;
+                flex-shrink: 0;
+                margin-top: 0.1rem;
+            }
+
+            .location-details .detail-item div {
+                flex: 1;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
             }
         }
     </style>
@@ -2637,7 +2843,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Modern Tire House SPC. All rights reserved. <span style="opacity:0.7;">v1.5</span></p>
+                <p>&copy; 2025 Modern Tire House SPC. All rights reserved. <span style="opacity:0.7;">v1.6</span></p>
             </div>
         </div>
     </footer>
@@ -2857,12 +3063,89 @@ ${data.message}
             }
         });
 
-        // Close mobile menu on window resize to desktop
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 768 && mobileNavOverlay.classList.contains('active')) {
+        // Dynamic header responsive behavior
+        function checkHeaderSpace() {
+            const nav = document.querySelector('.nav');
+            const logo = document.querySelector('.logo');
+            const navMenu = document.querySelector('.nav-menu');
+            const contactBtns = document.querySelector('.contact-btns');
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
+            
+            if (!nav || !logo || !navMenu || !contactBtns || !mobileToggle) return;
+            
+            // Reset display to calculate natural widths
+            navMenu.style.display = 'flex';
+            contactBtns.style.display = 'flex';
+            
+            // Use setTimeout to ensure accurate measurements after reflow
+            setTimeout(() => {
+                // Calculate total width needed for all elements
+                const logoWidth = logo.offsetWidth;
+                const navMenuWidth = navMenu.scrollWidth;
+                const contactBtnsWidth = contactBtns.scrollWidth;
+                const padding = 100; // Extra padding for spacing and margins
+                
+                const totalNeededWidth = logoWidth + navMenuWidth + contactBtnsWidth + padding;
+                const availableWidth = nav.offsetWidth;
+                
+                // Show hamburger menu if content doesn't fit or on smaller screens
+                const shouldShowHamburger = totalNeededWidth > availableWidth || window.innerWidth <= 1200;
+                
+                if (shouldShowHamburger) {
+                    navMenu.style.display = 'none';
+                    contactBtns.style.display = 'none';
+                    mobileToggle.style.display = 'flex';
+                } else {
+                    navMenu.style.display = 'flex';
+                    contactBtns.style.display = 'flex';
+                    mobileToggle.style.display = 'none';
+                    // Close mobile menu if it's open
+                    if (mobileNavOverlay && mobileNavOverlay.classList.contains('active')) {
+                        closeMobileMenu();
+                    }
+                }
+            }, 10);
+        }
+
+        // Debounce function for performance
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Close mobile menu on window resize and check header space
+        window.addEventListener('resize', debounce(function() {
+            checkHeaderSpace();
+            const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
+            if (window.innerWidth > 1400 && mobileNavOverlay && mobileNavOverlay.classList.contains('active')) {
                 closeMobileMenu();
             }
+        }, 150));
+
+        // Initial check on page load with delay for font loading
+        window.addEventListener('load', function() {
+            setTimeout(checkHeaderSpace, 100);
         });
+        
+        // Also check when DOM content is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(checkHeaderSpace, 100);
+        });
+
+        // Check again when fonts are loaded (if supported)
+        if (document.fonts) {
+            document.fonts.ready.then(function() {
+                setTimeout(checkHeaderSpace, 100);
+            });
+        }
 
         // Add dynamic effects
         document.addEventListener('mousemove', function(e) {
