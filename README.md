@@ -2,15 +2,12 @@
 <br />
 <div align="center">
   <a href="https://moderntirehouse.com">
-    <img src="logos/logo.png" alt="Logo" width="120" height="120" style="background:white;border-radius:50%;">
+    <img src="logos/logo.png" alt="Logo" width="120" height="120" style="background:white;border:5px solid white;border-radius:50%;">
   </a>
 
-  <h1 align="center">Modern Tire House SPC</h1>
+  <h1 align="center">Modern Tire House</h1>
   <p align="center">
-    Your Trusted Tire Traders in Oman
-    <br />
-    <br />
-    <a href="https://moderntirehouse.com"><strong>🌐 Visit Website »</strong></a>
+    Static Website Repository
     <br />
     <br />
     <a href="#-deployment">Deployment</a>
@@ -30,32 +27,35 @@
 
 </div>
 
-## 🚀 About The Project
+## 📁 Project Overview
 
-[![Modern Tire House Screen Shot][product-screenshot]](https://moderntirehouse.com)
+This repository contains the source code for the Modern Tire House website, a static HTML/CSS/JavaScript project deployed to https://moderntirehouse.com.
 
-**Modern Tire House SPC** is a premier tire trading company based in Oman with over 3 decades of excellence in the tire industry. We specialize in providing comprehensive solutions for:
+### 📁 Repository Structure
 
-* 🚚 **Truck & Bus Tires**
-* 🏭 **Industrial Tires**
-* 🚜 **OTR (Off-The-Road) Tires**
-* 🛞 **Commercial Vehicle Tires**
-
-Our extensive product range includes premium brands and our services cover everything from supply to maintenance solutions.
-
-### ✨ Key Features
-
-* **🌐 Fully Responsive Design** - Works on all devices
-* **⚡ High Performance** - Optimized for speed and SEO
-* **🎨 Modern UI/UX** - Clean and professional interface
-* **📱 Mobile-First Approach** - Enhanced mobile experience
-* **🛠️ Service Showcase** - Detailed service offerings
-* **🏷️ Product Categories** - Organized product listings
-* **🏆 Brand Partnerships** - Featured premium brands
+```
+modern-tire-house/
+├── home.html          # Main HTML file
+├── favicon.ico        # Website favicon
+├── README.md          # This file
+├── .github/
+│   └── workflows/     # GitHub Actions workflows
+│       ├── deploy.yml
+│       ├── clear-cache.yml
+│       └── deploy-and-clear.yml
+├── images/            # Background and content images
+│   ├── hero.jpeg
+│   ├── services.jpg
+│   └── ... (various section images)
+├── logos/             # Logo files
+│   └── logo.png
+├── products/          # Product category pages (if any)
+└── services/          # Service detail pages (if any)
+```
 
 ## 🔧 Technologies
 
-This project is built with modern web technologies for optimal performance and user experience:
+This project uses modern web technologies:
 
 ```mermaid
 graph TD
@@ -156,35 +156,12 @@ To manually trigger deployment:
 
 4. Test locally by opening in browser
 
-### Project Structure
-
-```
-modern-tire-house/
-├── home.html          # Main HTML file
-├── favicon.ico        # Website favicon
-├── README.md          # This file
-├── .github/
-│   └── workflows/     # GitHub Actions workflows
-│       ├── deploy.yml
-│       ├── clear-cache.yml
-│       └── deploy-and-clear.yml
-├── images/            # Background and content images
-│   ├── hero.jpeg
-│   ├── services.jpg
-│   └── ... (various section images)
-├── logos/             # Logo files
-│   └── logo.png
-├── products/          # Product category pages (if any)
-└── services/          # Service detail pages (if any)
-```
-
 ### Code Standards
 
 * **CSS Variables**: Used for consistent theming
 * **Responsive Design**: Mobile-first approach with media queries
 * **Accessibility**: Semantic HTML and ARIA attributes
 * **Performance**: Optimized images and efficient code
-* **SEO**: Proper meta tags and structured content
 
 ## 🌐 Browser Support
 
@@ -201,8 +178,6 @@ modern-tire-house/
 Aarsh - [@aarshps](https://github.com/aarshps)
 
 Project Link: [https://github.com/aarshps/modern-tire-house](https://github.com/aarshps/modern-tire-house)
-
-Website: [https://moderntirehouse.com](https://moderntirehouse.com)
 
 ## 🙏 Acknowledgments
 
@@ -225,7 +200,7 @@ Website: [https://moderntirehouse.com](https://moderntirehouse.com)
 ---
 
 <p align="center">
-  Made with ❤️ in Oman
+  Made with ❤️ 
 </p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
