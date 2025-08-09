@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://moderntirehouse.com">
-    <img src="logos/logo.png" alt="Logo" width="120" height="120">
+    <img src="logos/logo.png" alt="Logo" width="120" height="120" style="background:white;border-radius:50%;">
   </a>
 
   <h1 align="center">Modern Tire House SPC</h1>
