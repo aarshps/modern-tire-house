@@ -1,22 +1,14 @@
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="https://moderntirehouse.com">
-    <img src="logos/logo.png" alt="Logo" width="120" height="120" style="background:white;border:5px solid white;border-radius:50%;">
-  </a>
-
-  <h1 align="center">Modern Tire House</h1>
-  <p align="center">
-    Static Website Repository
-    <br />
-    <br />
-    <a href="#-deployment">Deployment</a>
-    ·
-    <a href="#-technologies">Technologies</a>
-    ·
-    <a href="#-development">Development</a>
-  </p>
-</div>
+<h1 align="center">Modern Tire House</h1>
+<p align="center">
+  Static Website Repository
+  <br />
+  <br />
+  <a href="#-deployment">Deployment</a>
+  ·
+  <a href="#-technologies">Technologies</a>
+  ·
+  <a href="#-development">Development</a>
+</p>
 
 <!-- BADGES -->
 <div align="center">
