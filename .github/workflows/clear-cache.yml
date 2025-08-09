@@ -1,0 +1,16 @@
+name: Clear GoDaddy Cache (Manual)
+
+on:
+  workflow_dispatch:
+  workflow_call:
+
+jobs:
+  cache-clear:
+    name: Clear GoDaddy WAF Cache
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Cache Clear Request to GoDaddy
+        run: |
+          curl -X DELETE \
+          -H "Authorization: sso-key ${{ secrets.GODADDY_API_KEY }}:${{ secrets.GODADDY_API_SECRET }}" \
+          "https://api.godaddy.com/v1/waf/domains/moderntirehouse.com/cache"

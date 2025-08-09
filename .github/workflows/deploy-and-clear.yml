@@ -1,0 +1,16 @@
+name: Deploy and Clear Cache (Full Process)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-deploy-workflow:
+    name: 1. Call Deploy Website Workflow
+    uses: ./.github/workflows/deploy.yml
+    secrets: inherit
+
+  call-cache-workflow:
+    name: 2. Call Clear Cache Workflow
+    needs: call-deploy-workflow
+    uses: ./.github/workflows/clear-cache.yml
+    secrets: inherit

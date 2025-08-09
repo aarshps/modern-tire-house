@@ -1,33 +1,20 @@
 name: Deploy Website to cPanel (Manual)
 
-# This workflow can only be run manually from the Actions tab
 on:
   workflow_dispatch:
+  workflow_call:
 
 jobs:
   ftp-deploy:
-    name: Deploy and Clear Cache
+    name: FTP Deploy
     runs-on: ubuntu-latest
     steps:
-      # Step 1: Checks out your repository's code so it can be uploaded
       - name: Checkout Code
         uses: actions/checkout@v4
-
-      # Step 2: Syncs the files to your cPanel server
       - name: Sync Files to cPanel
-        id: deploy # Give this step an ID to check its result later
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: public_html/
-
-      # Step 3: Clear GoDaddy WAF Cache after successful deployment
-      - name: Clear GoDaddy Cache
-        # This step only runs if the previous 'Sync Files' step was successful
-        if: success()
-        run: |
-          curl -X DELETE \
-          -H "Authorization: sso-key ${{ secrets.GODADDY_API_KEY }}:${{ secrets.GODADDY_API_SECRET }}" \
-          "https://api.godaddy.com/v1/waf/domains/moderntirehouse.com/cache"
