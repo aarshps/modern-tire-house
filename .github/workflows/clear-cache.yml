@@ -1,4 +1,4 @@
-name: Clear GoDaddy Cache (Manual)
+name: Clear GoDaddy-Sucuri Cache (Manual)
 
 on:
   workflow_dispatch:
@@ -6,11 +6,12 @@ on:
 
 jobs:
   cache-clear:
-    name: Clear GoDaddy WAF Cache
+    name: Clear GoDaddy (Sucuri) WAF Cache
     runs-on: ubuntu-latest
     steps:
-      - name: Send Cache Clear Request to GoDaddy
+      - name: Send Cache Clear Request to Sucuri API
         run: |
-          curl -X DELETE \
-          -H "Authorization: sso-key ${{ secrets.GODADDY_API_KEY }}:${{ secrets.GODADDY_API_SECRET }}" \
-          "https://api.godaddy.com/v1/waf/domains/moderntirehouse.com/cache"
+          curl -X POST "https://waf.sucuri.net/api?v2" \
+          -d "k=${{ secrets.GODADDY_API_KEY }}" \
+          -d "s=${{ secrets.GODADDY_API_SECRET }}" \
+          -d "a=clear_cache"

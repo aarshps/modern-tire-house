@@ -10,7 +10,7 @@ jobs:
     secrets: inherit
 
   call-cache-workflow:
-    name: 2. Call Clear Cache Workflow
+    name: 2. Call Clear GoDaddy-Sucuri Cache Workflow
     needs: call-deploy-workflow
     uses: ./.github/workflows/clear-cache.yml
     secrets: inherit
