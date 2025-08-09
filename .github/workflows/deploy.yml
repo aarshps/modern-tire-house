@@ -1,17 +1,19 @@
-name: Deploy Website to cPanel (Manual)
+name: '[Module] Deploy Website via FTP'
 
+# This workflow can be run manually OR be called by another workflow
 on:
   workflow_dispatch:
   workflow_call:
 
 jobs:
   ftp-deploy:
-    name: FTP Deploy
+    name: Sync Files to cPanel Server
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-      - name: Sync Files to cPanel
+
+      - name: Sync Files via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}

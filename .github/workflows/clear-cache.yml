@@ -1,17 +1,18 @@
-name: Clear GoDaddy-Sucuri Cache (Manual)
+name: '[Module] Clear Sucuri Cache'
 
+# This workflow can be run manually OR be called by another workflow
 on:
   workflow_dispatch:
   workflow_call:
 
 jobs:
   cache-clear:
-    name: Clear GoDaddy (Sucuri) WAF Cache
+    name: Clear Sucuri WAF Cache
     runs-on: ubuntu-latest
     steps:
       - name: Send Cache Clear Request to Sucuri API
         run: |
           curl -X POST "https://waf.sucuri.net/api?v2" \
-          -d "k=${{ secrets.GODADDY_API_KEY }}" \
-          -d "s=${{ secrets.GODADDY_API_SECRET }}" \
+          -d "k=${{ secrets.SUCURI_API_KEY }}" \
+          -d "s=${{ secrets.SUCURI_API_SECRET }}" \
           -d "a=clear_cache"

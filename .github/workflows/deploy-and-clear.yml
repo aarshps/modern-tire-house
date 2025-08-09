@@ -1,16 +1,20 @@
-name: Deploy and Clear Cache (Full Process)
+name: 'Full Process: Deploy and Clear Cache'
 
+# This is the master workflow, triggered manually
 on:
   workflow_dispatch:
 
 jobs:
+  # This job calls the deployment workflow
   call-deploy-workflow:
-    name: 1. Call Deploy Website Workflow
+    name: 'Step 1: Call Deploy Website Workflow'
     uses: ./.github/workflows/deploy.yml
     secrets: inherit
 
+  # This job calls the cache-clearing workflow after deployment succeeds
   call-cache-workflow:
-    name: 2. Call Clear GoDaddy-Sucuri Cache Workflow
+    name: 'Step 2: Call Clear Sucuri Cache Workflow'
+    # Ensures this job only runs after the 'call-deploy-workflow' job has finished successfully
     needs: call-deploy-workflow
     uses: ./.github/workflows/clear-cache.yml
     secrets: inherit
