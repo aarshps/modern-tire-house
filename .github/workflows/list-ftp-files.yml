@@ -1,0 +1,23 @@
+name: List Files on FTP Server
+
+on:
+  workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
+
+jobs:
+  list-ftp-files:
+    name: List files in public_html via FTP
+    runs-on: ubuntu-latest
+    steps:
+      # First, we need to check out the repository's code, as the FTP action requires it.
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # This action connects to the FTP server and shows what it would do without making changes.
+      - name: List remote files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: public_html/
+          dry-run: true # This is the key: it performs a test run without deploying.
