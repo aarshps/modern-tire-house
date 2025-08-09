@@ -1,0 +1,12 @@
+# Ignore the .github folder from the repo
+.github/*
+
+# Ignore the .gitignore file from the repo
+.gitignore
+
+# --- Protect server-side files ---
+# Never touch the cgi-bin directory on the server
+cgi-bin/
+
+# Never touch the 404.shtml file on the server
+404.shtml

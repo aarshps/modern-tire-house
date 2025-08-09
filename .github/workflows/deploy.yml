@@ -1,0 +1,31 @@
+name: Deploy Website to cPanel
+
+# This workflow runs on every push to the 'main' branch
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ftp-deploy:
+    name: FTP Deploy
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Checks out your repository's code so it can be uploaded
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 2. Syncs the files to your cPanel server
+      - name: Sync Files to cPanel
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          # Use the IP address you confirmed works
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+
+          # The destination directory on your server
+          server-dir: public_html/
+
+          # The action will automatically read the .git-ftp-ignore file
+          # you created to exclude the correct files and folders.
