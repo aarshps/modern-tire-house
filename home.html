@@ -2841,7 +2841,69 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Modern Tire House SPC. All rights reserved. <span style="opacity:0.7;">v1.8</span><br><span style="opacity:0.8; font-size:0.95em;">Powered by Ajyal</span></p>
+                <p>&copy; 2025 Modern Tire House SPC. All rights reserved. <span style="opacity:0.7;">v1.9</span><br><span style="opacity:0.8; font-size:0.95em;">Powered by <span class="ajyal-glow">Ajyal</span></span></p>
+<style>
+/* Multi-color glowing effect for Ajyal in footer */
+.ajyal-glow {
+    color: #fff;
+    font-weight: bold;
+    text-shadow:
+        0 0 8px #ff00cc,
+        0 0 16px #ffcc00,
+        0 0 24px #00ffea,
+        0 0 32px #00ffea,
+        0 0 40px #ff00cc,
+        0 0 48px #ffcc00;
+    animation: ajyal-multiglow 2s linear infinite;
+}
+@keyframes ajyal-multiglow {
+    0% {
+        text-shadow:
+            0 0 8px #ff00cc,
+            0 0 16px #ffcc00,
+            0 0 24px #00ffea,
+            0 0 32px #00ffea,
+            0 0 40px #ff00cc,
+            0 0 48px #ffcc00;
+    }
+    25% {
+        text-shadow:
+            0 0 8px #00ffea,
+            0 0 16px #ff00cc,
+            0 0 24px #ffcc00,
+            0 0 32px #ffcc00,
+            0 0 40px #00ffea,
+            0 0 48px #ff00cc;
+    }
+    50% {
+        text-shadow:
+            0 0 8px #ffcc00,
+            0 0 16px #00ffea,
+            0 0 24px #ff00cc,
+            0 0 32px #ff00cc,
+            0 0 40px #ffcc00,
+            0 0 48px #00ffea;
+    }
+    75% {
+        text-shadow:
+            0 0 8px #00ffea,
+            0 0 16px #ffcc00,
+            0 0 24px #ff00cc,
+            0 0 32px #ff00cc,
+            0 0 40px #00ffea,
+            0 0 48px #ffcc00;
+    }
+    100% {
+        text-shadow:
+            0 0 8px #ff00cc,
+            0 0 16px #ffcc00,
+            0 0 24px #00ffea,
+            0 0 32px #00ffea,
+            0 0 40px #ff00cc,
+            0 0 48px #ffcc00;
+    }
+}
+</style>
             </div>
         </div>
     </footer>
