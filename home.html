@@ -2845,11 +2845,38 @@
                                       Ajyal
                                 </span></span></p>
 <style>
-/* Multi-color glowing effect for Ajyal in footer */
+/* Copilot-style blue-cyan neon glow for Ajyal in footer */
 .ajyal-glow {
-    color: #1a6bee;
-    font-weight: bold;
-    letter-spacing: 0.02em;
+        color: #00e6ff;
+        font-weight: bold;
+        letter-spacing: 0.02em;
+        text-shadow:
+            0 0 8px #00e6ff,
+            0 0 16px #00e6ff,
+            0 0 32px #1a6bee,
+            0 0 48px #1a6bee,
+            0 0 64px #00e6ff;
+        animation: ajyal-copilot-glow 2s ease-in-out infinite alternate;
+}
+@keyframes ajyal-copilot-glow {
+    0% {
+        text-shadow:
+            0 0 8px #00e6ff,
+            0 0 16px #00e6ff,
+            0 0 32px #1a6bee,
+            0 0 48px #1a6bee,
+            0 0 64px #00e6ff;
+        color: #00e6ff;
+    }
+    100% {
+        text-shadow:
+            0 0 16px #1a6bee,
+            0 0 32px #00e6ff,
+            0 0 64px #00e6ff,
+            0 0 80px #1a6bee,
+            0 0 96px #00e6ff;
+        color: #1a6bee;
+    }
 }
 </style>
             </div>
