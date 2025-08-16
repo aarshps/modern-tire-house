@@ -1,4 +1,4 @@
-name: Create GitHub Release with Auto-Generated Notes
+name: Create Release
 
 on:
   workflow_dispatch:
@@ -13,27 +13,27 @@ on:
         type: string
 
 jobs:
-  create-release:
+  release:
     runs-on: ubuntu-latest
     permissions:
       contents: write # Required for creating releases
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Fetch all history for all tags and branches
 
-      - name: Determine Last Release Tag
-        id: get_last_tag
+      - name: Get last tag
+        id: last-tag
         run: |
           LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
           echo "last_tag=$LAST_TAG" >> $GITHUB_OUTPUT
           echo "Last tag found: '$LAST_TAG'"
 
-      - name: Generate Release Info (Tag & Name)
-        id: generate_release_info
+      - name: Generate release info
+        id: release-info
         run: |
-          LAST_TAG="${{ steps.get_last_tag.outputs.last_tag }}"
+          LAST_TAG="${{ steps.last-tag.outputs.last_tag }}"
           INPUT_TAG="${{ github.event.inputs.release_tag }}"
           INPUT_NAME="${{ github.event.inputs.release_name }}"
           
@@ -83,10 +83,10 @@ jobs:
           echo "new_tag=$NEW_TAG" >> $GITHUB_OUTPUT
           echo "release_name=$RELEASE_NAME" >> $GITHUB_OUTPUT
 
-      - name: Create Release with GitHub CLI
+      - name: Create release
         run: |
-          NEW_TAG="${{ steps.generate_release_info.outputs.new_tag }}"
-          RELEASE_NAME="${{ steps.generate_release_info.outputs.release_name }}"
+          NEW_TAG="${{ steps.release-info.outputs.new_tag }}"
+          RELEASE_NAME="${{ steps.release-info.outputs.release_name }}"
           
           echo "Creating release..."
           echo "  Tag: $NEW_TAG"
