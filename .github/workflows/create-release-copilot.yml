@@ -1,0 +1,99 @@
+name: Create GitHub Release with Auto-Generated Notes
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: 'Tag for the new release (e.g., v1.2.3). If empty, one will be auto-generated.'
+        required: false
+        type: string
+      release_name:
+        description: 'Name for the new release. If empty, one will be auto-generated.'
+        required: false
+        type: string
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Required for creating releases
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch all history for all tags and branches
+
+      - name: Determine Last Release Tag
+        id: get_last_tag
+        run: |
+          LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+          echo "last_tag=$LAST_TAG" >> $GITHUB_OUTPUT
+          echo "Last tag found: '$LAST_TAG'"
+
+      - name: Generate Release Info (Tag & Name)
+        id: generate_release_info
+        run: |
+          LAST_TAG="${{ steps.get_last_tag.outputs.last_tag }}"
+          INPUT_TAG="${{ github.event.inputs.release_tag }}"
+          INPUT_NAME="${{ github.event.inputs.release_name }}"
+          
+          # --- Auto-generate Tag ---
+          if [ -z "$INPUT_TAG" ]; then
+             if [ -z "$LAST_TAG" ]; then
+                NEW_TAG="v0.1.0" # Default starting version
+                echo "No previous tag found. Using default starting tag: $NEW_TAG"
+             else
+                echo "Previous tag found: $LAST_TAG. Auto-incrementing patch version."
+                # Basic semantic versioning increment (patch)
+                # Assumes tags are in the format vX.Y.Z
+                PREFIX=""
+                if [[ $LAST_TAG == v* ]]; then
+                    PREFIX="v"
+                    VERSION_PARTS_STR="${LAST_TAG#v}"
+                else
+                    VERSION_PARTS_STR="$LAST_TAG"
+                fi
+                IFS='.' read -ra VERSION_PARTS <<< "$VERSION_PARTS_STR"
+                
+                if [ ${#VERSION_PARTS[@]} -eq 3 ]; then
+                  MAJOR="${VERSION_PARTS[0]}"
+                  MINOR="${VERSION_PARTS[1]}"
+                  PATCH=$((${VERSION_PARTS[2]} + 1))
+                  NEW_TAG="${PREFIX}${MAJOR}.${MINOR}.${PATCH}"
+                else
+                   # Fallback if version format is unexpected
+                   NEW_TAG="${LAST_TAG}-next"
+                   echo "Warning: Last tag format was unexpected. Using fallback tag: $NEW_TAG"
+                fi
+             fi
+          else
+            NEW_TAG="$INPUT_TAG"
+            echo "Using provided tag: $NEW_TAG"
+          fi
+          
+          # --- Auto-generate Name ---
+          if [ -z "$INPUT_NAME" ]; then
+            RELEASE_NAME="Release $NEW_TAG"
+            echo "No name provided. Using default name: $RELEASE_NAME"
+          else
+            RELEASE_NAME="$INPUT_NAME"
+            echo "Using provided name: $RELEASE_NAME"
+          fi
+          
+          echo "new_tag=$NEW_TAG" >> $GITHUB_OUTPUT
+          echo "release_name=$RELEASE_NAME" >> $GITHUB_OUTPUT
+
+      - name: Create Release with GitHub CLI
+        run: |
+          NEW_TAG="${{ steps.generate_release_info.outputs.new_tag }}"
+          RELEASE_NAME="${{ steps.generate_release_info.outputs.release_name }}"
+          
+          echo "Creating release..."
+          echo "  Tag: $NEW_TAG"
+          echo "  Name: $RELEASE_NAME"
+          
+          gh release create "$NEW_TAG" \
+            --title "$RELEASE_NAME" \
+            --generate-notes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub automatically provides this token
