@@ -1,19 +1,40 @@
-name: '[Module] Deploy Website via FTP'
+name: Deploy Website via FTP
 
-# This workflow can be run manually OR be called by another workflow
 on:
   workflow_dispatch:
-  workflow_call:
+    inputs:
+      version:
+        description: 'Version/tag to deploy (e.g., v1.2.3). If empty, will deploy the latest release.'
+        required: false
+        type: string
 
 jobs:
-  ftp-deploy:
+  deploy:
     name: Sync Files to cPanel Server
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
+      - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Sync Files via FTP
+        with:
+          ref: ${{ github.event.inputs.version || 'main' }}
+          
+      - name: Get latest release if version not specified
+        if: ${{ !github.event.inputs.version }}
+        run: |
+          echo "No version specified. Fetching latest release..."
+          LATEST_RELEASE=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/releases/latest" | \
+            jq -r '.tag_name')
+          echo "Latest release is: $LATEST_RELEASE"
+          echo "LATEST_RELEASE=$LATEST_RELEASE" >> $GITHUB_ENV
+          
+      - name: Checkout specific release
+        if: ${{ !github.event.inputs.version }}
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.LATEST_RELEASE }}
+          
+      - name: Sync files via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}

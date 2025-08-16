@@ -1,16 +1,14 @@
-name: '[Module] Clear Sucuri Cache'
+name: Clear Sucuri Cache
 
-# This workflow can be run manually OR be called by another workflow
 on:
   workflow_dispatch:
-  workflow_call:
 
 jobs:
-  cache-clear:
+  clear-cache:
     name: Clear Sucuri WAF Cache
     runs-on: ubuntu-latest
     steps:
-      - name: Send Cache Clear Request to Sucuri API
+      - name: Send cache clear request to Sucuri API
         run: |
           curl -X POST "https://waf.sucuri.net/api?v2" \
           -d "k=${{ secrets.SUCURI_API_KEY }}" \
