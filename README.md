@@ -34,15 +34,32 @@ modern-tire-house/
 │   └── workflows/     # GitHub Actions workflows
 │       ├── deploy.yml
 │       ├── clear-cache.yml
-│       └── deploy-and-clear.yml
+│       └── release.yml
+├── docs/              # Documentation files
 ├── images/            # Background and content images
 │   ├── hero.jpeg
 │   ├── services.jpg
 │   └── ... (various section images)
 ├── logos/             # Logo files
 │   └── logo.png
-├── products/          # Product category pages (if any)
-└── services/          # Service detail pages (if any)
+├── products/          # Product category images
+│   ├── truck-and-bus-tyres.jpeg
+│   ├── industrial-tyres.jpeg
+│   ├── otr-tyres.jpeg
+│   ├── forklift-solid-tyres.jpeg
+│   ├── agri-tyres.jpeg
+│   ├── accessories.jpeg
+│   ├── specialized-rubber-parts.jpeg
+│   └── vane-pumps.jpeg
+├── scripts/           # JavaScript files
+├── services/          # Service images
+│   ├── truck-bus-tyres.jpeg
+│   ├── industrial-otr-tyres.jpeg
+│   ├── agriculture-tyres.jpeg
+│   ├── tyre-repair-service.jpeg
+│   ├── express-service.jpeg
+│   └── expert-consultation.jpeg
+└── ...                # Other assets
 ```
 
 ## 🔧 Technologies
@@ -67,6 +84,7 @@ graph TD
 * **Animations**: AOS (Animate On Scroll) Library
 * **Images**: Optimized JPEG format
 * **Hosting**: cPanel Shared Hosting via FTP Deployment
+* **Versioning**: Semantic versioning with automated releases
 
 ## 🎨 Visual Assets
 
@@ -83,28 +101,28 @@ graph TD
 | About | ![About](images/about.jpg) |
 | Contact | ![Contact](images/contact.jpg) |
 | Location | ![Location](images/maps.jpg) |
+| About Service | ![About Service](images/about-service.jpg) |
 
 </details>
 
 ## 🚀 Deployment
 
-We use **GitHub Actions** for automated deployment to our cPanel hosting environment.
+We use **GitHub Actions** for automated deployment to our cPanel hosting environment with semantic versioning.
 
 ### Workflows
 
-1. **[Full Process: Deploy and Clear Cache](.github/workflows/deploy-and-clear.yml)** - Master workflow
-   ```mermaid
-   graph LR
-     A[Manual Trigger] --> B[Deploy Website]
-     B --> C[Clear Sucuri Cache]
-   ```
+1. **[Create Release](.github/workflows/release.yml)** - Creates a new release with auto-incremented version number
+   * Automatically increments patch version (e.g., v1.2.3 → v1.2.4)
+   * Generates release notes automatically
+   * Can be manually triggered with custom tag/name
 
-2. **[Module] Deploy Website via FTP** ([deploy.yml](.github/workflows/deploy.yml))
+2. **[Deploy Website via FTP](.github/workflows/deploy.yml)**
    * Uses [SamKirkland/FTP-Deploy-Action](https://github.com/SamKirkland/FTP-Deploy-Action)
+   * Can deploy latest release or specific version
    * Deploys files to `public_html/` directory
    * Requires FTP credentials as GitHub Secrets
 
-3. **[Module] Clear Sucuri Cache** ([clear-cache.yml](.github/workflows/clear-cache.yml))
+3. **[Clear Sucuri Cache](.github/workflows/clear-cache.yml)**
    * Sends cache clear request to Sucuri WAF API
    * Uses `curl` to POST to Sucuri API endpoint
    * Requires API Key and Secret as GitHub Secrets
@@ -114,8 +132,10 @@ We use **GitHub Actions** for automated deployment to our cPanel hosting environ
 To manually trigger deployment:
 
 1. Go to [Actions tab](../../actions)
-2. Select **"Full Process: Deploy and Clear Cache"**
-3. Click **"Run workflow"**
+2. Select the desired workflow:
+   * **Create Release** - To create a new versioned release
+   * **Deploy Website via FTP** - To deploy the latest release or specific version
+   * **Clear Sucuri Cache** - To clear the website cache
 
 ### Secrets Required
 
@@ -126,6 +146,7 @@ To manually trigger deployment:
 | `FTP_PASSWORD` | FTP password |
 | `SUCURI_API_KEY` | Sucuri API key |
 | `SUCURI_API_SECRET` | Sucuri API secret |
+| `GITHUB_TOKEN` | GitHub token for release creation |
 
 ## 🛠️ Development
 
@@ -154,6 +175,7 @@ To manually trigger deployment:
 * **Responsive Design**: Mobile-first approach with media queries
 * **Accessibility**: Semantic HTML and ARIA attributes
 * **Performance**: Optimized images and efficient code
+* **JavaScript**: Custom scripts in the `scripts/` directory (when added)
 
 ## 🌐 Browser Support
 
