@@ -2841,22 +2841,43 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                                <p>&copy; 2025 Modern Tire House SPC. All rights reserved. <span style="opacity:0.7;">v1.9</span><br><span style="opacity:0.8; font-size:0.95em;">Powered by <span class="ajyal-glow">
+                                <p>&copy; 2025 Modern Tire House SPC. All rights reserved. <span style="opacity:0.7;">v2.0</span><br><span style="opacity:0.8; font-size:0.95em;">Powered by <span class="ajyal-glow">
                                       Ajyal
                                 </span></span></p>
 <style>
 /* Copilot-style blue-cyan neon glow for Ajyal in footer */
 .ajyal-glow {
-        color: #00e6ff;
-        font-weight: bold;
-        letter-spacing: 0.02em;
-        text-shadow:
-            0 0 8px #00e6ff,
-            0 0 16px #00e6ff,
-            0 0 32px #1a6bee,
-            0 0 48px #1a6bee,
-            0 0 64px #00e6ff;
-        animation: ajyal-copilot-glow 2s ease-in-out infinite alternate;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    background: linear-gradient(90deg, #00e6ff, #a259ff 40%, #fff 60%, #00e6ff 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    position: relative;
+    animation: ajyal-gradient-move 3s linear infinite;
+}
+.ajyal-glow::after {
+    content: '';
+    position: absolute;
+    left: -8px; right: -8px; top: -8px; bottom: -8px;
+    border-radius: 16px;
+    z-index: -1;
+    background: conic-gradient(from 0deg, #00e6ff, #a259ff, #fff, #00e6ff 100%);
+    filter: blur(14px) brightness(1.3);
+    opacity: 0.85;
+    animation: ajyal-glow-pulse 2.5s linear infinite;
+    pointer-events: none;
+}
+@keyframes ajyal-gradient-move {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+@keyframes ajyal-glow-pulse {
+    0%,100% { filter: blur(14px) brightness(1.3); opacity: 0.85; }
+    50% { filter: blur(20px) brightness(1.7); opacity: 1; }
+}
 }
 @keyframes ajyal-copilot-glow {
     0% {
