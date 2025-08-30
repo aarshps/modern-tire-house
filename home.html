@@ -2849,16 +2849,15 @@
 .ajyal-glow {
     font-weight: bold;
     letter-spacing: 0.02em;
-                            background: linear-gradient(90deg, #ffb300, #ff5e62 20%, #ffb347 40%, #ff5858 60%, #ffe53b 80%, #00e6ff 100%);
-                            background-size: 400% auto;
-                            -webkit-background-clip: text;
-                            -webkit-text-fill-color: transparent;
-                            background-clip: text;
-                            text-fill-color: transparent;
-                            font-weight: bold;
-                            letter-spacing: 0.02em;
-                            animation: ajyal-gradient-move 2.5s linear infinite;
-                            position: relative;
+    background: linear-gradient(90deg, #e3e6ea 0%, #b0b3b8 35%, #6d6e71 70%, #232326 100%);
+    background-size: 100% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    text-fill-color: transparent;
+    position: relative;
+    /* No animation, no glow, just metallic gradient */
 }
 .ajyal-glow::after {
         display: none;
