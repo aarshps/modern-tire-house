@@ -2849,26 +2849,28 @@
 .ajyal-glow {
     font-weight: bold;
     letter-spacing: 0.02em;
-                background: linear-gradient(90deg, #ffb300, #ff5e62 40%, #ffb347 100%);
-                background-size: 200% auto;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-                text-fill-color: transparent;
-                position: relative;
-                animation: ajyal-gradient-move 3s linear infinite;
-                text-shadow:
-                    0 0 8px #ffb300,
-                    0 0 16px #ff5e62,
-                    0 0 24px #ffb347,
-                    0 0 32px #ff5e62;
+                        background: linear-gradient(90deg, #ffb300, #ff5e62 25%, #ffb347 50%, #ff5858 75%, #ffe53b 100%);
+                        background-size: 300% auto;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        text-fill-color: transparent;
+                        position: relative;
+                        animation: ajyal-gradient-move 3s linear infinite;
+                    text-shadow:
+                        0 0 8px #ffb300,
+                        0 0 12px #ff5e62,
+                        0 0 16px #ffb347,
+                        0 0 20px #ff5858,
+                        0 0 24px #ffe53b;
 }
 .ajyal-glow::after {
         display: none;
 }
 @keyframes ajyal-gradient-move {
     0% { background-position: 0% 50%; }
-    100% { background-position: 200% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 @keyframes ajyal-glow-pulse {
         0%,100% { filter: blur(7px) brightness(1.08); opacity: 0.6; }
